@@ -12,3 +12,36 @@ ul {
   margin: 0;
   list-style: none;
 }
+
+.leadPhotoCaption {
+  position: absolute;
+  width: 100%;
+  height: 95vh;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-image: url("https://s3.eu-central-1.amazonaws.com/eurasiatour/bg.PNG");
+}
+
+.captionSection {
+  font-family: 'Dancing Script', cursive;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  font-size: 8em;
+  text-align: center;
+  margin-top: 25vh;
+  z-index: 5;
+  color: white;
+}
+
+.layerBGColor {
+  position: absolute;
+  background: linear-gradient(180deg, #8A8782 , black 80%, black);
+  opacity: 0.5;
+  width: 100%;
+  height: 200vh;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
