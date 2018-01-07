@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import englishFlag from '../../resources/static/images/english_flag.png';
-import turkishFlag from '../../resources/static/images/turkish_flag.png';
+import englishFlag from '../../resources/static/images/flags/english_flag.png';
+import turkishFlag from '../../resources/static/images/flags/turkish_flag.png';
 
 
 export default function NavBar({isEnglish}) {

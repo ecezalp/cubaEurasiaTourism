@@ -1,0 +1,13 @@
+.six-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+.six-grid figure {
+  width: 99%;
+  justify-self: center;
+}
+.six-grid figure img {
+  width: 100%;
+}

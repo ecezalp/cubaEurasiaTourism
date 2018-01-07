@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Namibia travel website",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "react-springy-parallax": "^1.2.0"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
