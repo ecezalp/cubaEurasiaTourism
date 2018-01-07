@@ -1,3 +1,4 @@
 .idea
 node_modules
 src/main/resources/webpack
+.DS_Store

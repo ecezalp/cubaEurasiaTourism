@@ -1,69 +1,88 @@
 .navbar-container {
   display: flex;
   justify-content: space-between;
+  background-color: rgb(139, 136, 132);
+  color: white;
   font-family: "Raleway", sans-serif;
-  //temporary background color for coordination
-  background-color: #8A8782 !important;
-
-  div, ul {
-    //temporary background color for coordination
-    background-color: #8A8782 !important;
-  }
 
   .navbar-left {
-    width: 20%;
-  }
+    width: 33%;
 
-  .navbar-logo {
-    font-family: "Raleway", sans-serif;
-    font-size: 1.8em;
-    text-align: center;
-    padding: 10px;
+    .navbar-logo {
+      font-family: "Raleway", sans-serif;
+      font-size: 1.8em;
+      text-align: center;
+      padding: 10px;
+      letter-spacing: 4px;
+      width: 80%;
 
-    .navbar-logo-bold {
-      font-weight: bold;
+      .navbar-logo-bold {
+        font-weight: bold;
+      }
+
+      .navbar-date {
+        font-size: 0.4em;
+        letter-spacing: 2px;
+      }
     }
-
-    .navbar-date {
-      font-size: 0.6em;
-    }
   }
-
-
 
   .navbar-right {
     width: 40%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
+
+    ul {
+      justify-content: space-around;
+      display: flex;
+    }
+
+    li {
+      padding: 6px 2px;
+      border-bottom: 3px solid rgb(139, 136, 132);
+    }
+
+    li:hover {
+      border-bottom: 2px solid white;
+    }
+
+    li a {
+      color: white;
+      text-decoration: none;
+      letter-spacing: 2px;
+    }
+
+    .navbar-top {
+      display: flex;
+      grid-area:  1 / 2 / 1 / 4;
+      justify-content: flex-end;
+
+      .navbar-languages, .navbar-about-us {
+        font-size: 0.8em;
+      }
+
+      .navbar-about-us {
+        padding-right: 25px;
+      }
+
+      .navbar-about-us ul li {
+        padding: 5px 5px;
+      }
+
+      .navbar-us {
+        padding: 0px 15px;
+      }
+    }
+
+    .navbar-menu-items {
+      grid-area: 2 / 1 / 3 / 4;
+    }
   }
 
-  .navbar-about-us {
-    grid-area: 1 / 1 / 2 / 3;
-    //temporary background color for coordination
-    background-color: #8A8782 !important;
-    justify-content: space-around;
-    display: flex;
+  .navbar-flag {
+    height: 15px;
+    width: 25px;
+    border-radius: 30%;
   }
-
-  .navbar-menu-items {
-    grid-area: 2 / 1 / 3 / 4;
-    //temporary background color for coordination
-    background-color: #8A8782 !important;
-    justify-content: space-around;
-    display: flex;
-  }
-
-  .navbar-languages {
-    grid-area: 1 / 3 / 2 / 4;
-    //temporary background color for coordination
-    background-color: #8A8782 !important;
-    justify-content: space-around;
-    display: flex;
-  }
-
-  li {
-
-  }
-
 }
