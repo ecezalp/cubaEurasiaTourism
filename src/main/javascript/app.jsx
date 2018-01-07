@@ -12,6 +12,7 @@ export default class App extends React.Component {
     this.state = {
       isEnglish: true
     };
+    this.changeLanguage = this.changeLanguage.bind(this);
   };
 
   getEnglishHome() {
@@ -22,10 +23,14 @@ export default class App extends React.Component {
     return <Home isEnglish={false}/>;
   }
 
+  changeLanguage(isEnglish){
+    this.setState({isEnglish});
+  }
+
   render() {
     return <BrowserRouter>
       <div id="application-container">
-        <NavBar isEnglish={true}/>
+        <NavBar isEnglish={this.state.isEnglish} changeLanguage={this.changeLanguage}/>
         <Switch>
           <Route exact path="/" component={this.getEnglishHome}/>
           <Route path="/tr" component={this.getTurkishHome}/>

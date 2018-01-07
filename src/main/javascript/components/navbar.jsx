@@ -4,9 +4,7 @@ import englishFlag from '../../resources/static/images/flags/english_flag.png';
 import turkishFlag from '../../resources/static/images/flags/turkish_flag.png';
 
 
-export default function NavBar({isEnglish}) {
-
-  console.log(isEnglish);
+export default function NavBar({isEnglish, changeLanguage}) {
 
   let linkPrefix = isEnglish ? "en" : "tr";
 
@@ -25,8 +23,8 @@ export default function NavBar({isEnglish}) {
     return <span className="navbar-about-us"><ul>
       <li><Link to={`${linkPrefix}/about-us`} className="navbar-us">{aboutUsHelper[isEnglish][0]}</Link></li>
       <li><Link to={`${linkPrefix}/contact-us`} className="navbar-us">{aboutUsHelper[isEnglish][1]}</Link></li>
-       <li><Link to="/tr"><img className="navbar-flag" src={turkishFlag}/></Link></li>
-      <li><Link to="/en"><img className="navbar-flag" src={englishFlag}/></Link></li>
+       <li><Link to="/tr" onClick={() => changeLanguage(false)}><img className="navbar-flag" src={turkishFlag}/></Link></li>
+      <li><Link to="/en" onClick={() => changeLanguage(true)}><img className="navbar-flag" src={englishFlag}/></Link></li>
     </ul></span>
   };
 
