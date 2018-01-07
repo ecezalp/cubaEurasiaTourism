@@ -9,8 +9,8 @@ export default function NavBar({isEnglish}) {
 
   const getLogo = () => {
     return <div className="navbar-logo">
-      <span className="navbar-logo-bold">Eurasia</span> Tourism
-      <span className="navbar-date">Since 1990</span>
+      <span><span className="navbar-logo-bold">Eurasia</span> Tourism </span>
+      <div className="navbar-date">Since 1990</div>
     </div>
   };
 
@@ -46,10 +46,10 @@ export default function NavBar({isEnglish}) {
 
   return (
     <div className="navbar-container">
-      <div className="navbar-right">
+      <div className="navbar-left">
         {getLogo()}
       </div>
-      <div className="navbar-left">
+      <div className="navbar-right">
         {getAboutUs()}
         {getLanguages()}
         {getMenuItems()}

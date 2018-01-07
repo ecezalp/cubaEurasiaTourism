@@ -2,7 +2,6 @@ import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import "../styles/main.scss";
 
-import NavBar from "./components/navbar";
 import Home from "./components/home";
 
 export default class App extends React.Component {
@@ -12,31 +11,20 @@ export default class App extends React.Component {
     this.state = {
       isEnglish: true
     };
-
-    this.getEnglishHome = this.getEnglishHome.bind(this);
-    this.getTurkishHome = this.getTurkishHome.bind(this);
   };
 
   getEnglishHome() {
-    !this.state.isEnglish ?
-      this.setState({isEnglish: true}, this.getHome) :
-      this.getHome();
+    return <Home isEnglish={true}/>;
   }
 
   getTurkishHome() {
-    this.state.isEnglish ?
-      this.setState({isEnglish: false}, this.getHome) :
-      this.getHome();
-  }
-
-  getHome() {
-    return <Home isEnglish={this.state.isEnglish}/>;
+    return <Home isEnglish={false}/>;
   }
 
   render() {
     return <BrowserRouter>
       <div id="application-container">
-        <NavBar isEnglish={this.state.isEnglish}/>
+
         <Switch>
           <Route exact path="/" component={this.getEnglishHome}/>
           <Route path="/tr" component={this.getTurkishHome}/>

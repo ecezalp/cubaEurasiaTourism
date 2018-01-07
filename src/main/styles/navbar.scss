@@ -2,16 +2,34 @@
   display: flex;
   justify-content: space-between;
   background-color: lightblue;
+  font-family: "Raleway", sans-serif;
 
   div, ul {
     background-color: red;
   }
 
-  .navbar-right {
-
+  .navbar-left {
+    width: 20%;
   }
 
-  .navbar-left {
+  .navbar-logo {
+    font-family: "Raleway", sans-serif;
+    font-size: 1.8em;
+    text-align: center;
+    padding: 10px;
+
+    .navbar-logo-bold {
+      font-weight: bold;
+    }
+
+    .navbar-date {
+      font-size: 0.6em;
+    }
+  }
+
+
+
+  .navbar-right {
     width: 40%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -43,15 +61,4 @@
 
   }
 
-  .navbar-logo {
-
-  }
-
-  .navbar-logo-bold {
-
-  }
-
-  .navbar-date {
-
-  }
 }
