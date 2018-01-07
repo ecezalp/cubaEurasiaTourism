@@ -1,5 +1,8 @@
 .navbar-container {
   display: flex;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
   justify-content: space-between;
   background-color: rgb(139, 136, 132);
   color: white;

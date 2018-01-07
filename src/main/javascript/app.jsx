@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import "../styles/main.scss";
 
 import Home from "./components/home";
+import NavBar from "./components/navbar"
 
 export default class App extends React.Component {
 
@@ -24,7 +25,7 @@ export default class App extends React.Component {
   render() {
     return <BrowserRouter>
       <div id="application-container">
-
+        <NavBar isEnglish={true}/>
         <Switch>
           <Route exact path="/" component={this.getEnglishHome}/>
           <Route path="/tr" component={this.getTurkishHome}/>
