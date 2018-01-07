@@ -5,15 +5,16 @@ import namibTrees from '../../resources/static/images/sixGrid/namib_trees.jpg';
 import namibDeadTree from '../../resources/static/images/sixGrid/namib_deadTree.jpg';
 import namibDune from '../../resources/static/images/sixGrid/namib_dune.jpg';
 import namibBush from '../../resources/static/images/sixGrid/namib_bush.jpg';
+import africaMap from '../../resources/static/vectors/africaMap';
 
 
 export default class Home extends React.Component {
 
   getLanding() {
-    return <div className="landingImageContainer">
-      <div className="landingImage"/>
-      <div className="landingCaption">{this.props.isEnglish ? "Namibia" : "Namibya"}</div>
-      <div className="backgroundLayer"/>
+    return <div className="landing-image-container">
+      <div className="landing-image"/>
+      <div className="landing-caption">{this.props.isEnglish ? "Namibia" : "Namibya"}</div>
+      <div className="background-layer"/>
       <i className="fa fa-caret-down" aria-hidden="true"/>
     </div>
   };
@@ -35,23 +36,27 @@ export default class Home extends React.Component {
       },
     };
 
-    return <div className="quoteContainer">
-      <div className="quoteCover">
-        {quoteHelper[isEnglish][0]}<br/>
-        {quoteHelper[isEnglish][1]}
-      </div><br/>
-      <div className="quoteAuthor">
-        <i>{quoteHelper[isEnglish][2]}</i><br/>
-        {quoteHelper[isEnglish][3]}
+    return <div className="quote-and-map-container">
+      <div className="quote-container">
+        <div className="quote-cover">
+          {quoteHelper[isEnglish][0]}<br/>
+          {quoteHelper[isEnglish][1]}
+        </div>
+        <br/>
+        <div className="quote-author">
+          <i>{quoteHelper[isEnglish][2]}</i><br/>
+          {quoteHelper[isEnglish][3]}
+        </div>
       </div>
-    </div>
+      {africaMap()}
+      </div>
   };
 
   getGrid() {
     return <div className="six-grid">
       <figure>
         <img src={namibDesert} alt="The Pulpit Rock"/>
-          <figcaption>Fig1. - A view of the pulpit rock in Norway.</figcaption>
+        <figcaption>Fig1. - A view of the pulpit rock in Norway.</figcaption>
       </figure>
 
       <figure>

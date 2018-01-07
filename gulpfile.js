@@ -44,7 +44,7 @@ const WBBPACK_SRC_CONFIG = {
         test: /(icons|fonts)/,
         loader: 'url-loader'
       }, {
-        test:  [/\.png$/, /\.jpg$/],
+        test:  [/\.png$/, /\.jpg$/, /\.svg$/],
         loader: 'url-loader?=mimetype=image/png'
       }
     ]
