@@ -2,7 +2,7 @@ var gulp = require('gulp');
 
 // Build Path
 var path = require('path');
-const BUILD_PATH = path.join(__dirname, './target/classes/static');
+const BUILD_PATH = path.join(__dirname, './src/main/resources/webpack');
 
 // Globs
 const GLOBS = {
@@ -13,7 +13,6 @@ const GLOBS = {
 };
 
 // Webpack Configuration
-var webpack = require('webpack');
 var webpackStream = require('webpack-stream');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var _ = require('lodash');
@@ -52,13 +51,13 @@ const WBBPACK_SRC_CONFIG = {
   }, resolve: {
     extensions: ['.js', '.jsx', '.json', '.scss', '.css']
   }, plugins: [
-    new ExtractTextPlugin('styles/bundle.css')
+    new ExtractTextPlugin('bundle.css')
   ]
 };
 
 const WEBPACK_BUILD_CONFIG = _.merge({}, WBBPACK_SRC_CONFIG, {
   entry: './src/main/javascript/index.jsx',
-  output: {filename: 'javascript/bundle.js'}
+  output: {filename: 'bundle.js'}
 });
 
 const WEBPACK_TEST_CONFIG = _.merge({}, WBBPACK_SRC_CONFIG, {
