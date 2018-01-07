@@ -1,10 +1,8 @@
 import React from "react";
-import namibDesert from '../../resources/static/images/sixGrid/namib_desert.jpg';
-import namibRiverbed from '../../resources/static/images/sixGrid/namib_riverbed.jpg';
-import namibTrees from '../../resources/static/images/sixGrid/namib_trees.jpg';
-import namibDeadTree from '../../resources/static/images/sixGrid/namib_deadTree.jpg';
-import namibDune from '../../resources/static/images/sixGrid/namib_dune.jpg';
-import namibBush from '../../resources/static/images/sixGrid/namib_bush.jpg';
+import culturePic from '../../resources/static/images/sixGrid/culture.jpg';
+import landscapePic from '../../resources/static/images/sixGrid/landscape.jpg';
+import lodgePic from '../../resources/static/images/sixGrid/lodgeParadise.jpg';
+import safariPic from '../../resources/static/images/sixGrid/safari.jpg';
 import africaMap from '../../resources/static/vectors/africaMap';
 
 
@@ -91,36 +89,60 @@ export default class Home extends React.Component {
     </div>
   };
 
+  getOnlyInNamibia() {
+    let isEnglish = this.props.isEnglish;
+    let onlyInNamibiaQuote = {
+      true: {
+        0: "Trip Inspirations",
+        1: "Our Schedule",
+      },
+      false: {
+        0: "Gezi İlhamları",
+        1: "Programımız",
+      }
+    }
+    return <div className="namibia-activities-header">
+      {onlyInNamibiaQuote[isEnglish][0]}
+      <div className="go-to-recommendation">{onlyInNamibiaQuote[isEnglish][1]}</div>
+    </div>
+  }
+
   getGrid() {
+    let isEnglish = this.props.isEnglish;
+    let activitiesHeader = {
+      true: {
+        0: "Cultural Excursions",
+        1: "Wilderness",
+        2: "Safari",
+        3: "Lodge Paradise",
+      },
+      false: {
+        0: "Kültür Gezintileri",
+        1: "Doğa çöl",
+        2: "Safari",
+        3: "Lodge Paradise",
+      },
+    }
+
     return <div className="six-grid">
       <figure>
-        <img src={namibDesert} alt="The Pulpit Rock"/>
-        <figcaption>Fig1. - A view of the pulpit rock in Norway.</figcaption>
+        <img src={culturePic} alt="The Pulpit Rock"/>
+        <div className="picCaption">Cultural Excursions</div>
       </figure>
 
       <figure>
-        <img src={namibRiverbed} alt="The Pulpit Rock"/>
-        <figcaption>Fig1. - A view of the pulpit rock in Norway.</figcaption>
+        <img src={landscapePic} alt="The Pulpit Rock"/>
+        <div className="picCaption">Wilderness</div>
       </figure>
 
       <figure>
-        <img src={namibTrees} alt="The Pulpit Rock"/>
-        <figcaption>Fig1. - A view of the pulpit rock in Norway.</figcaption>
+        <img src={safariPic} alt="The Pulpit Rock"/>
+        <div className="picCaption">Safari</div>
       </figure>
 
       <figure>
-        <img src={namibDeadTree} alt="The Pulpit Rock"/>
-        <figcaption>Fig1. - A view of the pulpit rock in Norway.</figcaption>
-      </figure>
-
-      <figure>
-        <img src={namibBush} alt="The Pulpit Rock"/>
-        <figcaption>Fig1. - A view of the pulpit rock in Norway.</figcaption>
-      </figure>
-
-      <figure>
-        <img src={namibDune} alt="The Pulpit Rock"/>
-        <figcaption>Fig1. - A view of the pulpit rock in Norway.</figcaption>
+        <img src={lodgePic} alt="The Pulpit Rock"/>
+        <div className="picCaption">Lodge Paradise</div>
       </figure>
 
     </div>
@@ -131,7 +153,11 @@ export default class Home extends React.Component {
       {this.getLanding()}
       {this.getQuote()}
       {this.getNamibiaDesc()}
-      {this.getGrid()}
+      {this.getOnlyInNamibia()}
+      <div className="gridContainer">
+        {this.getGrid()}
+        <div className="gridCover"></div>
+      </div>
     </div>;
   }
 }

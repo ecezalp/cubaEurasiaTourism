@@ -4,6 +4,7 @@ import "../styles/main.scss";
 
 import Home from "./components/home";
 import NavBar from "./components/navbar"
+import Tail from "./components/tail"
 
 export default class App extends React.Component {
 
@@ -36,6 +37,7 @@ export default class App extends React.Component {
           <Route path="/tr" component={this.getTurkishHome}/>
           <Route path="/en" component={this.getEnglishHome}/>
         </Switch>
+        <Tail isEnglish={this.state.isEnglish} changeLanguage={this.changeLanguage}/>
       </div>
     </BrowserRouter>
   }
