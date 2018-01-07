@@ -5,23 +5,44 @@ import "../styles/main.scss";
 import NavBar from "./components/navbar";
 import Home from "./components/home";
 
-let getEnglishHome = () => {
-    return <Home isEnglish={true}/>
-};
+export default class App extends React.Component {
 
-let getTurkishHome = () => {
-    return <Home isEnglish={false}/>
-};
+  constructor(props) {
+    super(props);
+    this.state = {
+      isEnglish: true
+    };
 
-export default function App () {
+    this.getEnglishHome = this.getEnglishHome.bind(this);
+    this.getTurkishHome = this.getTurkishHome.bind(this);
+  };
+
+  getEnglishHome() {
+    !this.state.isEnglish ?
+      this.setState({isEnglish: true}, this.getHome) :
+      this.getHome();
+  }
+
+  getTurkishHome() {
+    this.state.isEnglish ?
+      this.setState({isEnglish: false}, this.getHome) :
+      this.getHome();
+  }
+
+  getHome() {
+    return <Home isEnglish={this.state.isEnglish}/>;
+  }
+
+  render() {
     return <BrowserRouter>
-        <div id="application-container">
-            {NavBar()}
-            <Switch>
-                <Route exact path="/" component={getEnglishHome}/>
-                <Route exact path="/tr" component={getTurkishHome}/>
-                <Route exact path="/en" component={getEnglishHome}/>
-            </Switch>
-        </div>
+      <div id="application-container">
+        <NavBar isEnglish={this.state.isEnglish}/>
+        <Switch>
+          <Route exact path="/" component={this.getEnglishHome}/>
+          <Route path="/tr" component={this.getTurkishHome}/>
+          <Route path="/en" component={this.getEnglishHome}/>
+        </Switch>
+      </div>
     </BrowserRouter>
+  }
 };
