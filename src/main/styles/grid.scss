@@ -1,17 +1,17 @@
-.six-grid {
+.four-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   position: absolute;
 }
 
 
-.six-grid figure {
+.four-grid figure {
   width: 100%;
   height: 33vh;
   overflow: hidden;
   margin: 0;
 }
-.six-grid figure img {
+.four-grid figure img {
   width: 100%;
   height: 33vh;
 }

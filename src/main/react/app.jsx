@@ -17,20 +17,24 @@ export default class App extends React.Component {
     this.changeLanguage = this.changeLanguage.bind(this);
   };
 
-  getEnglishHome() {
-    return <Home isEnglish={true}/>;
+  getEnglishHome(props) {
+    let newProps = Object.assign({}, props, {isEnglish: true});
+    return <Home {...newProps} />;
   }
 
-  getTurkishHome() {
-    return <Home isEnglish={false}/>;
+  getTurkishHome(props) {
+    let newProps = Object.assign({}, props, {isEnglish: false});
+    return <Home {...newProps} />;
   }
 
-  getEnglishSchedule() {
-    return <Schedule isEnglish={true}/>;
+  getEnglishSchedule(props) {
+    let newProps = Object.assign({}, props, {isEnglish: true});
+    return <Schedule {...newProps}/>;
   }
 
-  getTurkishSchedule() {
-    return <Schedule isEnglish={false}/>;
+  getTurkishSchedule(props) {
+    let newProps = Object.assign({}, props, {isEnglish: false});
+    return <Schedule {...newProps}/>;
   }
 
   changeLanguage(isEnglish){
@@ -44,9 +48,9 @@ export default class App extends React.Component {
         <Switch>
           <Route exact path="/" component={this.getEnglishHome}/>
           <Route path="/tr" component={this.getTurkishHome}/>
+          <Route path="/tr/schedule" component={this.getEnglishSchedule}/>
           <Route path="/en" component={this.getEnglishHome}/>
           <Route path="/en/schedule" component={this.getEnglishSchedule}/>
-          <Route path="/tr/schedule" component={this.getTurkishSchedule}/>
         </Switch>
         <Tail isEnglish={this.state.isEnglish} changeLanguage={this.changeLanguage}/>
       </div>
