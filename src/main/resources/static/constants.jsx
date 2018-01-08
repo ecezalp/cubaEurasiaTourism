@@ -1,4 +1,8 @@
 import React from 'react';
+import culturePic from '../../resources/static/images/sixGrid/culture.jpg';
+import landscapePic from '../../resources/static/images/sixGrid/landscape.jpg';
+import lodgePic from '../../resources/static/images/sixGrid/lodgeParadise.jpg';
+import safariPic from '../../resources/static/images/sixGrid/safari.jpg';
 
 export const namibiaDesc = {
   true: [
@@ -60,17 +64,24 @@ export const activitiesHeader = {
   },
 };
 
-export const gridHelper = {
+export const gridHelper = [
+  {src: culturePic, language: {true: "Cultural Excursions", false: "Kültür"}},
+  {src: landscapePic, language: {true: "Wilderness", false: "Vahşi Doğa"}},
+  {src: safariPic, language: {true: "Safari", false: "Safari"}},
+  {src: lodgePic, language: {true: "Lodge Paradise", false: "Loca Cenneti"}},
+];
+
+export const scheduleHelper = {
   true: {
-    0: "Cultural Excursions",
-    1: "Wilderness",
-    2: "Safari",
-    3: "Lodge Paradise",
+    0: "I never knew of a morning in Africa",
+    1: "when I woke up that I was not happy.",
+    2: "True at First Light",
+    3: "by Ernest Hemingway"
   },
   false: {
-    0: "Kültür",
-    1: "Vahşi Doğa",
-    2: "Safari",
-    3: "Loca Cenneti",
-  }
+    0: "Bir sabah bilmedim ki",
+    1: "Afrika'da huzurla uyanmadığım.",
+    2: "Günün İlk Işığında Gerçek",
+    3: "Ernest Hemingway"
+  },
 };

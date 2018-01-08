@@ -1,18 +1,15 @@
 import React from "react";
-import culturePic from '../../resources/static/images/sixGrid/culture.jpg';
-import landscapePic from '../../resources/static/images/sixGrid/landscape.jpg';
-import lodgePic from '../../resources/static/images/sixGrid/lodgeParadise.jpg';
-import safariPic from '../../resources/static/images/sixGrid/safari.jpg';
-import {Link} from 'react-router-dom';
+import {Link, Route} from 'react-router-dom';
 import africaMap from '../../resources/static/vectors/africaMap';
 import {gridHelper, namibiaDesc, onlyInNamibiaQuote, quoteHelper} from "../../resources/static/constants";
+import Schedule from "./schedule";
 
 
 export default class Home extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log(props);
+    this.getScheduleComponent = this.getScheduleComponent.bind(this);
   }
 
   getLanding() {
@@ -62,40 +59,36 @@ export default class Home extends React.Component {
   getGrid() {
     return <div className="gridContainer">
       <div className="four-grid">
-        <figure>
-          <img src={culturePic} alt="The Pulpit Rock"/>
-          <div className="picCaption">{gridHelper[this.props.isEnglish][0]}</div>
-        </figure>
-
-        <figure>
-          <img src={landscapePic} alt="The Pulpit Rock"/>
-          <div className="picCaption">{gridHelper[this.props.isEnglish][1]}</div>
-        </figure>
-
-        <figure>
-          <img src={safariPic} alt="The Pulpit Rock"/>
-          <div className="picCaption">{gridHelper[this.props.isEnglish][2]}</div>
-        </figure>
-
-        <figure>
-          <img src={lodgePic} alt="The Pulpit Rock"/>
-          <div className="picCaption">{gridHelper[this.props.isEnglish][3]}</div>
-        </figure>
+        {gridHelper.map((item) =>
+          <figure>
+            <img src={item.src} alt="The Pulpit Rock"/>
+            <div className="picCaption">{item.language[this.props.isEnglish]}</div>
+          </figure>)}
       </div>
       <div className="gridCover"/>
     </div>
   }
 
+  validatePathnameForHome() {
+    return ((this.props.location.pathname.toString() === "/") ||
+      (this.props.location.pathname.toString() === "/en") ||
+      (this.props.location.pathname.toString() === "/tr"));
+  }
+
+  getScheduleComponent() {
+    return <Schedule isEnglish={this.props.isEnglish}/>;
+  }
+
   render() {
     return <div className="home-container">
-      {this.getLanding()}
-      {this.getQuote()}
-      {this.getNamibiaDesc()}
-      {this.getOnlyInNamibia()}
-      {this.getGrid()}
+      {this.validatePathnameForHome() && <div className="home">
+        {this.getLanding()}
+        {this.getQuote()}
+        {this.getNamibiaDesc()}
+        {this.getOnlyInNamibia()}
+        {this.getGrid()}
+      </div>}
+      <Route path={`${this.props.match.url}/schedule`} component={this.getScheduleComponent}/>
     </div>;
   }
 }
-
-// isEnglish
-// match
