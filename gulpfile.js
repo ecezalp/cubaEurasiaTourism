@@ -2,14 +2,15 @@ var gulp = require('gulp');
 
 // Build Path
 var path = require('path');
-const BUILD_PATH = path.join(__dirname, './src/main/resources/webpack');
+const BUILD_PATH = path.join(__dirname, './dist');
 
 // Globs
 const GLOBS = {
   assets: ['src/main/resources/static/images/*'],
-  js_jsx: ['src/main/javascript/**/*.+(js|jsx)'],
+  js_jsx: ['src/main/react/**/*.+(js|jsx)'],
   scss: ['src/main/styles/**.*.+(scss)'],
-  spec: ['src/test/javascript/**/*Spec.+(js|jsx)']
+  spec: ['src/test/react/**/*Spec.+(js|jsx)'],
+  server: ['src/main/node/**/*.+(js|jsx)'],
 };
 
 // Webpack Configuration
@@ -33,18 +34,20 @@ const WBBPACK_SRC_CONFIG = {
       }, {
         test: [/\.scss$/, /\.css$/],
         loader: ExtractTextPlugin.extract(
-          {use: [{
+          {
+            use: [{
               loader: "css-loader"
             }, {
               loader: "sass-loader"
             }],
-            fallback: "style-loader"}
+            fallback: "style-loader"
+          }
         )
       }, {
         test: /(icons|fonts)/,
         loader: 'url-loader'
       }, {
-        test:  [/\.png$/, /\.jpg$/, /\.svg$/],
+        test: [/\.png$/, /\.jpg$/, /\.svg$/],
         loader: 'url-loader?=mimetype=image/png'
       }
     ]
@@ -56,7 +59,7 @@ const WBBPACK_SRC_CONFIG = {
 };
 
 const WEBPACK_BUILD_CONFIG = _.merge({}, WBBPACK_SRC_CONFIG, {
-  entry: './src/main/javascript/index.jsx',
+  entry: './src/main/react/index.jsx',
   output: {filename: 'bundle.js'}
 });
 
@@ -74,6 +77,13 @@ const WEBPACK_TEST_CONFIG = _.merge({}, WBBPACK_SRC_CONFIG, {
 var eslint = require('gulp-eslint');
 var jasmineBrowser = require('gulp-jasmine-browser');
 var plumber = require('gulp-plumber');
+var nodemon = require('gulp-nodemon');
+
+gulp.task('start', ['build'], function () {
+  nodemon({
+    script: './server.js'
+  })
+});
 
 gulp.task('lint', () => {
   return gulp.src(GLOBS.js_jsx)
@@ -105,10 +115,10 @@ gulp.task('watch', () => {
   return gulp.src(GLOBS.js_jsx)
     .pipe(plumber(() => {
       console.error(arguments)
-}))
-.pipe(webpackStream(_.merge({}, WEBPACK_BUILD_CONFIG, {
-  watch: true,
-  devtool: 'inline-source-map',
-})))
-  .pipe(gulp.dest(BUILD_PATH))
+    }))
+    .pipe(webpackStream(_.merge({}, WEBPACK_BUILD_CONFIG, {
+      watch: true,
+      devtool: 'inline-source-map',
+    })))
+    .pipe(gulp.dest(BUILD_PATH))
 });
