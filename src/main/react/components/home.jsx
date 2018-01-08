@@ -59,8 +59,8 @@ export default class Home extends React.Component {
   getGrid() {
     return <div className="gridContainer">
       <div className="four-grid">
-        {gridHelper.map((item) =>
-          <figure>
+        {gridHelper.map((item, i) =>
+          <figure key={"figure-key-" + i}>
             <img src={item.src} alt="The Pulpit Rock"/>
             <div className="picCaption">{item.language[this.props.isEnglish]}</div>
           </figure>)}
