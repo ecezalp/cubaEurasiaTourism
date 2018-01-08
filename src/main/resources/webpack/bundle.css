@@ -1,0 +1,329 @@
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+  #landing-image-mobile {
+    background-size: auto 100%; }
+  .navbar-left {
+    width: 50%; }
+  #navbar-right-mobile-disappear {
+    display: none; }
+  #display-changes-for-mobile {
+    display: inline; }
+  #mobile-nav-web-disappear.mobile-nav {
+    display: inline; }
+  .navbar-us {
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none; }
+  .navbar-us-container {
+    width: 45vw;
+    float: left; }
+  .navbar-flag-container {
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    font-weight: 600;
+    text-align: right;
+    width: 45vw;
+    float: left; }
+  .navbar-flag-container a {
+    text-decoration: none;
+    color: white !important; }
+  .navbar-togo-items a {
+    text-decoration: none;
+    color: white !important; }
+  .navbar-togo-items {
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    font-weight: 600;
+    color: white !important;
+    text-decoration: none; }
+  .mobile-top-left {
+    overflow-y: auto;
+    width: 50%;
+    float: left; } }
+
+.navbar-container {
+  display: flex;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  justify-content: space-between;
+  background-color: #8b8884;
+  color: white;
+  font-family: "Raleway", sans-serif; }
+  .navbar-container .navbar-left {
+    width: 33%; }
+    .navbar-container .navbar-left .navbar-logo {
+      font-family: "Raleway", sans-serif;
+      font-size: 1.8em;
+      text-align: center;
+      padding: 10px;
+      letter-spacing: 4px;
+      width: 80%; }
+      .navbar-container .navbar-left .navbar-logo .navbar-logo-bold {
+        font-weight: bold; }
+      .navbar-container .navbar-left .navbar-logo .navbar-date {
+        font-size: 0.4em;
+        letter-spacing: 2px; }
+  .navbar-container .navbar-right {
+    width: 40%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr); }
+    .navbar-container .navbar-right ul {
+      justify-content: space-around;
+      display: flex; }
+    .navbar-container .navbar-right li {
+      padding: 6px 2px;
+      border-bottom: 3px solid #8b8884; }
+    .navbar-container .navbar-right li:hover {
+      border-bottom: 2px solid white; }
+    .navbar-container .navbar-right li a {
+      color: white;
+      text-decoration: none;
+      letter-spacing: 2px; }
+    .navbar-container .navbar-right .navbar-top {
+      display: flex;
+      grid-area: 1 / 2 / 1 / 4;
+      justify-content: flex-end; }
+      .navbar-container .navbar-right .navbar-top .navbar-languages, .navbar-container .navbar-right .navbar-top .navbar-about-us {
+        font-size: 0.8em; }
+      .navbar-container .navbar-right .navbar-top .navbar-about-us {
+        margin-top: 0.5vh;
+        margin-right: 1.5vw; }
+      .navbar-container .navbar-right .navbar-top .navbar-about-us ul li {
+        padding: 5px 5px; }
+      .navbar-container .navbar-right .navbar-top .navbar-us-container {
+        width: 100px;
+        text-align: center;
+        float: left; }
+      .navbar-container .navbar-right .navbar-top .navbar-us {
+        padding: 0px; }
+    .navbar-container .navbar-right .navbar-togo-items {
+      grid-area: 2 / 1 / 3 / 4; }
+
+.landing-image-container {
+  width: 100%;
+  height: 100vh; }
+
+.landing-image {
+  position: absolute;
+  width: 100%;
+  height: 95vh;
+  margin-top: 5vh;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-image: url("https://s3.eu-central-1.amazonaws.com/eurasiatour/bg.PNG"); }
+
+.fa-caret-down, .landing-caption {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-top: 86vh;
+  z-index: 5;
+  color: white; }
+
+.fa-caret-down {
+  font-size: 3em;
+  margin-top: 86vh; }
+
+.landing-caption {
+  font-family: 'Dancing Script', cursive;
+  font-size: 8em;
+  margin-top: 35vh; }
+
+.background-layer {
+  position: absolute;
+  background: linear-gradient(180deg, #8A8782, black 80%, black);
+  opacity: 0.2;
+  width: 100%;
+  height: 95%;
+  margin-top: 5vh; }
+
+.quote-container {
+  letter-spacing: 2px;
+  width: 60%;
+  margin-left: 20%;
+  overflow: auto;
+  font-size: 2.5rem;
+  line-height: 1.5;
+  overflow: auto;
+  padding: 20vh 0 5vh 0;
+  border-bottom: solid 0.5px #999999;
+  text-align: center; }
+
+.quote-author {
+  font-size: 1.5rem;
+  text-align: center; }
+
+.namibia-description-container {
+  width: 100%;
+  overflow: auto;
+  margin-top: 20vh;
+  margin-bottom: 20vh; }
+
+.namibia-description {
+  width: 45vw;
+  margin-left: 15vw;
+  margin-top: 3vh;
+  overflow: auto;
+  float: left;
+  font-size: 1.5rem;
+  line-height: 2; }
+
+.map-container {
+  width: 25vw;
+  overflow: auto;
+  float: left; }
+
+.africa-map {
+  margin-left: -17vw;
+  margin-top: 0vh; }
+
+.six-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  position: absolute; }
+
+.six-grid figure {
+  width: 100%;
+  height: 33vh;
+  overflow: hidden;
+  margin: 0; }
+
+.six-grid figure img {
+  width: 100%;
+  height: 33vh; }
+
+.namibia-activities-header {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 5vh; }
+
+.gridCover {
+  width: 100%;
+  height: 33vh;
+  background: linear-gradient(180deg, #8A8782, black 80%, black);
+  opacity: 0.4;
+  z-index: 5;
+  position: absolute;
+  margin-bottom: 20vh; }
+
+.picCaption {
+  width: 25vw;
+  z-index: 10;
+  color: white;
+  position: absolute;
+  text-align: center;
+  margin-top: -20vh;
+  font-size: 2em;
+  font-family: 'Dancing Script', cursive; }
+
+.go-to-recommendation {
+  margin-top: 5vh;
+  font-size: 1.5rem;
+  width: 300px;
+  margin-left: calc( 50vw - 150px);
+  border: solid 0.5px #8B8884;
+  padding: 10px; }
+
+.go-to-recommendation-text {
+  padding: 10px;
+  text-decoration: none; }
+
+.go-to-recommendation a {
+  color: #8B8884; }
+
+.go-to-recommendation a:hover {
+  color: white; }
+
+.go-to-recommendation:hover {
+  background-color: #8B8884;
+  cursor: pointer; }
+
+.gridContainer {
+  width: 100%;
+  height: 33vh; }
+
+.tail-container {
+  width: 100%;
+  height: 40vh;
+  background-color: #1B2224;
+  color: #8B8580; }
+
+.tail-top {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.8em;
+  text-align: center;
+  /* padding: 10px; */
+  letter-spacing: 4px;
+  color: #8B8580;
+  padding-top: 5vh;
+  padding-bottom: 5vh; }
+
+.navbar-logo-bold {
+  font-weight: 600; }
+
+.navbar-date {
+  font-size: 0.4em;
+  letter-spacing: 2px; }
+
+.navbar-menu-items {
+  width: 100%;
+  overflow: auto;
+  margin-top: 5vh; }
+
+.navbar-menu-container {
+  width: 64vw;
+  overflow: auto;
+  padding: 0;
+  margin-left: 20vw; }
+
+.tail-middle-menu {
+  min-width: 200px;
+  width: 25%;
+  letter-spacing: 5px;
+  font-weight: 600;
+  float: left;
+  text-align: center; }
+
+.tail-middle-menu:hover {
+  color: white;
+  cursor: pointer; }
+
+.navbar-bottom-container {
+  width: 200px;
+  overflow-y: auto;
+  margin-left: calc( 50vw - 100px);
+  margin-top: 5vh; }
+
+.favicon-container {
+  width: 50px;
+  float: left;
+  font-size: 1.5rem;
+  text-align: center; }
+
+.favicon {
+  color: #8B8580; }
+
+.favicon:hover {
+  color: white; }
+
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+ul {
+  margin: 0;
+  margin: 0;
+  list-style: none; }
+
+div:hover {
+  cursor: default; }
+
+::-webkit-scrollbar {
+  display: none; }
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJidW5kbGUuY3NzIiwic291cmNlUm9vdCI6IiJ9*/

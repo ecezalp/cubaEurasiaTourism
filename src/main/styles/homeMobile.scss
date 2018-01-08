@@ -1,0 +1,69 @@
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px) {
+  #landing-image-mobile {
+    background-size: auto 100%;
+  }
+  .navbar-left {
+    width: 50%;
+  }
+
+  #navbar-right-mobile-disappear {
+    display: none;
+  }
+
+  #display-changes-for-mobile {
+    display: inline;
+  }
+
+  #mobile-nav-web-disappear.mobile-nav {
+    display: inline;
+  }
+
+  .navbar-us {
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+  }
+
+  .navbar-us-container {
+    width: 45vw;
+    float: left;
+  }
+
+  .navbar-flag-container {
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    font-weight: 600;
+    text-align: right;
+    width: 45vw;
+    float: left;
+  }
+
+  .navbar-flag-container a {
+    text-decoration: none;
+    color: white !important;
+  }
+
+  .navbar-togo-items a {
+    text-decoration: none;
+    color: white !important;
+  }
+
+  .navbar-togo-items {
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    font-weight: 600;
+    color: white !important;
+    text-decoration: none;
+  }
+
+  .mobile-top-left {
+    overflow-y: auto;
+    width: 50%;
+    float: left;
+  }
+
+}

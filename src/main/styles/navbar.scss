@@ -77,6 +77,7 @@
       .navbar-us-container {
         width: 100px;
         text-align: center;
+        float: left;
       }
 
       .navbar-us {
@@ -87,11 +88,5 @@
     .navbar-togo-items {
       grid-area: 2 / 1 / 3 / 4;
     }
-  }
-
-  .navbar-flag {
-    height: 15px;
-    width: 25px;
-    border-radius: 30%;
   }
 }
