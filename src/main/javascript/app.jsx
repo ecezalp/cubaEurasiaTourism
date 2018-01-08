@@ -5,6 +5,7 @@ import "../styles/main.scss";
 import Home from "./components/home";
 import NavBar from "./components/navbar"
 import Tail from "./components/tail"
+import Schedule from "./components/schedule"
 
 export default class App extends React.Component {
 
@@ -24,6 +25,14 @@ export default class App extends React.Component {
     return <Home isEnglish={false}/>;
   }
 
+  getEnglishSchedule() {
+    return <Schedule isEnglish={true}/>;
+  }
+
+  getTurkishSchedule() {
+    return <Schedule isEnglish={false}/>;
+  }
+
   changeLanguage(isEnglish){
     this.setState({isEnglish});
   }
@@ -36,6 +45,8 @@ export default class App extends React.Component {
           <Route exact path="/" component={this.getEnglishHome}/>
           <Route path="/tr" component={this.getTurkishHome}/>
           <Route path="/en" component={this.getEnglishHome}/>
+          <Route path="/en/schedule" component={this.getEnglishSchedule}/>
+          <Route path="/tr/schedule" component={this.getTurkishSchedule}/>
         </Switch>
         <Tail isEnglish={this.state.isEnglish} changeLanguage={this.changeLanguage}/>
       </div>

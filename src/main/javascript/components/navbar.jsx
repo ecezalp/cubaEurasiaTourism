@@ -21,10 +21,10 @@ export default function NavBar({isEnglish, changeLanguage}) {
       {false: {0: "Hakkımızda", 1: "Iletişim"}});
 
     return <span className="navbar-about-us"><ul>
-      <li><Link to={`${linkPrefix}/about-us`} className="navbar-us">{aboutUsHelper[isEnglish][0]}</Link></li>
-      <li><Link to={`${linkPrefix}/contact-us`} className="navbar-us">{aboutUsHelper[isEnglish][1]}</Link></li>
-       <li><Link to="/tr" onClick={() => changeLanguage(false)}><img className="navbar-flag" src={turkishFlag}/></Link></li>
-      <li><Link to="/en" onClick={() => changeLanguage(true)}><img className="navbar-flag" src={englishFlag}/></Link></li>
+      <li className="navbar-us-container"><Link to={`${linkPrefix}/about-us`} className="navbar-us">{aboutUsHelper[isEnglish][0]}</Link></li>
+      <li className="navbar-us-container"><Link to={`${linkPrefix}/contact-us`} className="navbar-us">{aboutUsHelper[isEnglish][1]}</Link></li>
+      <li className="navbar-flag-container"><Link to="/tr" onClick={() => changeLanguage(false)}><img className="navbar-flag" src={turkishFlag}/></Link></li>
+      <li className="navbar-flag-container"><Link to="/en" onClick={() => changeLanguage(true)}><img className="navbar-flag" src={englishFlag}/></Link></li>
     </ul></span>
   };
 
@@ -33,7 +33,7 @@ export default function NavBar({isEnglish, changeLanguage}) {
       {true: {0: "Places to Go", 1: "Things to Do", 2: "Travel Blog"}},
       {false: {0: "Gideceklerimiz", 1: "Yapacaklarımız", 2: "Yolculuklarımız"}});
 
-    return <span className="navbar-menu-items"><ul>
+    return <span className="navbar-togo-items"><ul>
       <li><Link to={`${linkPrefix}/places-to-go`}>{menuItemsHelper[isEnglish][0]}</Link></li>
       <li><Link to={`${linkPrefix}/things-to-do`}>{menuItemsHelper[isEnglish][1]}</Link></li>
       <li><Link to={`${linkPrefix}/travel-blog`}>{menuItemsHelper[isEnglish][2]}</Link></li>

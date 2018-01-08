@@ -3,6 +3,7 @@ import culturePic from '../../resources/static/images/sixGrid/culture.jpg';
 import landscapePic from '../../resources/static/images/sixGrid/landscape.jpg';
 import lodgePic from '../../resources/static/images/sixGrid/lodgeParadise.jpg';
 import safariPic from '../../resources/static/images/sixGrid/safari.jpg';
+import {Link} from 'react-router-dom';
 import africaMap from '../../resources/static/vectors/africaMap';
 
 
@@ -101,9 +102,16 @@ export default class Home extends React.Component {
         1: "Programımız",
       }
     }
+
+    let linkPrefix = isEnglish ? "en" : tr;
+
     return <div className="namibia-activities-header">
       {onlyInNamibiaQuote[isEnglish][0]}
-      <div className="go-to-recommendation">{onlyInNamibiaQuote[isEnglish][1]}</div>
+      <div className="go-to-recommendation">
+        <Link className="go-to-recommendation-text" to={"/" + linkPrefix + "/schedule"}>
+          {onlyInNamibiaQuote[isEnglish][1]}
+        </Link>
+      </div>
     </div>
   }
 
