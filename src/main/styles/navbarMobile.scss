@@ -4,25 +4,36 @@
     display: inline-block;
     height: auto;
     overflow-y: auto;
-    font
   }
 
   .navbar-us-container#navbar-about-us-mobile{
     float: left;
     width: 90vw;
+    font-size: 3rem;
+    margin-top: 1vh;
   }
 
   .navbar-us-container#navbar-contact-us-mobile {
     float: left;
     width: 90vw;
+    font-size: 3rem;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+
+  .navbar-togo-item {
+    font-size: 3rem;
+    margin-top: 1vh;
   }
 
   .navbar-flag-container#navbar-turkish-mobile {
     float: left;
+    display: none;
   }
 
   .navbar-flag-container#navbar-english-mobile {
     float: left;
+    display: none;
   }
 
   .navbar-right#navbar-right-web {
@@ -37,6 +48,31 @@
 
   .navbar-togo-items ul li {
     width: 90vw;
+  }
+
+  .select-language-container-mobile {
+    width: 99vw;
+    overflow: auto;
+  }
+
+  .language-type-mobile {
+    text-align: right;
+    color: white;
+    font-size: 3rem;
+    margin-right: 2vw;
+    margin-bottom: 2vh;
+  }
+
+  .navbar-logo#navbar-logo-mobile {
+    width: 70vw;
+    overflow-y: auto;
+    text-align: center;
+    margin-left: 3vw;
+    font-size: 4rem;
+  }
+
+  .navbar-date {
+    text-align: center;
   }
 
 }

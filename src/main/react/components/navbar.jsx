@@ -9,7 +9,7 @@ export default function NavBar({isEnglish, changeLanguage}) {
   let linkPrefix = isEnglish ? "en" : "tr";
 
   const getLogo = () => {
-    return <div className="navbar-logo">
+    return <div className="navbar-logo" id="navbar-logo-mobile">
       <span><span className="navbar-logo-bold">EURASIA</span> TOURISM </span>
       <div className="navbar-date">since 1991</div>
     </div>
@@ -34,9 +34,9 @@ export default function NavBar({isEnglish, changeLanguage}) {
       {false: {0: "Gideceklerimiz", 1: "Yapacaklarımız", 2: "Yolculuklarımız"}});
 
     return <span className="navbar-togo-items"><ul>
-      <li><Link to={`${linkPrefix}/places-to-go`}>{menuItemsHelper[isEnglish][0]}</Link></li>
-      <li><Link to={`${linkPrefix}/things-to-do`}>{menuItemsHelper[isEnglish][1]}</Link></li>
-      <li><Link to={`${linkPrefix}/travel-blog`}>{menuItemsHelper[isEnglish][2]}</Link></li>
+      <li className="navbar-togo-item"><Link to={`${linkPrefix}/places-to-go`}>{menuItemsHelper[isEnglish][0]}</Link></li>
+      <li className="navbar-togo-item"><Link to={`${linkPrefix}/things-to-do`}>{menuItemsHelper[isEnglish][1]}</Link></li>
+      <li className="navbar-togo-item"><Link to={`${linkPrefix}/travel-blog`}>{menuItemsHelper[isEnglish][2]}</Link></li>
     </ul></span>
   };
 
@@ -54,6 +54,10 @@ export default function NavBar({isEnglish, changeLanguage}) {
       <div className="navbar-right-mobile" id="navbar-right-mobile">
         {getNavbarTop()}
         {getMenuItems()}
+        <div className="select-language-container-mobile">
+          <div className="language-type-mobile">Turkish</div>
+          <div className="language-type-mobile">English</div>
+        </div>
       </div>
     </div>
   )
