@@ -3,8 +3,8 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import "../styles/main.scss";
 
 import Home from "./components/home";
-import NavBar from "./components/navbar"
-import Tail from "./components/tail"
+import NavBar from "./components/navbar";
+import Tail from "./components/tail";
 
 export default class App extends React.Component {
 

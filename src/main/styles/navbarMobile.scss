@@ -1,0 +1,42 @@
+@media only screen and (min-device-width : 375px) and (max-device-width : 750px) {
+
+  .navbar-container#navbar-container-mobile {
+    display: inline-block;
+    height: auto;
+    overflow-y: auto;
+    font
+  }
+
+  .navbar-us-container#navbar-about-us-mobile{
+    float: left;
+    width: 90vw;
+  }
+
+  .navbar-us-container#navbar-contact-us-mobile {
+    float: left;
+    width: 90vw;
+  }
+
+  .navbar-flag-container#navbar-turkish-mobile {
+    float: left;
+  }
+
+  .navbar-flag-container#navbar-english-mobile {
+    float: left;
+  }
+
+  .navbar-right#navbar-right-web {
+    display: none;
+  }
+
+  .navbar-right-mobile#navbar-right-mobile {
+    display: inline-block;
+    color: red;
+    text-decoration: none;
+  }
+
+  .navbar-togo-items ul li {
+    width: 90vw;
+  }
+
+}

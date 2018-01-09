@@ -1,0 +1,14 @@
+@media only screen and (min-device-width : 375px) and (max-device-width : 750px) {
+  .landing-image#landing-image-mobile-change {
+    background-size: auto 100%;
+    background-image: url("../resources/static/images/sixGrid/bgMobile.jpg");
+  }
+
+  .landing-caption {
+    margin-top: 13vh;
+  }
+
+  .background-layer#background-layer-mobile-change {
+    opacity: 0;
+  }
+}

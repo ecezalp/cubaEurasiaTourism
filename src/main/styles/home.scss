@@ -14,7 +14,7 @@
   margin-top: 5vh;
   background-repeat: no-repeat;
   background-size: 100% auto;
-  background-image: url("https://s3.eu-central-1.amazonaws.com/eurasiatour/bg.PNG");
+  background-image: url("../resources/static/images/sixGrid/bg.jpg");
 }
 
 .fa-caret-down, .landing-caption {
@@ -74,7 +74,7 @@
 
 .namibia-description {
   width: 45vw;
-  margin-left: 15vw;
+  margin-left: 17vw;
   margin-top: 3vh;
   overflow: auto;
   float: left;
@@ -89,6 +89,6 @@
 }
 
 .africa-map {
-  margin-left: -17vw;
+  margin-left: -210px;
   margin-top: 0vh;
 }

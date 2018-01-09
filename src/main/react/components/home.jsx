@@ -15,9 +15,9 @@ export default class Home extends React.Component {
 
   getLanding() {
     return <div className="landing-image-container">
-      <div className="landing-image"/>
+      <div className="landing-image" id="landing-image-mobile-change"/>
       <div className="landing-caption">{this.props.isEnglish ? "Namibia" : "Namibya"}</div>
-      <div className="background-layer"/>
+      <div className="background-layer" id="background-layer-mobile-change"/>
       <i className="fa fa-caret-down" aria-hidden="true"/>
     </div>
   };
