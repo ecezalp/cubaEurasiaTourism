@@ -10,6 +10,7 @@ export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.getScheduleComponent = this.getScheduleComponent.bind(this);
+    this.getGridComponent = this.getGridComponent.bind(this);
   }
 
   getLanding() {
@@ -57,13 +58,16 @@ export default class Home extends React.Component {
   }
 
   getGrid() {
+    let linkPrefix = this.props.isEnglish ? "en" : "tr";
     return <div className="gridContainer">
       <div className="four-grid">
         {gridHelper.map((item, i) =>
-          <figure key={"figure-key-" + i}>
-            <img src={item.src} alt="The Pulpit Rock"/>
-            <div className="picCaption">{item.language[this.props.isEnglish]}</div>
-          </figure>)}
+          <Link to={"/" + linkPrefix + "/" + item.link} key={item.link}>
+            <figure>
+              <img src={item.src} alt={item.link}/>
+              <div className="picCaption">{item.language[this.props.isEnglish]}</div>
+            </figure>
+          </Link>)}
       </div>
       <div className="gridCover"/>
     </div>
@@ -79,6 +83,11 @@ export default class Home extends React.Component {
     return <Schedule isEnglish={this.props.isEnglish}/>;
   }
 
+  getGridComponent(component, props) {
+    let newProps = Object.assign({}, props, {isEnglish: this.props.isEnglish});
+    return () => component(newProps);
+  }
+
   render() {
     return <div className="home-container">
       {this.validatePathnameForHome() && <div className="home">
@@ -89,6 +98,9 @@ export default class Home extends React.Component {
         {this.getGrid()}
       </div>}
       <Route path={`${this.props.match.url}/schedule`} component={this.getScheduleComponent}/>
+      {gridHelper.map(item => <Route key={item.link}
+                                     path={`${this.props.match.url}/${item.link}`}
+                                     component={(props) => this.getGridComponent(item.component, props)()}/>)}
     </div>;
   }
 }

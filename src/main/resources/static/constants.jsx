@@ -3,6 +3,10 @@ import culturePic from '../../resources/static/images/sixGrid/culture.jpg';
 import landscapePic from '../../resources/static/images/sixGrid/landscape.jpg';
 import lodgePic from '../../resources/static/images/sixGrid/lodgeParadise.jpg';
 import safariPic from '../../resources/static/images/sixGrid/safari.jpg';
+import Culture from '../../react/components/grid/culture';
+import Wilderness from '../../react/components/grid/wilderness';
+import Safari from '../../react/components/grid/safari';
+import LodgeParadise from '../../react/components/grid/lodgeParadise';
 
 export const namibiaDesc = {
   true: [
@@ -49,26 +53,11 @@ export const onlyInNamibiaQuote = {
   }
 };
 
-export const activitiesHeader = {
-  true: {
-    0: "Cultural Excursions",
-    1: "Wilderness",
-    2: "Safari",
-    3: "Lodge Paradise",
-  },
-  false: {
-    0: "Kültür Gezintileri",
-    1: "Doğa çöl",
-    2: "Safari",
-    3: "Lodge Paradise",
-  },
-};
-
 export const gridHelper = [
-  {src: culturePic, language: {true: "Cultural Excursions", false: "Kültür"}},
-  {src: landscapePic, language: {true: "Wilderness", false: "Vahşi Doğa"}},
-  {src: safariPic, language: {true: "Safari", false: "Safari"}},
-  {src: lodgePic, language: {true: "Lodge Paradise", false: "Loca Cenneti"}},
+  {component: Culture, link: "culture", src: culturePic, language: {true: "Cultural Excursions", false: "Kültür"}},
+  {component: Wilderness, link: "wilderness", src: landscapePic, language: {true: "Wilderness", false: "Vahşi Doğa"}},
+  {component: Safari, link: "safari", src: safariPic, language: {true: "Safari", false: "Safari"}},
+  {component: LodgeParadise, link: "lodge-paradise", src: lodgePic, language: {true: "Lodge Paradise", false: "Loca Cenneti"}},
 ];
 
 export const scheduleHelper = {
