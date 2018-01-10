@@ -3,6 +3,7 @@
   .navbar-container#navbar-container-mobile {
     display: inline-block;
     height: auto;
+    min-height: 8vh;
     overflow-y: auto;
   }
 
@@ -67,12 +68,34 @@
     width: 70vw;
     overflow-y: auto;
     text-align: center;
-    margin-left: 3vw;
+    margin-left: 15vw;
     font-size: 4rem;
   }
 
   .navbar-date {
     text-align: center;
+  }
+
+  .mobile-navicon-container {
+    width: 10vw;
+    float: left;
+  }
+
+  .navicon-container#navicon-container-mobile {
+    display: inline-block;
+    float: left;
+    width: 10vw;
+    text-align: center;
+    margin-top: 1.5vh;
+  }
+
+  .navbar-left {
+    width: 80vw;
+    float: left;
+  }
+
+  .mobile-navicon {
+    font-size: 4rem;
   }
 
 }

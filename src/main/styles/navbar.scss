@@ -10,7 +10,8 @@
   font-family: "Raleway", sans-serif;
 
   .navbar-left {
-    width: 33%;
+    width: auto;
+    min-width: 35vw;
 
     .navbar-logo {
       font-family: "Raleway", sans-serif;
@@ -97,6 +98,10 @@
   }
 
   .navbar-right-mobile {
+    display: none;
+  }
+
+  .navicon-container {
     display: none;
   }
 }

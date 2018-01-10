@@ -11,7 +11,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isEnglish: true
+      isEnglish: true,
     };
     this.changeLanguage = this.changeLanguage.bind(this);
   };
@@ -43,4 +43,5 @@ export default class App extends React.Component {
       </div>
     </BrowserRouter>
   }
-};
+}
+

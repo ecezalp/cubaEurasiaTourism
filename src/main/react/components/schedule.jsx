@@ -21,3 +21,10 @@ export default function Schedule({isEnglish}) {
   </div>;
 
 }
+//
+// let props = Object.assign({}, {isEnglish: true}, {isSpanish: false});
+//
+// props = {
+//   isEnglish: true,
+//   isSpanish: false,
+// }
