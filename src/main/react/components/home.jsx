@@ -22,13 +22,25 @@ export default class Home extends React.Component {
     </div>
   };
 
-  getNamibiaDesc() {
+  getDescription() {
     return <div className="namibia-description-container">
       <div className="namibia-description">
         {namibiaDesc[this.props.isEnglish].map((item, i) => <div key={i}>{item}<br/></div>)}
       </div>
       <div className="map-container">
         {africaMap()}
+      </div>
+    </div>
+  }
+
+  getOnlyInNamibia() {
+    let linkPrefix = this.props.isEnglish ? "en" : "tr";
+    return <div className="namibia-activities-header">
+      {onlyInNamibiaQuote[this.props.isEnglish][0]}
+      <div className="go-to-recommendation">
+        <Link className="go-to-recommendation-text" to={"/" + linkPrefix + "/schedule"}>
+          {onlyInNamibiaQuote[this.props.isEnglish][1]}
+        </Link>
       </div>
     </div>
   }
@@ -44,18 +56,6 @@ export default class Home extends React.Component {
       </div>
     </div>
   };
-
-  getOnlyInNamibia() {
-    let linkPrefix = this.props.isEnglish ? "en" : "tr";
-    return <div className="namibia-activities-header">
-      {onlyInNamibiaQuote[this.props.isEnglish][0]}
-      <div className="go-to-recommendation">
-        <Link className="go-to-recommendation-text" to={"/" + linkPrefix + "/schedule"}>
-          {onlyInNamibiaQuote[this.props.isEnglish][1]}
-        </Link>
-      </div>
-    </div>
-  }
 
   getGrid() {
     let linkPrefix = this.props.isEnglish ? "en" : "tr";
@@ -93,7 +93,7 @@ export default class Home extends React.Component {
       {this.validatePathnameForHome() && <div className="home">
         {this.getLanding()}
         {this.getQuote()}
-        {this.getNamibiaDesc()}
+        {this.getDescription()}
         {this.getOnlyInNamibia()}
         {this.getGrid()}
       </div>}

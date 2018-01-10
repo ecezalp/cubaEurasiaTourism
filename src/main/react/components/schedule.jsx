@@ -1,27 +1,33 @@
 import React from "react";
+import scheduleBanner from "../../resources/static/images/schedule/schedule_banner.jpg"
 import {scheduleHelper} from "../../resources/static/constants";
 
 export default function Schedule({isEnglish}) {
 
-  const getQuote = () => {
-    return <div className="quote-container">
-      <div className="quote-cover">
-        {scheduleHelper[isEnglish][0]} <br/> {scheduleHelper[isEnglish][1]}
-      </div>
-      <br/>
-      <div className="quote-author">
-        <i>{scheduleHelper[isEnglish][2]}</i> {scheduleHelper[isEnglish][3]}
-      </div>
-    </div>
+  const getBanner = () => {
+    return <figure>
+      <img src={scheduleBanner}/>
+    </figure>
   };
 
-  return <div className="home-container" style={{backgroundColor: "red"}}>
+  const getHighlights = () => {
+    // textured background
+    // map
+    // highlights (locations / activities)
+  }
+
+  const getDay = () => {
+    // title
+    // body
+    // hotel
+    // meal
+  };
+
+  return <div className="home-container">
     "Hello World"
-    {getQuote()}
   </div>;
 
-}
-//
+}//
 // let props = Object.assign({}, {isEnglish: true}, {isSpanish: false});
 //
 // props = {
