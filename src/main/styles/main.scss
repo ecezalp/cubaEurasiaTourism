@@ -4,6 +4,7 @@
 @import "tail.scss";
 @import "navbarMobile.scss";
 @import "homeMobile.scss";
+@import "schedule";
 
 body {
   margin: 0;
@@ -27,6 +28,7 @@ div:hover {
 
 figure {
   margin: 0;
+  display: inherit;
 }
 
 ::-webkit-scrollbar {

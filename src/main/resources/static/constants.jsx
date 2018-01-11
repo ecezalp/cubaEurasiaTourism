@@ -60,17 +60,24 @@ export const gridHelper = [
   {component: LodgeParadise, link: "lodge-paradise", src: lodgePic, language: {true: "Lodge Paradise", false: "Loca Cenneti"}},
 ];
 
-export const scheduleHelper = {
+export const scheduleBannerOverlay = {
   true: {
-    0: "I never knew of a morning in Africa",
-    1: "when I woke up that I was not happy.",
-    2: "True at First Light",
-    3: "by Ernest Hemingway"
+    0: "7 DAYS IN NAMIBIA",
+    1: "Safari + Cultural Interactions",
+    2: "Photograph UNESCO World Heritage Sossusvlei dunes, observe wild life during safari in Namib Desert, stay in luxurious lodges inside the National Parks, meet the local Himba people, wonder at the depths of the Milky Way.",
   },
   false: {
-    0: "Bir sabah bilmedim ki",
-    1: "Afrika'da huzurla uyanmadığım.",
-    2: "Günün İlk Işığında Gerçek",
-    3: "Ernest Hemingway"
+    0: "NAMIBYA'DA 7 GUN",
+    1: "Safari + Kulturel Deneyimler",
+    2: "UNESCO Dunya Mirasi Sossusvlei kumullarinda fotograf cek, Namib colunde safariye cikip vahsi hayati gozlemle, Milli Parklarin icerisindeki luks lodge\'larda konakla, Himba kabilesi ile tanis, Samanyolu'nun derinligini duyumsa.",
   },
+};
+
+export const highlightsHelper = {
+  true: {
+    0: "Trip Highlights"
+  },
+  false: {
+    0: ""
+  }
 };

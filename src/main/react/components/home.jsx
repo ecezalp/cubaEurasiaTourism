@@ -22,7 +22,7 @@ export default class Home extends React.Component {
     </div>
   };
 
-  getNamibiaDesc() {
+  getDescription() {
     return <div className="namibia-description-container">
       <div className="namibia-description">
         {namibiaDesc[this.props.isEnglish].map((item, i) => <div key={i}>{item}<br/></div>)}
@@ -56,6 +56,18 @@ export default class Home extends React.Component {
       </div>
     </div>
   }
+
+  getQuote() {
+    return <div className="quote-container">
+      <div className="quote-cover">
+        {quoteHelper[this.props.isEnglish][0]} <br/> {quoteHelper[this.props.isEnglish][1]}
+      </div>
+      <br/>
+      <div className="quote-author">
+        <i>{quoteHelper[this.props.isEnglish][2]}</i> {quoteHelper[this.props.isEnglish][3]}
+      </div>
+    </div>
+  };
 
   getGrid() {
     let linkPrefix = this.props.isEnglish ? "en" : "tr";
@@ -93,7 +105,7 @@ export default class Home extends React.Component {
       {this.validatePathnameForHome() && <div className="home">
         {this.getLanding()}
         {this.getQuote()}
-        {this.getNamibiaDesc()}
+        {this.getDescription()}
         {this.getOnlyInNamibia()}
         {this.getGrid()}
       </div>}
