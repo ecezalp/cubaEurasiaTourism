@@ -23,11 +23,11 @@ export default class Home extends React.Component {
   };
 
   getDescription() {
-    return <div className="namibia-description-container">
-      <div className="namibia-description">
+    return <div className="namibia-description-container" id="namibia-description-container-mobile">
+      <div className="namibia-description" id="namibia-description-mobile">
         {namibiaDesc[this.props.isEnglish].map((item, i) => <div key={i}>{item}<br/></div>)}
       </div>
-      <div className="map-container">
+      <div className="map-container" id="map-container-mobile">
         {africaMap()}
       </div>
     </div>
@@ -47,9 +47,9 @@ export default class Home extends React.Component {
 
   getOnlyInNamibia() {
     let linkPrefix = this.props.isEnglish ? "en" : "tr";
-    return <div className="namibia-activities-header">
+    return <div className="namibia-activities-header" id="namibia-activities-header-mobile">
       {onlyInNamibiaQuote[this.props.isEnglish][0]}
-      <div className="go-to-recommendation">
+      <div className="go-to-recommendation" id="go-to-recommendation-mobile">
         <Link className="go-to-recommendation-text" to={"/" + linkPrefix + "/schedule"}>
           {onlyInNamibiaQuote[this.props.isEnglish][1]}
         </Link>
@@ -71,8 +71,8 @@ export default class Home extends React.Component {
 
   getGrid() {
     let linkPrefix = this.props.isEnglish ? "en" : "tr";
-    return <div className="gridContainer">
-      <div className="four-grid">
+    return <div className="gridContainer" id="gridContainer-mobile">
+      <div className="four-grid" id="four-grid-mobile">
         {gridHelper.map((item, i) =>
           <Link to={"/" + linkPrefix + "/" + item.link} key={item.link}>
             <figure>

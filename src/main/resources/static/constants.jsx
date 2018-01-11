@@ -12,7 +12,7 @@ export const namibiaDesc = {
   true: [
     "We travel looking for ourselves.",
     "We long for where we came from.",
-    <b>Namibia is not just a place but it's a sensation</b>,
+    <b>Namibia is not just a place but it's a sensation.</b>,
     "The touch of wilderness rekindles",
     "our sense of belonging to nature.",
     <b>Think about it. Things will not be same as before.</b>,
@@ -20,7 +20,7 @@ export const namibiaDesc = {
   false: [
     "Kendimize bakmak için seyahat ediyoruz.",
     "Nereden geldiğimizi uzun süre bekliyoruz.",
-    <b>Namibya sadece bir yer değil, aynı zamanda bir sansasyon</b>,
+    <b>Namibya sadece bir yer değil, aynı zamanda bir sansasyon.</b>,
     "Vahşi doğanın dokunuşları yeniden canlanır",
     "doğaya aid olma duygumuz.",
     <b>"Bunu düşün. Her şey eskisi gibi olmayacak.</b>,

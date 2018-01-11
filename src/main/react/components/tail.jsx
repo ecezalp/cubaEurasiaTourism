@@ -70,7 +70,7 @@ export default function Tail({isEnglish, changeLanguage}) {
 
   return (
     <div className="tail-container">
-      <div className="tail-top">
+      <div className="tail-top" id="tail-top-mobile">
         {getLogo()}
       </div>
       <div className="tail-middle">
