@@ -16,7 +16,7 @@ export default class Home extends React.Component {
   getLanding() {
     return <div className="landing-image-container">
       <div className="landing-image" id="landing-image-mobile-change"/>
-      <div className="landing-caption">{this.props.isEnglish ? "Namibia" : "Namibya"}</div>
+      <div className="landing-caption" id="mobile-caption-size-change">{this.props.isEnglish ? "Namibia" : "Namibya"}</div>
       <div className="background-layer" id="background-layer-mobile-change"/>
       <i className="fa fa-caret-down" aria-hidden="true"/>
     </div>
@@ -36,7 +36,7 @@ export default class Home extends React.Component {
   getQuote() {
     return <div className="quote-container">
       <div className="quote-cover">
-        {quoteHelper[this.props.isEnglish][0]} <br/> {quoteHelper[this.props.isEnglish][1]}
+        {quoteHelper[this.props.isEnglish][0]} <span className="quote-web-linebreak"><br/></span> {quoteHelper[this.props.isEnglish][1]}
       </div>
       <br/>
       <div className="quote-author">

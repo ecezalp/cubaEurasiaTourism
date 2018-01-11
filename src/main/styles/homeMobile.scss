@@ -2,6 +2,7 @@
   .landing-image#landing-image-mobile-change {
     background-size: auto 100%;
     background-image: url("../resources/static/images/sixGrid/bgMobile.jpg");
+    height: 97vh;
   }
 
   .landing-caption {
@@ -9,6 +10,25 @@
   }
 
   .background-layer#background-layer-mobile-change {
-    opacity: 0;
+    opacity: 0.3;
+    height : 97vh;
   }
+
+  .landing-caption#mobile-caption-size-change {
+    margin-top: 30vh;
+    font-size: 13em;
+  }
+
+  .quote-web-linebreak {
+    display: none;
+  }
+
+  .quote-cover {
+    font-size: 3.5rem;
+  }
+
+  .quote-author {
+    font-size: 3rem;
+  }
+
 }
