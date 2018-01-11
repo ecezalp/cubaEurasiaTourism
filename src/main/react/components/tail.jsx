@@ -11,7 +11,7 @@ export default function Tail({isEnglish, changeLanguage}) {
   const getLogo = () => {
     return <div className="navbar-logo">
       <span><span className="navbar-logo-bold">EURASIA</span> TOURISM </span>
-      <div className="navbar-date">since 1991</div>
+      <div className="navbar-date" id="navbar-date-mobile">since 1991</div>
     </div>
   };
 
@@ -44,23 +44,23 @@ export default function Tail({isEnglish, changeLanguage}) {
       phoneNumberFavicon: "fa fa-phone-square",},
     )
 
-    return <div className="navbar-bottom-container">
-      <div className="favicon-container">
+    return <div className="navbar-bottom-container" id="navbar-bottom-container-mobile">
+      <div className="favicon-container" id="favicon-container-instagram-mobile">
         <a target="_blank" href={`${faviconLinkHelper["instagramLink"]}`} className="favicon">
           <i className={faviconItemsHelper["instagramFavicon"]}aria-hidden="true" />
         </a>
       </div>
-      <div className="favicon-container">
+      <div className="favicon-container" id="favicon-container-facebook-mobile">
         <a target="_blank" href={`${faviconLinkHelper["facebookFavicon"]}`} className="favicon">
           <i className={faviconItemsHelper["facebookFavicon"]}aria-hidden="true" />
         </a>
       </div>
-      <div className="favicon-container">
+      <div className="favicon-container" id="favicon-container-whatsapp-mobile">
         <a target="_blank" href={`${faviconLinkHelper["whatsApp"]}`} className="favicon">
           <i className={faviconItemsHelper["whatsAppFavicon"]}aria-hidden="true" />
         </a>
       </div>
-      <div className="favicon-container">
+      <div className="favicon-container" id="favicon-container-phone-mobile">
         <a target="_blank" href={`${faviconLinkHelper["phoneNumber"]}`} className="favicon">
           <i className={faviconItemsHelper["phoneNumberFavicon"]}aria-hidden="true" />
         </a>
@@ -73,7 +73,7 @@ export default function Tail({isEnglish, changeLanguage}) {
       <div className="tail-top" id="tail-top-mobile">
         {getLogo()}
       </div>
-      <div className="tail-middle">
+      <div className="tail-middle" id="tail-middle-mobile">
         {getTailItems()}
       </div>
       {socialFavicons()}

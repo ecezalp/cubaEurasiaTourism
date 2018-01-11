@@ -1,0 +1,42 @@
+@media only screen and (min-device-width : 375px) and (max-device-width : 750px) {
+  .tail-top#tail-top-mobile {
+    font-size: 4rem;
+  }
+
+  .navbar-date#navbar-date-mobile {
+    font-size: 2.5rem;
+  }
+
+  .tail-middle-menu {
+    width: 50%;
+    font-size: 2rem;
+    margin-top: 3vh;
+  }
+
+  .fa {
+    font-size: 3rem;
+
+  }
+
+  .navbar-bottom-container#navbar-bottom-container-mobile {
+    width: 40vw;
+    margin-left: 30vw;
+  }
+
+  #favicon-container-instagram-mobile {
+    width: 10vw;
+  }
+
+  #favicon-container-facebook-mobile {
+    width: 10vw;
+  }
+
+  #favicon-container-whatsapp-mobile {
+    width: 10vw;
+  }
+
+  #favicon-container-phone-mobile {
+    width: 10vw;
+  }
+
+}
