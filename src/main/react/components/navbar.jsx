@@ -10,19 +10,21 @@ export default class NavBar extends React.Component {
     super(props);
     this.state = {
       showMobileMenu: false,
-    }
+    };
     this.handleMobileNaviconClick = this.handleMobileNaviconClick.bind(this);
   }
 
   getPrefix() {
-   return this.props.isEnglish ? "en" : "tr";
+    return this.props.isEnglish ? "en" : "tr";
   }
 
   getLogo() {
-    return <div className="navbar-logo" id="navbar-logo-mobile">
-      <span><span className="navbar-logo-bold">EURASIA</span> TOURISM </span>
-      <div className="navbar-date">since 1991</div>
-    </div>
+    return <Link to={"/"}>
+      <div className="navbar-logo" id="navbar-logo-mobile" style={{cursor: "pointer"}}>
+        <span><span className="navbar-logo-bold">EURASIA</span> TOURISM </span>
+        <div className="navbar-date">since 1991</div>
+      </div>
+    </Link>
   };
 
   getNavbarTop() {
@@ -31,16 +33,18 @@ export default class NavBar extends React.Component {
       {false: {0: "Hakkımızda", 1: "Iletişim"}});
 
     return <span className="navbar-about-us"><ul>
-      <li className="navbar-us-container" id="navbar-about-us-mobile"><Link to={`${this.getPrefix()}/about-us`}
-                                                                            className="navbar-us">{aboutUsHelper[this.props.isEnglish][0]}</Link></li>
-      <li className="navbar-us-container" id="navbar-contact-us-mobile"><Link to={`${this.getPrefix()}/contact-us`}
-                                                                              className="navbar-us">{aboutUsHelper[this.props.isEnglish][1]}</Link></li>
-      <li className="navbar-flag-container" id="navbar-turkish-mobile"><Link to="/tr"
-                                                                             onClick={() => this.props.changeLanguage(false)}><img
-        className="navbar-flag" src={turkishFlag}/></Link></li>
-      <li className="navbar-flag-container" id="navbar-english-mobile"><Link to="/en"
-                                                                             onClick={() => this.props.changeLanguage(true)}><img
-        className="navbar-flag" src={englishFlag}/></Link></li>
+      <li className="navbar-us-container" id="navbar-about-us-mobile">
+        <Link to={`${this.getPrefix()}/about-us`}
+              className="navbar-us">{aboutUsHelper[this.props.isEnglish][0]}</Link></li>
+      <li className="navbar-us-container" id="navbar-contact-us-mobile">
+        <Link to={`${this.getPrefix()}/contact-us`}
+              className="navbar-us">{aboutUsHelper[this.props.isEnglish][1]}</Link></li>
+      <li className="navbar-flag-container" id="navbar-turkish-mobile">
+        <Link to="/tr" onClick={() => this.props.changeLanguage(false)}><img
+          className="navbar-flag" src={turkishFlag}/></Link></li>
+      <li className="navbar-flag-container" id="navbar-english-mobile">
+        <Link to="/en" onClick={() => this.props.changeLanguage(true)}><img
+          className="navbar-flag" src={englishFlag}/></Link></li>
     </ul></span>
   };
 
@@ -82,8 +86,10 @@ export default class NavBar extends React.Component {
             {this.getNavbarTop()}
             {this.getMenuItems()}
             <div className="select-language-container-mobile">
-              <Link to="/tr" className="language-type-mobile" onClick={() => this.props.changeLanguage(false)}>Turkce</Link>
-              <Link to="/en" className="language-type-mobile" onClick={() => this.props.changeLanguage(true)}>English</Link>
+              <Link to="/tr" className="language-type-mobile"
+                    onClick={() => this.props.changeLanguage(false)}>Turkce</Link>
+              <Link to="/en" className="language-type-mobile"
+                    onClick={() => this.props.changeLanguage(true)}>English</Link>
             </div>
           </div>
         </div>

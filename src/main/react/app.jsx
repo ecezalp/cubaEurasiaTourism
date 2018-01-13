@@ -18,11 +18,13 @@ export default class App extends React.Component {
 
   getEnglishHome(props) {
     let newProps = Object.assign({}, props, {isEnglish: true});
+    window.scrollTo(0,0);
     return <Home {...newProps} />;
   }
 
   getTurkishHome(props) {
     let newProps = Object.assign({}, props, {isEnglish: false});
+    window.scrollTo(0,0);
     return <Home {...newProps} />;
   }
 

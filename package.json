@@ -4,6 +4,7 @@
   "description": "Namibia travel website",
   "main": "gulpfile.js",
   "dependencies": {
+    "bezier-easing": "^2.0.3",
     "react-springy-parallax": "^1.2.0"
   },
   "devDependencies": {

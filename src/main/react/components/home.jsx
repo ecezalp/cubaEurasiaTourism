@@ -13,22 +13,24 @@ export default class Home extends React.Component {
     this.getGridComponent = this.getGridComponent.bind(this);
   }
 
-  getLanding() {
+  getLandingImage() {
     return <div className="landing-image-container">
       <div className="landing-image" id="landing-image-mobile-change"/>
-      <div className="landing-caption" id="mobile-caption-size-change">{this.props.isEnglish ? "Namibia" : "Namibya"}</div>
-      <div className="background-layer" id="background-layer-mobile-change"/>
       <i className="fa fa-caret-down" aria-hidden="true"/>
     </div>
   };
+
+  getLandingLayer() {
+    return <div className="background-layer" id="background-layer-mobile-change">
+      <div className="landing-caption" id="mobile-caption-size-change">
+        {this.props.isEnglish ? "Namibia" : "Namibya"}</div>
+    </div>
+  }
 
   getDescription() {
     return <div className="namibia-description-container" id="namibia-description-container-mobile">
       <div className="namibia-description" id="namibia-description-mobile">
         {namibiaDesc[this.props.isEnglish].map((item, i) => <div key={i}>{item}<br/></div>)}
-      </div>
-      <div className="map-container" id="map-container-mobile">
-        {africaMap()}
       </div>
     </div>
   }
@@ -36,7 +38,8 @@ export default class Home extends React.Component {
   getQuote() {
     return <div className="quote-container">
       <div className="quote-cover">
-        {quoteHelper[this.props.isEnglish][0]} <span className="quote-web-linebreak"><br/></span> {quoteHelper[this.props.isEnglish][1]}
+        {quoteHelper[this.props.isEnglish][0]} <span
+        className="quote-web-linebreak"><br/></span> {quoteHelper[this.props.isEnglish][1]}
       </div>
       <br/>
       <div className="quote-author">
@@ -56,18 +59,6 @@ export default class Home extends React.Component {
       </div>
     </div>
   }
-
-  getQuote() {
-    return <div className="quote-container">
-      <div className="quote-cover">
-        {quoteHelper[this.props.isEnglish][0]} <br/> {quoteHelper[this.props.isEnglish][1]}
-      </div>
-      <br/>
-      <div className="quote-author">
-        <i>{quoteHelper[this.props.isEnglish][2]}</i> {quoteHelper[this.props.isEnglish][3]}
-      </div>
-    </div>
-  };
 
   getGrid() {
     let linkPrefix = this.props.isEnglish ? "en" : "tr";
@@ -103,11 +94,15 @@ export default class Home extends React.Component {
   render() {
     return <div className="home-container">
       {this.validatePathnameForHome() && <div className="home">
-        {this.getLanding()}
-        {this.getQuote()}
-        {this.getDescription()}
-        {this.getOnlyInNamibia()}
-        {this.getGrid()}
+        {this.getLandingImage()}
+        <div>
+          {this.getLandingLayer()}
+          {this.getQuote()}
+          {this.getDescription()}
+          {this.getGrid()}
+          {/*{this.getOnlyInNamibia()}*/}
+
+        </div>
       </div>}
       <Route path={`${this.props.match.url}/schedule`} component={this.getScheduleComponent}/>
       {gridHelper.map(item => <Route key={item.link}
