@@ -3,6 +3,7 @@ import culturePic from '../../resources/static/images/sixGrid/culture.jpg';
 import landscapePic from '../../resources/static/images/sixGrid/landscape.jpg';
 import lodgePic from '../../resources/static/images/sixGrid/lodgeParadise.jpg';
 import safariPic from '../../resources/static/images/sixGrid/safari.jpg';
+import lionPic from '../../resources/static/images/web/lion.jpg';
 import Culture from '../../react/components/grid/culture';
 import Wilderness from '../../react/components/grid/wilderness';
 import Safari from '../../react/components/grid/safari';
@@ -71,6 +72,18 @@ export const scheduleBannerOverlay = {
     1: "Safari + Kulturel Deneyimler",
     2: "UNESCO Dunya Mirasi Sossusvlei kumullarinda fotograf cek, Namib colunde safariye cikip vahsi hayati gozlemle, Milli Parklarin icerisindeki luks lodge\'larda konakla, Himba kabilesi ile tanis, Samanyolu'nun derinligini duyumsa.",
   },
+};
+
+export const safariHomeHelper = {
+  true: {
+    banner: "Safari in Namibia",
+    caption: "Taking you to a safari is not just our job. It is our passion."
+  },
+  false: {
+    banner: "Namibya'da Safari",
+    caption: "Sizinle safariye cikmak bizim sadece isimiz degil, tutkumuz ve nesemiz."
+  },
+  img: lionPic,
 };
 
 export const highlightsHelper = {

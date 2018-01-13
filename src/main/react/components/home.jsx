@@ -1,7 +1,13 @@
 import React from "react";
 import {Link, Route} from 'react-router-dom';
 import africaMap from '../../resources/static/vectors/africaMap';
-import {gridHelper, namibiaDesc, onlyInNamibiaQuote, quoteHelper} from "../../resources/static/constants";
+import {
+  gridHelper,
+  namibiaDesc,
+  onlyInNamibiaQuote,
+  quoteHelper,
+  safariHomeHelper
+} from "../../resources/static/constants";
 import Schedule from "./schedule";
 
 
@@ -16,7 +22,6 @@ export default class Home extends React.Component {
   getLandingImage() {
     return <div className="landing-image-container">
       <div className="landing-image" id="landing-image-mobile-change"/>
-      <i className="fa fa-caret-down" aria-hidden="true"/>
     </div>
   };
 
@@ -24,7 +29,34 @@ export default class Home extends React.Component {
     return <div className="background-layer" id="background-layer-mobile-change">
       <div className="landing-caption" id="mobile-caption-size-change">
         {this.props.isEnglish ? "Namibia" : "Namibya"}</div>
+      <i className="fa fa-caret-down" aria-hidden="true"/>
     </div>
+  }
+
+  getHomeSafari() {
+    let linkPrefix = this.props.isEnglish ? "en" : "tr";
+    return <div className="safari-wrapper">
+      <div className="safari-left">
+        <div className="map-container">
+          {africaMap()}
+        </div>
+        <div className="safari-text-parent">
+          <div className="safari-title">
+            {safariHomeHelper[this.props.isEnglish].banner}
+          </div>
+          <div className="safari-caption">
+            {safariHomeHelper[this.props.isEnglish].caption}
+          </div>
+          <div className="go-to-recommendation" id="go-to-recommendation-mobile">
+            <Link className="go-to-recommendation-text" to={"/" + linkPrefix + "/schedule"}>
+              {onlyInNamibiaQuote[this.props.isEnglish][1]}
+            </Link>
+          </div>
+        </div>
+      </div>
+      <div className="safari-right"/>
+    </div>
+
   }
 
   getDescription() {
@@ -49,14 +81,8 @@ export default class Home extends React.Component {
   };
 
   getOnlyInNamibia() {
-    let linkPrefix = this.props.isEnglish ? "en" : "tr";
     return <div className="namibia-activities-header" id="namibia-activities-header-mobile">
       {onlyInNamibiaQuote[this.props.isEnglish][0]}
-      <div className="go-to-recommendation" id="go-to-recommendation-mobile">
-        <Link className="go-to-recommendation-text" to={"/" + linkPrefix + "/schedule"}>
-          {onlyInNamibiaQuote[this.props.isEnglish][1]}
-        </Link>
-      </div>
     </div>
   }
 
@@ -97,10 +123,11 @@ export default class Home extends React.Component {
         {this.getLandingImage()}
         <div>
           {this.getLandingLayer()}
+          {this.getHomeSafari()}
           {this.getQuote()}
           {this.getDescription()}
           {this.getGrid()}
-          {/*{this.getOnlyInNamibia()}*/}
+          {this.getOnlyInNamibia()}
 
         </div>
       </div>}

@@ -1,11 +1,13 @@
 const path = require("path");
 const express = require("express");
 
+
 const DIST_DIR = path.join(__dirname, "dist"),
   PORT = 3000,
   app = express();
 
 app.use(express.static(DIST_DIR));
+// app.use(require("src/main/react/app.jsx"));
 
 app.get("*", function (req, res) {
   res.sendFile(path.join(DIST_DIR, "index.html"));

@@ -1,3 +1,5 @@
+$africa-map-min-width: 316px;
+
 .home-container {
   min-height: 100%;
 }
@@ -15,36 +17,35 @@
 .landing-image {
   top: 0;
   left: 0;
-  position: fixed;
   width: 100%;
   z-index: -10;
-  height: 95vh;
-  margin-top: 70px;
+  height: 100vh;
+
+  background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
   background-image: url("../resources/static/images/sixGrid/bghr.jpg");
 }
 
 .fa-caret-down, .landing-caption {
-  position: absolute;
   width: 100%;
   height: auto;
   text-align: center;
-  margin-top: 86vh;
   z-index: 5;
   color: white;
 }
 
 .fa-caret-down {
   font-size: 3em;
-  margin-top: 86vh;
+  margin-top: 22vh;
   -webkit-animation: breathing 7s ease-out infinite normal;
   animation: breathing 7s ease-out infinite normal;
 }
 
 .landing-caption {
   font-family: 'Dancing Script', cursive;
-  font-size: 8em;
+  font-size: 10em;
   margin-top: 35vh;
 }
 
@@ -57,6 +58,68 @@
   height: 100vh;
 }
 
+.safari-wrapper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  border-top: solid 5px gray;
+  //letter-spacing: 2px;
+  //overflow: auto;
+  font-size: 2.5rem;
+  line-height: 1.5;
+  //padding: 10vh 0 10vh 0;
+  height: 60%;
+  min-height: 24vw;
+  border-bottom: solid 5px gray;
+  text-align: center;
+  background-image: url("../resources/static/images/backgrounds/45degreee_fabric.png");
+}
+
+.safari-left {
+  overflow: hidden;
+  position: relative;
+  justify-content: flex-start;
+  display: flex;
+}
+
+.safari-wrapper .map-container {
+  margin-top: 5vh;
+  z-index: 2;
+  position: absolute;
+  min-width: $africa-map-min-width * 2;
+  margin-left: -2vw;
+}
+
+.safari-text-parent {
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 8vw;
+}
+
+.safari-text-parent div {
+  margin: 8px;
+}
+
+.safari-title {
+  font-family: "Cookie", cursive;
+  font-size: 1.2em;
+}
+
+.safari-caption {
+  max-width: 60%;
+  font-family: "Lato", italic;
+  font-size: 0.5em;
+}
+
+.safari-right {
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../resources/static/images/web/lion.jpg");
+}
+
 .quote-container {
   border-top: solid 5px gray;
   letter-spacing: 2px;
@@ -67,7 +130,7 @@
   border-bottom: solid 5px gray;
   text-align: center;
   /* Background pattern from Subtle Patterns */
-  background-image: url("../resources/static/images/schedule/background_circles_light.png");
+  background-image: url("../resources/static/images/backgrounds/background_circles_light.png");
 }
 
 .quote-author {
@@ -100,15 +163,49 @@
 }
 
 .map-container {
-  width: 25vw;
+  width: $africa-map-min-width;
   overflow: auto;
   float: left;
 }
 
 .africa-map {
-  margin-left: -210px;
-  margin-top: 0vh;
+  //margin-left: -210px;
+  //margin-top: 0vh;
+  display: block;
 }
+
+
+.go-to-recommendation {
+  margin-top: 20px !important;
+  border-radius: 6px;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  width: 172px;
+  background-color: rgba(255,255, 255, 0.8);
+  border: solid 0.5px #8B8884;
+  padding: 7px;
+}
+
+.go-to-recommendation-text {
+  padding: 10px;
+  text-decoration: none;
+}
+
+.go-to-recommendation a {
+  color: #8B8884;
+}
+
+.go-to-recommendation:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+.gridContainer {
+  width: 100%;
+  height: 33vh;
+}
+
+
 
 // caret animation
 
