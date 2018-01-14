@@ -62,12 +62,9 @@ $africa-map-min-width: 316px;
   display: grid;
   grid-template-columns: 50% 50%;
   border-top: solid 5px gray;
-  //letter-spacing: 2px;
-  //overflow: auto;
   font-size: 2.5rem;
   line-height: 1.5;
-  //padding: 10vh 0 10vh 0;
-  height: 60%;
+  height: 80%;
   min-height: 24vw;
   border-bottom: solid 5px gray;
   text-align: center;
@@ -113,12 +110,78 @@ $africa-map-min-width: 316px;
   font-size: 0.5em;
 }
 
-.safari-right {
+.safari-right-antelope, .safari-right-lion {
+  grid-template-rows: 1fr 20%;
+  display: grid;
   overflow: hidden;
   background-size: cover;
   background-position: center;
+}
+
+.safari-right-lion {
   background-image: url("../resources/static/images/web/lion.jpg");
 }
+
+.safari-right-antelope {
+  background-image: url("../resources/static/images/web/antelope.jpg");
+}
+
+.full-circle {
+  background: white;
+}
+
+.empty-circle {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.empty-circle:hover {
+  background: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+.full-circle, .empty-circle {
+  width: 12px;
+  height: 12px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  border: solid 1px white;
+  margin: 10px;
+}
+
+.circle-container {
+  justify-self: end;
+  padding: 20px;
+}
+
+.safari-info {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-family: "Lato", sans-serif;
+  font-size: 0.4em;
+  text-align: left;
+  padding: 5px 20px;
+}
+
+.safari-info-title {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.1em;
+}
+
+.email-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  font-size: 2.5rem;
+  line-height: 1.5;
+  height: 60%;
+  min-height: 24vw;
+  border-bottom: solid 5px gray;
+  text-align: center;
+  background-image: linear-gradient(
+                  rgba(0, 0, 255, 0.45),
+                  rgba(0, 0, 255, 0.45)
+  ),url("../resources/static/images/backgrounds/green_dust_scratch.png");
+}
+
 
 .quote-container {
   border-top: solid 5px gray;

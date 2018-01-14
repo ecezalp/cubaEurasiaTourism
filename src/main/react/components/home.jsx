@@ -2,21 +2,25 @@ import React from "react";
 import {Link, Route} from 'react-router-dom';
 import africaMap from '../../resources/static/vectors/africaMap';
 import {
-  gridHelper,
-  namibiaDesc,
-  onlyInNamibiaQuote,
-  quoteHelper,
-  safariHomeHelper
+  gridHelper, namibiaDesc, onlyInNamibiaQuote, quoteHelper,
+  safariHomeHelper, emailHelper
 } from "../../resources/static/constants";
 import Schedule from "./schedule";
-
 
 export default class Home extends React.Component {
 
   constructor(props) {
     super(props);
+
+    this.state = {
+      isLionSelected: true,
+    };
+
     this.getScheduleComponent = this.getScheduleComponent.bind(this);
     this.getGridComponent = this.getGridComponent.bind(this);
+    this.onCircleClick = this.onCircleClick.bind(this);
+    this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handleEmailSubmit = this.handleEmailSubmit.bind(this);
   }
 
   getLandingImage() {
@@ -33,30 +37,79 @@ export default class Home extends React.Component {
     </div>
   }
 
-  getHomeSafari() {
+  getLanding() {
+    return <div>
+      {this.getLandingImage()}
+      {this.getLandingLayer()}
+    </div>;
+  }
+
+  getSafariLeft() {
     let linkPrefix = this.props.isEnglish ? "en" : "tr";
-    return <div className="safari-wrapper">
-      <div className="safari-left">
-        <div className="map-container">
-          {africaMap()}
+
+    return <div className="safari-left">
+      <div className="map-container">
+        {africaMap()}
+      </div>
+      <div className="safari-text-parent">
+        <div className="safari-title">
+          {safariHomeHelper[this.props.isEnglish].banner}
         </div>
-        <div className="safari-text-parent">
-          <div className="safari-title">
-            {safariHomeHelper[this.props.isEnglish].banner}
-          </div>
-          <div className="safari-caption">
-            {safariHomeHelper[this.props.isEnglish].caption}
-          </div>
-          <div className="go-to-recommendation" id="go-to-recommendation-mobile">
-            <Link className="go-to-recommendation-text" to={"/" + linkPrefix + "/schedule"}>
-              {onlyInNamibiaQuote[this.props.isEnglish][1]}
-            </Link>
-          </div>
+        <div className="safari-caption">
+          {safariHomeHelper[this.props.isEnglish].caption}
+        </div>
+        <div className="go-to-recommendation" id="go-to-recommendation-mobile">
+          <Link className="go-to-recommendation-text" to={"/" + linkPrefix + "/schedule"}>
+            {onlyInNamibiaQuote[this.props.isEnglish][1]}
+          </Link>
         </div>
       </div>
-      <div className="safari-right"/>
     </div>
+  }
 
+  getSafariRight() {
+    return <div className={`safari-right-${this.state.isLionSelected ? "lion" : "antelope"}`}>
+      <div className="circle-container">
+        <div className={this.state.isLionSelected ? "full-circle" : "empty-circle"} onClick={this.onCircleClick}/>
+        <div className={this.state.isLionSelected ? "empty-circle" : "full-circle"} onClick={this.onCircleClick}/>
+      </div>
+      <div className="safari-info">
+        <div className="safari-info-title">{safariHomeHelper[this.props.isEnglish].infoTitle}</div>
+        <div className="safari-info-caption">{safariHomeHelper[this.props.isEnglish].infoCaption}</div>
+      </div>
+    </div>
+  }
+
+  onCircleClick() {
+    this.setState({isLionSelected: !this.state.isLionSelected})
+  }
+
+  getSafari() {
+    return <div className="safari-wrapper">
+      {this.getSafariLeft()}
+      {this.getSafariRight()}
+    </div>
+  }
+
+  getEmail() {
+    return <div className="email-container">
+      <form onSubmit={this.handleEmailSubmit}>
+        <label>
+          {emailHelper[this.props.isEnglish].label}
+          <input type="text" value={this.state.value} onChange={this.handleEmailChange} />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  }
+
+  handleEmailSubmit(event) {
+    event.preventDefault();
+    console.log("email submitted");
+  }
+
+  handleEmailChange(event) {
+    this.setState({email: event.target.value});
   }
 
   getDescription() {
@@ -120,10 +173,10 @@ export default class Home extends React.Component {
   render() {
     return <div className="home-container">
       {this.validatePathnameForHome() && <div className="home">
-        {this.getLandingImage()}
         <div>
-          {this.getLandingLayer()}
-          {this.getHomeSafari()}
+          {this.getLanding()}
+          {this.getSafari()}
+          {this.getEmail()}
           {this.getQuote()}
           {this.getDescription()}
           {this.getGrid()}

@@ -77,13 +77,25 @@ export const scheduleBannerOverlay = {
 export const safariHomeHelper = {
   true: {
     banner: "Safari in Namibia",
-    caption: "Taking you to a safari is not just our job. It is our passion."
+    caption: "Taking you to a safari is not just our job. It is our passion.",
+    infoTitle: "Wildlife in Etosha National Park",
+    infoCaption: "Chance to see 114 mammal species, 340 bird species, 110 reptile species, 16 amphibian species and 1 species of fish (up to 49 species of fish during floods)",
   },
   false: {
     banner: "Namibya'da Safari",
-    caption: "Sizinle safariye cikmak bizim sadece isimiz degil, tutkumuz ve nesemiz."
+    caption: "Sizinle safariye cikmak bizim sadece isimiz degil, tutkumuz ve nesemiz.",
+    infoTitle: "Etosha Milli Parkinda vahsi hayat",
+    infoCaption: "114 cins memeli hayvan, 340 cins kus, 110 cins surungen, 16 cins sogukkanli hayvan, ve mevsimsel olarak 49 cinse varan baligi gorme sansini kacirmayin.",
+  }
+};
+
+export const emailHelper = {
+  true: {
+    label: "Join our mailing list to hear about our next tour"
   },
-  img: lionPic,
+  false: {
+    label: "Bir sonraki turumuzla ilgili bilgi almak icin email listemize katilin"
+  }
 };
 
 export const highlightsHelper = {
