@@ -1,5 +1,8 @@
 $africa-map-min-width: 316px;
 
+
+// home
+
 .home-container {
   min-height: 100%;
 }
@@ -25,7 +28,7 @@ $africa-map-min-width: 316px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("../resources/static/images/sixGrid/bghr.jpg");
+  background-image: url("../resources/static/images/web/giraffes.jpg");
 }
 
 .fa-caret-down, .landing-caption {
@@ -38,24 +41,28 @@ $africa-map-min-width: 316px;
 
 .fa-caret-down {
   font-size: 6vh;
+  padding-top: 30vh;
   -webkit-animation: breathing 4s ease-out infinite normal;
   animation: breathing 5s ease-out infinite normal;
 }
 
 .landing-caption {
   font-family: 'Dancing Script', cursive;
-  font-size: 10em;
+  font-size: 7em;
   margin-top: 35vh;
 }
 
 .background-layer {
   position: absolute;
   top: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), black);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
   opacity: 0.8;
   width: 100%;
   height: 100vh;
 }
+
+
+// safari
 
 .safari-wrapper {
   display: grid;
@@ -85,8 +92,8 @@ $africa-map-min-width: 316px;
 
 .safari-title {
   font-family: "Cookie", cursive;
-  font-size: 6vw;
-  margin-top: -15vh;
+  font-size: 4vw;
+  margin-top: -10vh;
 }
 
 .safari-caption {
@@ -95,8 +102,31 @@ $africa-map-min-width: 316px;
   font-size: 1.5vw;
 }
 
+.our-schedule-button {
+  margin-top: 1vh;
+  border-radius: 6px;
+  font-family: "Lato", sans-serif;
+  font-size: 2vh;
+  padding: 7px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.our-schedule-button {
+  padding: 10px;
+  text-decoration: none;
+}
+
+.our-schedule-button a {
+  color: black;
+}
+
+.our-schedule-button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
 .safari-right-antelope, .safari-right-lion {
-  grid-template-rows: 1fr 15%;
+  grid-template-rows: 1fr 18%;
   display: grid;
   overflow: hidden;
   background-size: cover;
@@ -104,11 +134,11 @@ $africa-map-min-width: 316px;
 }
 
 .safari-right-lion {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("../resources/static/images/web/safari-animals.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url("../resources/static/images/web/safari-animals.jpg");
 }
 
 .safari-right-antelope {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("../resources/static/images/web/antelope.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url("../resources/static/images/web/antelope.jpg");
 }
 
 .full-circle {
@@ -152,6 +182,8 @@ $africa-map-min-width: 316px;
   font-size: 1.2em;
 }
 
+// destinations
+
 .destinations {
   background-color: rgb(242, 240, 232);
   height: 70%;
@@ -177,6 +209,72 @@ $africa-map-min-width: 316px;
   letter-spacing: 1px;
   text-align: justify;
 }
+
+// grid
+
+.gridContainer {
+  width: 100%;
+}
+
+// expert
+
+.expert-wrapper {
+  display: grid;
+  position: absolute;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: 50% 50%;
+  width: 100%;
+  height: 80vh;
+  background-color: white;
+}
+
+.expert-top {
+  grid-column: 2 / 4;
+  grid-row: 1 / 3;
+  background-color: rgb(242, 240, 232);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly
+}
+
+.expert-title {
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  font-size: 4vh;
+  letter-spacing: 3px;
+  line-height: 4vh;
+}
+
+.expert-info {
+  max-width: 50%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2vh;
+  line-height: 4vh;
+  letter-spacing: 1px;
+  text-align: justify;
+}
+
+.expert-bottom {
+  grid-column: 4 / 6;
+  grid-row: 1 / 3;
+  background: url("../resources/static/images/web/capricorn.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.expert-left {
+  background: url("../resources/static/images/web/gunnur.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+
+// email
 
 .email-container {
   display: flex;
@@ -239,7 +337,6 @@ $africa-map-min-width: 316px;
   width: 100%;
   overflow: auto;
   background-image: url("../resources/static/images/web/elephants.jpg");
-
   height: 70%;
   background-attachment: fixed;
   background-position: center;
@@ -265,36 +362,6 @@ $africa-map-min-width: 316px;
   right: 0;
   text-align: center;
 }
-
-
-.go-to-recommendation {
-  margin-top: 7vh;
-  border-radius: 6px;
-  font-family: "Lato", sans-serif;
-  font-size: 2vh;
-  padding: 7px;
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.go-to-recommendation-text {
-  padding: 10px;
-  text-decoration: none;
-}
-
-.go-to-recommendation a {
-  color: black;
-}
-
-.go-to-recommendation:hover {
-  background-color: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-}
-
-.gridContainer {
-  width: 100%;
-  height: 33vh;
-}
-
 
 
 // caret animation

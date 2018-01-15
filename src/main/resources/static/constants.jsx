@@ -1,12 +1,9 @@
 import React from 'react';
-import culturePic from '../../resources/static/images/sixGrid/culture.jpg';
-import landscapePic from '../../resources/static/images/sixGrid/landscape.jpg';
-import lodgePic from '../../resources/static/images/sixGrid/lodgeParadise.jpg';
-import safariPic from '../../resources/static/images/sixGrid/safari.jpg';
-import Culture from '../../react/components/grid/culture';
-import Wilderness from '../../react/components/grid/wilderness';
-import Safari from '../../react/components/grid/safari';
-import LodgeParadise from '../../react/components/grid/lodgeParadise';
+import etoshaPic from '../../resources/static/images/natureGrid/etosha.jpg'
+import sossuvleiPic from '../../resources/static/images/natureGrid/sossuvlei.jpg'
+import namibPic from '../../resources/static/images/natureGrid/namib.jpg'
+import swapkomundPic from '../../resources/static/images/natureGrid/swapkomund.jpg'
+import naukluftPic from '../../resources/static/images/natureGrid/naukluft.jpg'
 
 export const namibiaDesc = {
   true: [
@@ -53,16 +50,12 @@ export const onlyInNamibiaQuote = {
   }
 };
 
-export const gridHelper = [
-  {component: Culture, link: "culture", src: culturePic, language: {true: "Cultural Excursions", false: "Kültür"}},
-  {component: Wilderness, link: "wilderness", src: landscapePic, language: {true: "Wilderness", false: "Vahşi Doğa"}},
-  {component: Safari, link: "safari", src: safariPic, language: {true: "Safari", false: "Safari"}},
-  {
-    component: LodgeParadise,
-    link: "lodge-paradise",
-    src: lodgePic,
-    language: {true: "Lodge Paradise", false: "Loca Cenneti"}
-  },
+export const natureGridHelper = [
+  {link: "etosha", src: etoshaPic},
+  {link: "namib", src: namibPic},
+  {link: "sossuvlei", src: sossuvleiPic},
+  {link: "naukluft", src: naukluftPic},
+  {link: "swapkomund", src: swapkomundPic},
 ];
 
 export const scheduleBannerOverlay = {
@@ -80,13 +73,13 @@ export const scheduleBannerOverlay = {
 
 export const safariHomeHelper = {
   true: {
-    banner: "Safari in Namibia",
+    banner: "Discover Namibian Culture",
     caption: "Taking you to a safari is not just our job. It is our passion.",
     infoTitle: "Wildlife in Etosha National Park",
     infoCaption: "114 mammals, 340 birds, 110 reptiles, 16 amphibians, and 49 fish",
   },
   false: {
-    banner: "Namibya'da Safari",
+    banner: "Namibya'nin Kulturunu kesfet",
     caption: "Sizinle safariye cikmak bizim sadece isimiz degil, tutkumuz ve nesemiz.",
     infoTitle: "Etosha Milli Parkinda vahsi hayat",
     infoCaption: "114 memeli, 340 kus, 110 surungen, 16 sogukkanli hayvan ve 49 balik",
@@ -105,7 +98,7 @@ export const emailHelper = {
 export const destinationsHelper = {
   true: {
     title: "DESTINATIONS",
-    text: "Namibia is full of magnificent places, unique cultures and amazing people. Etosha National Park has countless indigenous species, and luxurious lodges for us to stay. Namib desert, the oldest UNESCO World Heritage Site, is home to wondrous safaris. Sossuvlei Dunes are a sight to see and photograph. Naukluft National Park has a fauna that seems extraterrestrial. Swakpomund is home to swathes of flamingos. There is no  shortage of destinations to add to your travel bucket list. Below are the destinations where we hold the most knowledge and experience. Where will the world take you?"
+    text: <div>Namibia is full of magnificent places, unique cultures and amazing people. <strong>Etosha</strong> National Park has countless indigenous species, and luxurious lodges for us to stay. <strong>Namib desert</strong>, the oldest UNESCO World Heritage Site, is home to wondrous safaris. <strong>Sossuvlei</strong> Dunes are a sight to see and photograph. <strong>Naukluft</strong> National Park has a fauna that seems extraterrestrial. <strong>Swakpomund</strong> is home to swathes of flamingos. There is no  shortage of destinations to add to your travel bucket list. Below are the destinations where we hold the most knowledge and experience. Where will the world take you?</div>
   },
   false: {
     title: "ISTIKAMETLERIMIZ",

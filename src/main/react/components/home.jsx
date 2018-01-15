@@ -2,10 +2,11 @@ import React from "react";
 import {Link, Route} from 'react-router-dom';
 import africaMap from '../../resources/static/vectors/africaMap';
 import {
-  emailHelper, gridHelper, namibiaDesc, onlyInNamibiaQuote, quoteHelper,
-  safariHomeHelper, destinationsHelper,
+  destinationsHelper, emailHelper, namibiaDesc, natureGridHelper, onlyInNamibiaQuote, quoteHelper,
+  safariHomeHelper,
 } from "../../resources/static/constants";
 import Schedule from "./schedule";
+import * as _ from "lodash";
 
 export default class Home extends React.Component {
 
@@ -52,8 +53,8 @@ export default class Home extends React.Component {
         <div className="safari-title">
           {safariHomeHelper[this.props.isEnglish].banner}
         </div>
-        <div className="go-to-recommendation" id="go-to-recommendation-mobile">
-          <Link className="go-to-recommendation-text" to={"/" + linkPrefix + "/schedule"}>
+        <div className="our-schedule-button" id="go-to-recommendation-mobile">
+          <Link className="our-schedule-button" to={"/" + linkPrefix + "/schedule"}>
             {onlyInNamibiaQuote[this.props.isEnglish][1]}
           </Link>
         </div>
@@ -97,19 +98,29 @@ export default class Home extends React.Component {
   }
 
   getGrid() {
-    let linkPrefix = this.props.isEnglish ? "en" : "tr";
     return <div className="gridContainer" id="gridContainer-mobile">
-      <div className="four-grid" id="four-grid-mobile">
-        {gridHelper.map((item, i) =>
-          <Link to={"/" + linkPrefix + "/" + item.link} key={item.link}>
-            <figure>
-              <img src={item.src} alt={item.link}/>
-              <div className="picCaption">{item.language[this.props.isEnglish]}</div>
-            </figure>
-          </Link>)}
+      <div className="five-grid" id="six-grid-mobile">
+        {natureGridHelper.map((item, i) =>
+          <figure key={i}>
+            <img src={item.src} alt={item.link}/>
+            <figcaption className="picCaption">{_.capitalize(item.link)}</figcaption>
+          </figure>)}
       </div>
-      <div className="gridCover"/>
     </div>
+  }
+
+  getExpert() {
+    return <div className="expert-wrapper">
+      <div className="expert-top">
+        <div className="expert-title">OUR EXPERT</div>
+        <div className="expert-info"> asdfasd asdfasdf asdfasdf asdfa sdfas asdfa sdfa df asdf asdf asdf </div>
+      </div>
+      <div className="expert-bottom">
+        <div className="expert-right"/>
+        <div className="gunnur-info"/>
+      </div>
+      <div className="expert-left"/>
+    </div>;
   }
 
   getEmail() {
@@ -184,17 +195,15 @@ export default class Home extends React.Component {
           {this.getLanding()}
           {this.getSafari()}
           {this.getDestinations()}
-          {/*{this.getQuote()}*/}
-          {/*{this.getDescription()}*/}
           {this.getGrid()}
-          {/*{this.getOnlyInNamibia()}*/}
+          {this.getExpert()}
           {this.getEmail()}
         </div>
       </div>}
       <Route path={`${this.props.match.url}/schedule`} component={this.getScheduleComponent}/>
-      {gridHelper.map(item => <Route key={item.link}
-                                     path={`${this.props.match.url}/${item.link}`}
-                                     component={(props) => this.getGridComponent(item.component, props)()}/>)}
+      {natureGridHelper.map(item => <Route key={item.link}
+                                           path={`${this.props.match.url}/${item.link}`}
+                                           component={(props) => this.getGridComponent(item.component, props)()}/>)}
     </div>;
   }
 }
