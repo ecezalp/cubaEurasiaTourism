@@ -3,7 +3,6 @@ import culturePic from '../../resources/static/images/sixGrid/culture.jpg';
 import landscapePic from '../../resources/static/images/sixGrid/landscape.jpg';
 import lodgePic from '../../resources/static/images/sixGrid/lodgeParadise.jpg';
 import safariPic from '../../resources/static/images/sixGrid/safari.jpg';
-import lionPic from '../../resources/static/images/web/lion.jpg';
 import Culture from '../../react/components/grid/culture';
 import Wilderness from '../../react/components/grid/wilderness';
 import Safari from '../../react/components/grid/safari';
@@ -58,7 +57,12 @@ export const gridHelper = [
   {component: Culture, link: "culture", src: culturePic, language: {true: "Cultural Excursions", false: "Kültür"}},
   {component: Wilderness, link: "wilderness", src: landscapePic, language: {true: "Wilderness", false: "Vahşi Doğa"}},
   {component: Safari, link: "safari", src: safariPic, language: {true: "Safari", false: "Safari"}},
-  {component: LodgeParadise, link: "lodge-paradise", src: lodgePic, language: {true: "Lodge Paradise", false: "Loca Cenneti"}},
+  {
+    component: LodgeParadise,
+    link: "lodge-paradise",
+    src: lodgePic,
+    language: {true: "Lodge Paradise", false: "Loca Cenneti"}
+  },
 ];
 
 export const scheduleBannerOverlay = {
@@ -79,13 +83,13 @@ export const safariHomeHelper = {
     banner: "Safari in Namibia",
     caption: "Taking you to a safari is not just our job. It is our passion.",
     infoTitle: "Wildlife in Etosha National Park",
-    infoCaption: "Chance to see 114 mammal species, 340 bird species, 110 reptile species, 16 amphibian species and 1 species of fish (up to 49 species of fish during floods)",
+    infoCaption: "114 mammals, 340 birds, 110 reptiles, 16 amphibians, and 49 fish",
   },
   false: {
     banner: "Namibya'da Safari",
     caption: "Sizinle safariye cikmak bizim sadece isimiz degil, tutkumuz ve nesemiz.",
     infoTitle: "Etosha Milli Parkinda vahsi hayat",
-    infoCaption: "114 cins memeli hayvan, 340 cins kus, 110 cins surungen, 16 cins sogukkanli hayvan, ve mevsimsel olarak 49 cinse varan baligi gorme sansini kacirmayin.",
+    infoCaption: "114 memeli, 340 kus, 110 surungen, 16 sogukkanli hayvan ve 49 balik",
   }
 };
 
@@ -97,6 +101,18 @@ export const emailHelper = {
     label: "Bir sonraki turumuzla ilgili bilgi almak icin email listemize katilin"
   }
 };
+
+export const destinationsHelper = {
+  true: {
+    title: "DESTINATIONS",
+    text: "Namibia is full of magnificent places, unique cultures and amazing people. Etosha National Park has countless indigenous species, and luxurious lodges for us to stay. Namib desert, the oldest UNESCO World Heritage Site, is home to wondrous safaris. Sossuvlei Dunes are a sight to see and photograph. Naukluft National Park has a fauna that seems extraterrestrial. Swakpomund is home to swathes of flamingos. There is no  shortage of destinations to add to your travel bucket list. Below are the destinations where we hold the most knowledge and experience. Where will the world take you?"
+  },
+  false: {
+    title: "ISTIKAMETLERIMIZ",
+    text: "Tezatlarin ulkesi Namibya’yı keşfedeceğimiz bu unutulmayacak yolculuğumuzda Etosha Milli Parkindaki lüks lodge’larda konaklayacak, UNESCO Dünya Miras Listesindeki dünyanın en eski çölü olan Namib Çölü’nde safariye çıkacak, zarafetle kıvrılan Sossusvlei kumullarında fotoğraf çekecek, Naukluft Milli Parkinda sanki bu dunyaya ait olmayan dogaya tanik olacak, Swapkomund’daki flamingolara hayran kalacakyerlilerle birlikte olağanüstü saatler geçireceğiz..."
+  }
+};
+
 
 export const highlightsHelper = {
   true: {

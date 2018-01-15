@@ -2,8 +2,8 @@ import React from "react";
 import {Link, Route} from 'react-router-dom';
 import africaMap from '../../resources/static/vectors/africaMap';
 import {
-  gridHelper, namibiaDesc, onlyInNamibiaQuote, quoteHelper,
-  safariHomeHelper, emailHelper
+  emailHelper, gridHelper, namibiaDesc, onlyInNamibiaQuote, quoteHelper,
+  safariHomeHelper, destinationsHelper,
 } from "../../resources/static/constants";
 import Schedule from "./schedule";
 
@@ -46,17 +46,11 @@ export default class Home extends React.Component {
 
   getSafariLeft() {
     let linkPrefix = this.props.isEnglish ? "en" : "tr";
-
     return <div className="safari-left">
-      <div className="map-container">
-        {africaMap()}
-      </div>
+      {africaMap()}
       <div className="safari-text-parent">
         <div className="safari-title">
           {safariHomeHelper[this.props.isEnglish].banner}
-        </div>
-        <div className="safari-caption">
-          {safariHomeHelper[this.props.isEnglish].caption}
         </div>
         <div className="go-to-recommendation" id="go-to-recommendation-mobile">
           <Link className="go-to-recommendation-text" to={"/" + linkPrefix + "/schedule"}>
@@ -91,15 +85,44 @@ export default class Home extends React.Component {
     </div>
   }
 
+  getDestinations() {
+    return <div className="destinations">
+      <div className="destinations-title">
+        {destinationsHelper[this.props.isEnglish].title}
+      </div>
+      <div className="destinations-text">
+        {destinationsHelper[this.props.isEnglish].text}
+      </div>
+    </div>
+  }
+
+  getGrid() {
+    let linkPrefix = this.props.isEnglish ? "en" : "tr";
+    return <div className="gridContainer" id="gridContainer-mobile">
+      <div className="four-grid" id="four-grid-mobile">
+        {gridHelper.map((item, i) =>
+          <Link to={"/" + linkPrefix + "/" + item.link} key={item.link}>
+            <figure>
+              <img src={item.src} alt={item.link}/>
+              <div className="picCaption">{item.language[this.props.isEnglish]}</div>
+            </figure>
+          </Link>)}
+      </div>
+      <div className="gridCover"/>
+    </div>
+  }
+
   getEmail() {
-    return <div className="email-container">
-      <form onSubmit={this.handleEmailSubmit}>
-        <label>
+    return <div>
+      <div className="email-container" onSubmit={this.handleEmailSubmit}>
+        <div className="email-label">
           {emailHelper[this.props.isEnglish].label}
-          <input type="text" value={this.state.value} onChange={this.handleEmailChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+        </div>
+        <div>
+          <span><input className="email-input" type="text" value={this.state.value} onChange={this.handleEmailChange}/></span>
+          <span><input className="email-submit" type="submit" value="Join"/></span>
+        </div>
+      </div>
     </div>
   }
 
@@ -139,22 +162,6 @@ export default class Home extends React.Component {
     </div>
   }
 
-  getGrid() {
-    let linkPrefix = this.props.isEnglish ? "en" : "tr";
-    return <div className="gridContainer" id="gridContainer-mobile">
-      <div className="four-grid" id="four-grid-mobile">
-        {gridHelper.map((item, i) =>
-          <Link to={"/" + linkPrefix + "/" + item.link} key={item.link}>
-            <figure>
-              <img src={item.src} alt={item.link}/>
-              <div className="picCaption">{item.language[this.props.isEnglish]}</div>
-            </figure>
-          </Link>)}
-      </div>
-      <div className="gridCover"/>
-    </div>
-  }
-
   validatePathnameForHome() {
     return ((this.props.location.pathname.toString() === "/") ||
       (this.props.location.pathname.toString() === "/en") ||
@@ -176,12 +183,12 @@ export default class Home extends React.Component {
         <div>
           {this.getLanding()}
           {this.getSafari()}
-          {this.getEmail()}
-          {this.getQuote()}
-          {this.getDescription()}
+          {this.getDestinations()}
+          {/*{this.getQuote()}*/}
+          {/*{this.getDescription()}*/}
           {this.getGrid()}
-          {this.getOnlyInNamibia()}
-
+          {/*{this.getOnlyInNamibia()}*/}
+          {this.getEmail()}
         </div>
       </div>}
       <Route path={`${this.props.match.url}/schedule`} component={this.getScheduleComponent}/>

@@ -37,10 +37,9 @@ $africa-map-min-width: 316px;
 }
 
 .fa-caret-down {
-  font-size: 3em;
-  margin-top: 22vh;
-  -webkit-animation: breathing 7s ease-out infinite normal;
-  animation: breathing 7s ease-out infinite normal;
+  font-size: 6vh;
+  -webkit-animation: breathing 4s ease-out infinite normal;
+  animation: breathing 5s ease-out infinite normal;
 }
 
 .landing-caption {
@@ -61,57 +60,43 @@ $africa-map-min-width: 316px;
 .safari-wrapper {
   display: grid;
   grid-template-columns: 50% 50%;
-  border-top: solid 5px gray;
   font-size: 2.5rem;
   line-height: 1.5;
-  height: 80%;
+  height: 60%;
   min-height: 24vw;
-  border-bottom: solid 5px gray;
   text-align: center;
-  background-image: url("../resources/static/images/backgrounds/45degreee_fabric.png");
+  background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url("../resources/static/images/backgrounds/45degreee_fabric.png");
 }
 
 .safari-left {
   overflow: hidden;
   position: relative;
-  justify-content: flex-start;
+  justify-content: center;
   display: flex;
-}
-
-.safari-wrapper .map-container {
-  margin-top: 5vh;
-  z-index: 2;
-  position: absolute;
-  min-width: $africa-map-min-width * 2;
-  margin-left: -2vw;
 }
 
 .safari-text-parent {
   z-index: 3;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin-left: 8vw;
-}
-
-.safari-text-parent div {
-  margin: 8px;
+  justify-content: center;
 }
 
 .safari-title {
   font-family: "Cookie", cursive;
-  font-size: 1.2em;
+  font-size: 6vw;
+  margin-top: -15vh;
 }
 
 .safari-caption {
   max-width: 60%;
   font-family: "Lato", italic;
-  font-size: 0.5em;
+  font-size: 1.5vw;
 }
 
 .safari-right-antelope, .safari-right-lion {
-  grid-template-rows: 1fr 20%;
+  grid-template-rows: 1fr 15%;
   display: grid;
   overflow: hidden;
   background-size: cover;
@@ -119,11 +104,11 @@ $africa-map-min-width: 316px;
 }
 
 .safari-right-lion {
-  background-image: url("../resources/static/images/web/lion.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("../resources/static/images/web/safari-animals.jpg");
 }
 
 .safari-right-antelope {
-  background-image: url("../resources/static/images/web/antelope.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("../resources/static/images/web/antelope.jpg");
 }
 
 .full-circle {
@@ -155,42 +140,91 @@ $africa-map-min-width: 316px;
 }
 
 .safari-info {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(118, 110, 102, 0.8);
   font-family: "Lato", sans-serif;
-  font-size: 0.4em;
+  font-size: 0.5em;
   text-align: left;
   padding: 5px 20px;
 }
 
 .safari-info-title {
-  font-family: "Dancing Script", cursive;
-  font-size: 1.1em;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2em;
+}
+
+.destinations {
+  background-color: rgb(242, 240, 232);
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.destinations-title {
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  font-size: 4vh;
+  letter-spacing: 3px;
+  line-height: 4vh;
+}
+
+.destinations-text {
+  max-width: 50%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2vh;
+  line-height: 4vh;
+  letter-spacing: 1px;
+  text-align: justify;
 }
 
 .email-container {
-  display: grid;
-  grid-template-columns: 50% 50%;
+  display: flex;
+  flex-direction: column;
   font-size: 2.5rem;
   line-height: 1.5;
-  height: 60%;
+  height: 20%;
   min-height: 24vw;
-  border-bottom: solid 5px gray;
   text-align: center;
-  background-image: linear-gradient(
-                  rgba(0, 0, 255, 0.45),
-                  rgba(0, 0, 255, 0.45)
-  ),url("../resources/static/images/backgrounds/green_dust_scratch.png");
+  border-bottom: solid 1px rgb(100, 151, 177);
+  background-image:
+          linear-gradient(
+                  rgba(100,151,177, 0.45),
+                  rgba(100,151,177, 0.65)
+  ), url("../resources/static/images/backgrounds/whirlpool.png");
+}
+
+.email-container div {
+  margin: 2vh;
+}
+
+.email-label {
+  margin-top: 8vh !important;
+}
+
+.email-input {
+  min-width: 40%;
+  font-size: 4vh;
+  border-radius: 7px;
+  border-width: 0.5px;
+}
+
+.email-submit {
+  border-radius: 6px;
+  font-family: "Lato", sans-serif;
+  font-size: 2vh;
+  padding: 8px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 
 .quote-container {
-  border-top: solid 5px gray;
   letter-spacing: 2px;
   overflow: auto;
   font-size: 2.5rem;
   line-height: 1.5;
   padding: 10vh 0 10vh 0;
-  border-bottom: solid 5px gray;
   text-align: center;
   /* Background pattern from Subtle Patterns */
   background-image: url("../resources/static/images/backgrounds/background_circles_light.png");
@@ -214,39 +248,32 @@ $africa-map-min-width: 316px;
 }
 
 .namibia-description {
-  //width: 45vw;
-  //margin-left: 17vw;
-  //margin-top: 3vh;
-  //overflow: auto;
-  //float: left;
-  //font-size: 1.5rem;
   line-height: 2;
   height: 100%;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6))
 }
 
-.map-container {
-  width: $africa-map-min-width;
-  overflow: auto;
-  float: left;
-}
-
 .africa-map {
-  //margin-left: -210px;
-  //margin-top: 0vh;
   display: block;
+  position: absolute;
+  margin:auto;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 
 
 .go-to-recommendation {
-  margin-top: 20px !important;
+  margin-top: 7vh;
   border-radius: 6px;
   font-family: "Lato", sans-serif;
-  font-size: 1rem;
-  width: 172px;
-  background-color: rgba(255,255, 255, 0.8);
-  border: solid 0.5px #8B8884;
+  font-size: 2vh;
   padding: 7px;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .go-to-recommendation-text {
@@ -255,11 +282,11 @@ $africa-map-min-width: 316px;
 }
 
 .go-to-recommendation a {
-  color: #8B8884;
+  color: black;
 }
 
 .go-to-recommendation:hover {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
 }
 
