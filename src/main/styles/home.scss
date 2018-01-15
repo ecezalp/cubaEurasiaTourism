@@ -184,14 +184,49 @@ $africa-map-min-width: 316px;
 
 // destinations
 
-.destinations {
+.destinations, .destinations-half {
   background-color: rgb(242, 240, 232);
   height: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   justify-content: space-evenly;
 }
+
+.destinations-half {
+  display: grid !important;
+  grid-template-columns: 60% 40%;
+}
+
+.other-half {
+  background-color: rgba(255, 182, 193, 0.2) !important;
+  height: 100%;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+.half-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.half-container div {
+  margin: 2vh;
+}
+
+.other-half-info {
+  max-width: 50%;
+  font-size: 4vh;
+  line-height: 6vh;
+  letter-spacing: 1px;
+  z-index: 6;
+}
+
 
 .destinations-title {
   color: black;
@@ -210,6 +245,19 @@ $africa-map-min-width: 316px;
   text-align: justify;
 }
 
+.destinations-map {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  height: 70vh;
+}
+
+
+.destinations-map-pic {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 // grid
 
 .gridContainer {
@@ -220,7 +268,7 @@ $africa-map-min-width: 316px;
 
 .expert-wrapper {
   display: grid;
-  position: absolute;
+  position: relative;
   grid-template-columns: repeat(5, 20%);
   grid-template-rows: 50% 50%;
   width: 100%;
@@ -231,7 +279,7 @@ $africa-map-min-width: 316px;
 .expert-top {
   grid-column: 2 / 4;
   grid-row: 1 / 3;
-  background-color: rgb(242, 240, 232);
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -412,4 +460,49 @@ $africa-map-min-width: 316px;
     -ms-transform: scale(0.6);
     transform: scale(0.6);
   }
+}
+
+// heart
+
+.heart{
+  position: absolute;
+  width: 100px;
+  height: 90px;
+  //float: left;
+  z-index: 5;
+}
+.heart:before,
+.heart:after{
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: rgb(255, 182, 193);
+  -moz-border-radius: 50px 50px 0 0;
+  border-radius: 50px 50px 0 0;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  -o-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+}
+.heart:after{
+  left: 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  -o-transform-origin: 100% 100%;
+  transform-origin :100% 100%;
 }

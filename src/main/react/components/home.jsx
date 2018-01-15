@@ -3,7 +3,7 @@ import {Link, Route} from 'react-router-dom';
 import africaMap from '../../resources/static/vectors/africaMap';
 import {
   destinationsHelper, emailHelper, namibiaDesc, natureGridHelper, onlyInNamibiaQuote, quoteHelper,
-  safariHomeHelper,
+  safariHomeHelper, stayGridHelper, stayHelper,
 } from "../../resources/static/constants";
 import Schedule from "./schedule";
 import * as _ from "lodash";
@@ -86,24 +86,40 @@ export default class Home extends React.Component {
     </div>
   }
 
-  getDestinations() {
+  getDestinations(helper, isHalfGrid) {
+    if (isHalfGrid) {
+      return <div className="destinations-half">
+        <div className="half-container">
+          <div className="destinations-title">
+            {helper[this.props.isEnglish].title}
+          </div>
+          <div className="destinations-text">
+            {helper[this.props.isEnglish].text}
+          </div>
+        </div>
+        <div className="other-half">
+          <div className="heart"/>
+          <div className="other-half-info">Custom Tailored Tours for Groups over 10</div>
+        </div>
+      </div>
+    }
     return <div className="destinations">
       <div className="destinations-title">
-        {destinationsHelper[this.props.isEnglish].title}
+        {helper[this.props.isEnglish].title}
       </div>
       <div className="destinations-text">
-        {destinationsHelper[this.props.isEnglish].text}
+        {helper[this.props.isEnglish].text}
       </div>
     </div>
   }
 
-  getGrid() {
+  getGrid(helper) {
     return <div className="gridContainer" id="gridContainer-mobile">
       <div className="five-grid" id="six-grid-mobile">
-        {natureGridHelper.map((item, i) =>
+        {helper.map((item, i) =>
           <figure key={i}>
-            <img src={item.src} alt={item.link}/>
-            <figcaption className="picCaption">{_.capitalize(item.link)}</figcaption>
+            <img src={item.src}/>
+            <figcaption className="picCaption">{_.capitalize(item.title)}</figcaption>
           </figure>)}
       </div>
     </div>
@@ -113,7 +129,7 @@ export default class Home extends React.Component {
     return <div className="expert-wrapper">
       <div className="expert-top">
         <div className="expert-title">OUR EXPERT</div>
-        <div className="expert-info"> asdfasd asdfasdf asdfasdf asdfa sdfas asdfa sdfa df asdf asdf asdf </div>
+        <div className="expert-info"> asdfasd asdfasdf asdfasdf asdfa sdfas asdfa sdfa df asdf asdf asdf</div>
       </div>
       <div className="expert-bottom">
         <div className="expert-right"/>
@@ -194,8 +210,10 @@ export default class Home extends React.Component {
         <div>
           {this.getLanding()}
           {this.getSafari()}
-          {this.getDestinations()}
-          {this.getGrid()}
+          {this.getDestinations(destinationsHelper)}
+          {this.getGrid(natureGridHelper)}
+          {this.getDestinations(stayHelper, true)}
+          {this.getGrid(stayGridHelper)}
           {this.getExpert()}
           {this.getEmail()}
         </div>

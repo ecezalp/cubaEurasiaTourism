@@ -4,6 +4,11 @@ import sossuvleiPic from '../../resources/static/images/natureGrid/sossuvlei.jpg
 import namibPic from '../../resources/static/images/natureGrid/namib.jpg'
 import swapkomundPic from '../../resources/static/images/natureGrid/swapkomund.jpg'
 import naukluftPic from '../../resources/static/images/natureGrid/naukluft.jpg'
+import dolomitePic from '../../resources/static/images/stayGrid/dolomite.jpg'
+import iremPic from '../../resources/static/images/stayGrid/irem.jpg'
+import lodgeStayPic from '../../resources/static/images/stayGrid/lodge-stay.png'
+import safariJeepPic from '../../resources/static/images/stayGrid/safari-jeep.jpg'
+import swapkomundHotelPic from '../../resources/static/images/stayGrid/swapkomund-hotel.jpg'
 
 export const namibiaDesc = {
   true: [
@@ -51,12 +56,21 @@ export const onlyInNamibiaQuote = {
 };
 
 export const natureGridHelper = [
-  {link: "etosha", src: etoshaPic},
-  {link: "namib", src: namibPic},
-  {link: "sossuvlei", src: sossuvleiPic},
-  {link: "naukluft", src: naukluftPic},
-  {link: "swapkomund", src: swapkomundPic},
+  {title: "etosha", src: etoshaPic},
+  {title: "namib", src: namibPic},
+  {title: "sossuvlei", src: sossuvleiPic},
+  {title: "naukluft", src: naukluftPic},
+  {title: "swapkomund", src: swapkomundPic},
 ];
+
+export const stayGridHelper = [
+  {title: "Dolomite Hotel", src: dolomitePic},
+  {title: "Meet Himba People", src: iremPic},
+  {title: "Stay at Lodges", src: lodgeStayPic},
+  {title: "Safari in Jeep", src: safariJeepPic},
+  {title: "Swapkomund Hotel", src: swapkomundHotelPic},
+];
+
 
 export const scheduleBannerOverlay = {
   true: {
@@ -106,6 +120,16 @@ export const destinationsHelper = {
   }
 };
 
+export const stayHelper = {
+  true: {
+    title: "CULTURAL EXCURSIONS",
+    text: <div>Namibia is a really cool place with a truly fantastic culture. <strong>Himba People</strong> are friendly and very eager to meet with interesting individuals who would like to visit them. Namibia also offers many luxurious getaways in beautiful resorts taht we will visit.</div>
+  },
+  false: {
+    title: "KULTUREL AKTIVITELER",
+    text: "Tezatlarin ulkesi Namibya’yı keşfedeceğimiz bu unutulmayacak yolculuğumuzda Etosha Milli Parkindaki lüks lodge’larda konaklayacak, UNESCO Dünya Miras Listesindeki dünyanın en eski çölü olan Namib Çölü’nde safariye çıkacak, zarafetle kıvrılan Sossusvlei kumullarında fotoğraf çekecek, Naukluft Milli Parkinda sanki bu dunyaya ait olmayan dogaya tanik olacak, Swapkomund’daki flamingolara hayran kalacakyerlilerle birlikte olağanüstü saatler geçireceğiz..."
+  }
+};
 
 export const highlightsHelper = {
   true: {

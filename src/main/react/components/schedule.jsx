@@ -30,9 +30,7 @@ export default function Schedule({isEnglish}) {
         <div className="highlights-label"></div>
       </div>
       <div className="highlights-left-container">
-        <div className="map-container">
-          {africaMap()}
-        </div>
+       
       </div>
     </div>
   };
