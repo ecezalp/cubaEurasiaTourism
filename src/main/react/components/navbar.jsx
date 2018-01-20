@@ -38,7 +38,8 @@ export default class NavBar extends React.Component {
   getAbout() {
     return aboutHelper[this.props.isEnglish].map(item =>
       {let itemWithDashes = item.name.replace(" ", "-");
-      return <li className="navbar-us-container" id="navbar-about-us-mobile" key={itemWithDashes}>
+      return <li className="navbar-us-container" id="navbar-about-us-mobile"
+                 key={itemWithDashes} onClick={() => this.scrollTo(item.gridStart)}>
         <Link to={`/${this.getPrefix()}/${itemWithDashes}`} className="navbar-us">
           {_.capitalize(item.name)}
         </Link>

@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {animateScroll} from 'react-scroll'
 import "../styles/main.scss";
 
 import Home from "./components/home";
@@ -18,13 +19,18 @@ export default class App extends React.Component {
 
   getEnglishHome(props) {
     let newProps = Object.assign({}, props, {isEnglish: true});
-    window.scrollTo(0,0);
+    console.log(props);
+    return <Home {...newProps} />;
+  }
+
+  getEnglishHomeAndScroll(props){
+    let newProps = Object.assign({}, props, {isEnglish: true});
+    animateScroll.scrollTo(0);
     return <Home {...newProps} />;
   }
 
   getTurkishHome(props) {
     let newProps = Object.assign({}, props, {isEnglish: false});
-    window.scrollTo(0,0);
     return <Home {...newProps} />;
   }
 
@@ -37,9 +43,10 @@ export default class App extends React.Component {
       <div id="application-container">
         <NavBar isEnglish={this.state.isEnglish} changeLanguage={this.changeLanguage}/>
         <Switch>
-          <Route exact path="/" component={this.getEnglishHome}/>
+          <Route exact path="/" component={this.getEnglishHomeAndScroll}/>
           <Route path="/tr" component={this.getTurkishHome}/>
           <Route path="/en" component={this.getEnglishHome}/>
+          {/*<Route path="/en/activities" component={this.getEnglishHome}/>*/}
         </Switch>
         <Tail isEnglish={this.state.isEnglish} changeLanguage={this.changeLanguage}/>
       </div>

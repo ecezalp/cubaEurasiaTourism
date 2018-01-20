@@ -19,19 +19,19 @@ export const menuItemsHelper = {
   true: [
     {gridStart: 3, name: "destinations"},
     {gridStart: 6, name: "activities"},
-    {gridStart: 9, name: "schedule"}],
+    {gridStart: 11, name: "schedule"}],
   false: [
     {gridStart: 3, name: "goreceklerimiz"},
     {gridStart: 6, name: "aktivitelerimiz"},
-    {gridStart: 9, name: "programimiz"}],
+    {gridStart: 11, name: "programimiz"}],
 };
 
 export const aboutHelper = {
   true: [
-    {gridStart: 10, name: "about us"},
+    {gridStart: 9, name: "about us"},
     {gridStart: 12, name: "contact us"}],
   false: [
-    {gridStart: 10, name: "hakkimizda"},
+    {gridStart: 9, name: "hakkimizda"},
     {gridStart: 12, name: "iletisim"}],
 };
 
