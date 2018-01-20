@@ -37,16 +37,17 @@ export default class NavBar extends React.Component {
 
   getAbout() {
     return aboutHelper[this.props.isEnglish].map(item =>
-      <li className="navbar-us-container" id="navbar-about-us-mobile">
-        <Link to={`${this.getPrefix()}/${item.name}`} className="navbar-us">
+      {let itemWithDashes = item.name.replace(" ", "-");
+      return <li className="navbar-us-container" id="navbar-about-us-mobile" key={itemWithDashes}>
+        <Link to={`/${this.getPrefix()}/${itemWithDashes}`} className="navbar-us">
           {_.capitalize(item.name)}
         </Link>
-      </li>
+      </li>}
     )
   };
 
   getFlags() {
-    return flagHelper.map(flag => <li className="navbar-flag-container">
+    return flagHelper.map(flag => <li className="navbar-flag-container" key={flag.prefix}>
       <Link to={`/${flag.prefix}`} onClick={() => this.props.changeLanguage(flag.boolean)}>
         <img className="navbar-flag" src={flag.src}/>
       </Link>
@@ -61,7 +62,7 @@ export default class NavBar extends React.Component {
     return <span className="navbar-togo-items"><ul>
       {menuItemsHelper[this.props.isEnglish].map(item =>
         <li className="navbar-togo-item" onClick={() => this.scrollTo(item.gridStart)}>
-          <Link to={`${this.getPrefix()}/${item.name}`}>{_.capitalize(item.name)}</Link>
+          <Link to={`/${this.getPrefix()}/${item.name}`}>{_.capitalize(item.name)}</Link>
         </li>)}
     </ul></span>
   }
