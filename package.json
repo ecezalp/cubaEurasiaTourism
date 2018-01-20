@@ -5,6 +5,7 @@
   "main": "gulpfile.js",
   "dependencies": {
     "bezier-easing": "^2.0.3",
+    "react-scroll": "^1.7.6",
     "react-springy-parallax": "^1.2.0"
   },
   "devDependencies": {

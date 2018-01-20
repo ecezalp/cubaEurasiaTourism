@@ -1,10 +1,12 @@
 import React from "react";
 import africaMap from '../../resources/static/vectors/africaMap';
 import {
-  destinationsHelper, emailHelper, namibiaDesc, natureGridHelper, onlyInNamibiaQuote, quoteHelper,
-  safariHomeHelper, stayHelper, stayGridHelper
+  destinationsHelper, natureGridHelper, safariHomeHelper, stayGridHelper,
+  stayHelper
 } from "../../resources/static/constants";
 import * as _ from "lodash";
+import { animateScroll } from 'react-scroll'
+
 
 export default class Home extends React.Component {
 
@@ -18,6 +20,29 @@ export default class Home extends React.Component {
     // this.onCircleClick = this.onCircleClick.bind(this);
     // this.handleEmailChange = this.handleEmailChange.bind(this);
     // this.handleEmailSubmit = this.handleEmailSubmit.bind(this);
+  }
+
+  scrollTo(element) {
+    switch (element){
+      case "destinations":
+        animateScroll.scrollTo(this.convertGridStartToPixels(3));
+        break;
+      case "things to do":
+        animateScroll.scrollTo(this.convertGridStartToPixels(6));
+        break;
+      case "schedule":
+        animateScroll.scrollTo(this.convertGridStartToPixels(9));
+        break;
+      case "default":
+        break;
+    }
+  }
+
+  convertGridStartToPixels(gridStart) {
+    let gridCellHeight = Math.ceil(window.innerHeight / 3);
+    let navbarHeight = 75;
+
+    return (gridCellHeight * gridStart) - navbarHeight;
   }
 
   getLandingImage() {
@@ -77,17 +102,17 @@ export default class Home extends React.Component {
   }
 
   getHeart() {
-    return <div className="heart-container">
+    return <div className="heart-container" onClick={() => this.scrollTo("destinations")}>
       <div className="heart"/>
       <div className="heart-info">Custom Tailored Tours for Groups over 10</div>
     </div>
   }
 
-  getExpertHeadshot(){
+  getExpertHeadshot() {
     return <div className="expert-headshot"/>;
   }
 
-  getExpertInfo(){
+  getExpertInfo() {
     return <div className="expert-info-wrapper">
       <div className="expert-title">OUR EXPERT</div>
       <div className="expert-info"> asdfasd asdfasdf asdfasdf asdfa sdfas asdfa sdfa df asdf asdf asdf</div>
@@ -95,8 +120,9 @@ export default class Home extends React.Component {
   }
 
   getGroupPicture() {
-    return <div className="group-picture"/>;
+    return <div className="group-picture" onClick={() => this.scrollTo("things to do")}/>;
   }
+
   //
   // getEmail() {
   //   return <div>
