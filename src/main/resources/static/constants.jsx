@@ -10,6 +10,39 @@ import lodgeStayPic from '../../resources/static/images/stayGrid/lodge-stay.png'
 import safariJeepPic from '../../resources/static/images/stayGrid/safari-jeep.jpg'
 import swapkomundHotelPic from '../../resources/static/images/stayGrid/swapkomund-hotel.jpg'
 
+import turkishFlag from '../../resources/static/images/flags/turkish_flag.png'
+import englishFlag from '../../resources/static/images/flags/english_flag.png'
+
+// Navbar
+
+export const menuItemsHelper = {
+  true: [
+    {gridStart: 3, name: "destinations"},
+    {gridStart: 6, name: "activities"},
+    {gridStart: 9, name: "schedule"}],
+  false: [
+    {gridStart: 3, name: "goreceklerimiz"},
+    {gridStart: 6, name: "aktivitelerimiz"},
+    {gridStart: 9, name: "programimiz"}],
+};
+
+export const aboutHelper = {
+  true: [
+    {gridStart: 10, name: "about us"},
+    {gridStart: 12, name: "contact us"}],
+  false: [
+    {gridStart: 10, name: "hakkimizda"},
+    {gridStart: 12, name: "iletisim"}],
+};
+
+export const flagHelper = [
+  {prefix: "tr", boolean: false, src: turkishFlag},
+  {prefix: "en", boolean: true, src: englishFlag}
+];
+
+
+// Main
+
 export const safariHomeHelper = {
   true: {
     banner: "Visit Namibia",
@@ -18,8 +51,6 @@ export const safariHomeHelper = {
     banner: "Namibya'ya Gel",
   }
 };
-
-
 
 
 export const namibiaDesc = {
@@ -98,7 +129,6 @@ export const scheduleBannerOverlay = {
 };
 
 
-
 export const emailHelper = {
   true: {
     label: "Join our mailing list to hear about our next tour"
@@ -111,7 +141,10 @@ export const emailHelper = {
 export const destinationsHelper = {
   true: {
     title: "DESTINATIONS",
-    text: <div>Namibia is magnificent. <strong>Etosha</strong> National Park has countless indigenous species. <strong>Namib desert</strong> is the oldest UNESCO World Heritage Site. <strong>Sossuvlei</strong> Dunes are a sight to see and photograph. <strong>Naukluft</strong> has a fauna that seems extraterrestrial. <strong>Swakpomund</strong> is home to swathes of flamingos. There is no  shortage of destinations. Where will the world take you?</div>
+    text: <div>Namibia is magnificent. <strong>Etosha</strong> National Park has countless indigenous species. <strong>Namib
+      desert</strong> is the oldest UNESCO World Heritage Site. <strong>Sossuvlei</strong> Dunes are a sight to see and
+      photograph. <strong>Naukluft</strong> has a fauna that seems extraterrestrial. <strong>Swakpomund</strong> is home
+      to swathes of flamingos. There is no shortage of destinations. Where will the world take you?</div>
   },
   false: {
     title: "ISTIKAMETLERIMIZ",
@@ -122,7 +155,9 @@ export const destinationsHelper = {
 export const stayHelper = {
   true: {
     title: "CULTURAL EXCURSIONS",
-    text: <div>Namibia is a really cool place with a truly fantastic culture. <strong>Himba People</strong> are friendly and very eager to meet with interesting individuals who would like to visit them. Namibia also offers many luxurious getaways in beautiful resorts taht we will visit.</div>
+    text: <div>Namibia is a really cool place with a truly fantastic culture. <strong>Himba People</strong> are friendly
+      and very eager to meet with interesting individuals who would like to visit them. Namibia also offers many
+      luxurious getaways in beautiful resorts taht we will visit.</div>
   },
   false: {
     title: "KULTUREL AKTIVITELER",

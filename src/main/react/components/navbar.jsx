@@ -1,7 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import englishFlag from '../../resources/static/images/flags/english_flag.png';
-import turkishFlag from '../../resources/static/images/flags/turkish_flag.png';
+import {aboutHelper, menuItemsHelper, flagHelper} from "../../resources/static/constants";
+import {animateScroll} from 'react-scroll'
+import * as _ from "lodash";
 
 
 export default class NavBar extends React.Component {
@@ -28,43 +29,52 @@ export default class NavBar extends React.Component {
   };
 
   getNavbarTop() {
-    let aboutUsHelper = Object.assign({},
-      {true: {0: "About Us", 1: "Contact Us"}},
-      {false: {0: "Hakkımızda", 1: "Iletişim"}});
-
     return <span className="navbar-about-us"><ul>
-      <li className="navbar-us-container" id="navbar-about-us-mobile">
-        <Link to={`${this.getPrefix()}/about-us`}
-              className="navbar-us">{aboutUsHelper[this.props.isEnglish][0]}</Link></li>
-      <li className="navbar-us-container" id="navbar-contact-us-mobile">
-        <Link to={`${this.getPrefix()}/contact-us`}
-              className="navbar-us">{aboutUsHelper[this.props.isEnglish][1]}</Link></li>
-      <li className="navbar-flag-container" id="navbar-turkish-mobile">
-        <Link to="/tr" onClick={() => this.props.changeLanguage(false)}><img
-          className="navbar-flag" src={turkishFlag}/></Link></li>
-      <li className="navbar-flag-container" id="navbar-english-mobile">
-        <Link to="/en" onClick={() => this.props.changeLanguage(true)}><img
-          className="navbar-flag" src={englishFlag}/></Link></li>
+      {this.getAbout()}
+      {this.getFlags()}
     </ul></span>
+  }
+
+  getAbout() {
+    return aboutHelper[this.props.isEnglish].map(item =>
+      <li className="navbar-us-container" id="navbar-about-us-mobile">
+        <Link to={`${this.getPrefix()}/${item.name}`} className="navbar-us">
+          {_.capitalize(item.name)}
+        </Link>
+      </li>
+    )
   };
+
+  getFlags() {
+    return flagHelper.map(flag => <li className="navbar-flag-container">
+      <Link to={`/${flag.prefix}`} onClick={() => this.props.changeLanguage(flag.boolean)}>
+        <img className="navbar-flag" src={flag.src}/>
+      </Link>
+    </li>)
+  }
 
   handleMobileNaviconClick() {
     this.setState({showMobileMenu: !this.state.showMobileMenu});
   }
 
   getMenuItems() {
-    let menuItemsHelper = Object.assign({},
-      {true: {0: "Places to Go", 1: "Things to Do", 2: "Travel Blog"}},
-      {false: {0: "Gideceklerimiz", 1: "Yapacaklarımız", 2: "Yolculuklarımız"}});
-
     return <span className="navbar-togo-items"><ul>
-      <li className="navbar-togo-item"><Link
-        to={`${this.getPrefix()}/places-to-go`}>{menuItemsHelper[this.props.isEnglish][0]}</Link></li>
-      <li className="navbar-togo-item"><Link
-        to={`${this.getPrefix()}/things-to-do`}>{menuItemsHelper[this.props.isEnglish][1]}</Link></li>
-      <li className="navbar-togo-item"><Link
-        to={`${this.getPrefix()}/travel-blog`}>{menuItemsHelper[this.props.isEnglish][2]}</Link></li>
+      {menuItemsHelper[this.props.isEnglish].map(item =>
+        <li className="navbar-togo-item" onClick={() => this.scrollTo(item.gridStart)}>
+          <Link to={`${this.getPrefix()}/${item.name}`}>{_.capitalize(item.name)}</Link>
+        </li>)}
     </ul></span>
+  }
+
+  scrollTo(gridStart) {
+    animateScroll.scrollTo(this.convertGridStartToPixels(gridStart));
+  }
+
+  convertGridStartToPixels(gridStart) {
+    let gridCellHeight = Math.ceil(window.innerHeight / 3);
+    let navbarHeight = 75;
+
+    return (gridCellHeight * gridStart) - navbarHeight;
   }
 
   render() {
