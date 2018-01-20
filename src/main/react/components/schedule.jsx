@@ -1,6 +1,6 @@
 import React from "react";
 import scheduleBanner from "../../resources/static/images/schedule/schedule_banner.jpg"
-import {scheduleBannerOverlay, highlightsHelper} from "../../resources/static/constants";
+import {scheduleHelper, highlightsHelper} from "../../resources/static/constants";
 import africaMap from '../../resources/static/vectors/africaMap';
 
 export default function Schedule({isEnglish}) {
@@ -14,9 +14,9 @@ export default function Schedule({isEnglish}) {
   const getBannerOverlay = () => {
     return <div className="schedule-banner-overlay">
       <div className="schedule-banner-overlay-contents">
-        <div className="schedule-overlay-title">{scheduleBannerOverlay[isEnglish][0]}</div>
-        <div className="schedule-overlay-caption">{scheduleBannerOverlay[isEnglish][1]}</div>
-        <div className="schedule-overlay-description">{scheduleBannerOverlay[isEnglish][2]}</div>
+        <div className="schedule-overlay-title">{scheduleHelper[isEnglish][0]}</div>
+        <div className="schedule-overlay-caption">{scheduleHelper[isEnglish][1]}</div>
+        <div className="schedule-overlay-description">{scheduleHelper[isEnglish][2]}</div>
       </div>
     </div>
   };

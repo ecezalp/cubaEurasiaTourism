@@ -14,7 +14,6 @@ import turkishFlag from '../../resources/static/images/flags/turkish_flag.png'
 import englishFlag from '../../resources/static/images/flags/english_flag.png'
 
 // Navbar
-
 export const menuItemsHelper = {
   true: [
     {gridStart: 3, name: "destinations"},
@@ -42,7 +41,6 @@ export const flagHelper = [
 
 
 // Main
-
 export const safariHomeHelper = {
   true: {
     banner: "Visit Namibia",
@@ -115,18 +113,39 @@ export const stayGridHelper = [
 ];
 
 
-export const scheduleBannerOverlay = {
+export const scheduleHelper = {
   true: {
-    0: "7 DAYS IN NAMIBIA",
-    1: "Safari + Cultural Interactions",
-    2: "Photograph UNESCO World Heritage Sossusvlei dunes, observe wild life during safari in Namib Desert, stay in luxurious lodges inside the National Parks, meet the local Himba people, wonder at the depths of the Milky Way.",
-  },
+    title: "7 DAYS IN NAMIBIA",
+    week: [
+      {style: {gridColumn: "1/2", gridRow: "10/12", backgroundColor: "rgba(0,100,0,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "5/6", gridRow: "10/12", backgroundColor: "rgba(0,0,100,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "2/3", gridRow: "11/13", backgroundColor: "rgba(100,0,0,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "4/5", gridRow: "11/13", backgroundColor: "rgba(200,0,0,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "1/2", gridRow: "12/14", backgroundColor: "rgba(0,200,0,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "3/4", gridRow: "12/14", backgroundColor: "rgba(0,0,200,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "5/6", gridRow: "12/14", backgroundColor: "rgba(130,130,0,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
+    ],
+   },
   false: {
-    0: "NAMIBYA'DA 7 GUN",
-    1: "Safari + Kulturel Deneyimler",
-    2: "UNESCO Dunya Mirasi Sossusvlei kumullarinda fotograf cek, Namib colunde safariye cikip vahsi hayati gozlemle, Milli Parklarin icerisindeki luks lodge\'larda konakla, Himba kabilesi ile tanis, Samanyolu'nun derinligini duyumsa.",
+    title: "NAMIBYA'DA 7 GUN",
+    week: [
+      {style: {gridColumn: "1/2", gridRow: "10/12", backgroundColor: "rgba(130,0,130,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "5/6", gridRow: "10/12", backgroundColor: "rgba(200,0,20,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "2/3", gridRow: "11/13", backgroundColor: "rgba(200,70,70,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "4/5", gridRow: "11/13", backgroundColor: "rgba(100,140,130,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "1/2", gridRow: "12/14", backgroundColor: "rgba(50,50,150,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "3/4", gridRow: "12/14", backgroundColor: "rgba(210,40,20,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "5/6", gridRow: "12/14", backgroundColor: "rgba(190,240,40,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
+    ],
   },
 };
+
+// 1: "Safari + Cultural Interactions",
+// 2: "Photograph UNESCO World Heritage Sossusvlei dunes, observe wild life during safari in Namib Desert, stay in luxurious lodges inside the National Parks, meet the local Himba people, wonder at the depths of the Milky Way.",
+
+// 1: "Safari + Kulturel Deneyimler",
+//   2: "UNESCO Dunya Mirasi Sossusvlei kumullarinda fotograf cek, Namib colunde safariye cikip vahsi hayati gozlemle, Milli Parklarin icerisindeki luks lodge\'larda konakla, Himba kabilesi ile tanis, Samanyolu'nun derinligini duyumsa.",
+
 
 
 export const emailHelper = {

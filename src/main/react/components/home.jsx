@@ -1,7 +1,7 @@
 import React from "react";
 import africaMap from '../../resources/static/vectors/africaMap';
 import {
-  destinationsHelper, natureGridHelper, safariHomeHelper, stayGridHelper,
+  destinationsHelper, natureGridHelper, safariHomeHelper, scheduleHelper, stayGridHelper,
   stayHelper
 } from "../../resources/static/constants";
 import * as _ from "lodash";
@@ -97,6 +97,24 @@ export default class Home extends React.Component {
 
   getGroupPicture() {
     return <div className="group-picture"/>;
+  }
+
+  getScheduleBanner() {
+    return <div className="schedule-banner">
+      <div className="schedule-title">{scheduleHelper[this.props.isEnglish][0]}</div>
+    </div>
+  }
+
+  getNamibiaFlag() {
+    return <div className="namibia-flag"/>;
+  }
+
+  getWeek(){
+    return scheduleHelper[this.props.isEnglish].week.map(day => this.getDay(day));
+  }
+
+  getDay(day){
+    return <div style={day.style}/>;
   }
 
   //
@@ -200,6 +218,9 @@ export default class Home extends React.Component {
       {this.getGroupPicture()}
 
       {/* row 12 */}
+      {this.getScheduleBanner()}
+      {this.getNamibiaFlag()}
+      {this.getWeek()}
       {/*{this.getEmail()}*/}
     </div>;
   }
