@@ -115,27 +115,27 @@ export const stayGridHelper = [
 
 export const scheduleHelper = {
   true: {
-    title: "7 DAYS IN NAMIBIA",
+    title: "SCHEDULE",
     week: [
-      {style: {gridColumn: "1/2", gridRow: "10/12", backgroundColor: "rgba(0,100,0,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "5/6", gridRow: "10/12", backgroundColor: "rgba(0,0,100,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "2/3", gridRow: "11/13", backgroundColor: "rgba(100,0,0,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "4/5", gridRow: "11/13", backgroundColor: "rgba(200,0,0,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "1/2", gridRow: "12/14", backgroundColor: "rgba(0,200,0,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "3/4", gridRow: "12/14", backgroundColor: "rgba(0,0,200,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "5/6", gridRow: "12/14", backgroundColor: "rgba(130,130,0,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "1/2", gridRow: "10/12", backgroundColor: "rgba(0,100,0,0.2)"}, text: "a", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "5/6", gridRow: "10/12", backgroundColor: "rgba(0,0,100,0.2)"}, text: "s", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "2/3", gridRow: "11/13", backgroundColor: "rgba(100,0,0,0.2)"}, text: "d", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "4/5", gridRow: "11/13", backgroundColor: "rgba(200,0,0,0.2)"}, text: "f", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "1/2", gridRow: "12/14", backgroundColor: "rgba(0,200,0,0.2)"}, text: "g", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "3/4", gridRow: "12/14", backgroundColor: "rgba(0,0,200,0.2)"}, text: "h", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "5/6", gridRow: "12/14", backgroundColor: "rgba(130,130,0,0.2)"}, text: "j", location: "", icons: ["", "", ""], dateAlignment: "right"},
     ],
    },
   false: {
-    title: "NAMIBYA'DA 7 GUN",
+    title: "PROGRAM",
     week: [
-      {style: {gridColumn: "1/2", gridRow: "10/12", backgroundColor: "rgba(130,0,130,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "5/6", gridRow: "10/12", backgroundColor: "rgba(200,0,20,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "2/3", gridRow: "11/13", backgroundColor: "rgba(200,70,70,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "4/5", gridRow: "11/13", backgroundColor: "rgba(100,140,130,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "1/2", gridRow: "12/14", backgroundColor: "rgba(50,50,150,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "3/4", gridRow: "12/14", backgroundColor: "rgba(210,40,20,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "5/6", gridRow: "12/14", backgroundColor: "rgba(190,240,40,0.2)"}, text: "", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "1/2", gridRow: "10/12", backgroundColor: "rgba(130,0,130,0.2)"}, text: "q", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "5/6", gridRow: "10/12", backgroundColor: "rgba(200,0,20,0.2)"}, text: "w", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "2/3", gridRow: "11/13", backgroundColor: "rgba(200,70,70,0.2)"}, text: "e", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "4/5", gridRow: "11/13", backgroundColor: "rgba(100,140,130,0.2)"}, text: "r", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "1/2", gridRow: "12/14", backgroundColor: "rgba(50,50,150,0.2)"}, text: "t", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "3/4", gridRow: "12/14", backgroundColor: "rgba(210,40,20,0.2)"}, text: "y", location: "", icons: ["", "", ""], dateAlignment: "right"},
+      {style: {gridColumn: "5/6", gridRow: "12/14", backgroundColor: "rgba(190,240,40,0.2)"}, text: "u", location: "", icons: ["", "", ""], dateAlignment: "right"},
     ],
   },
 };
@@ -163,7 +163,9 @@ export const destinationsHelper = {
     text: <div>Namibia is magnificent. <strong>Etosha</strong> National Park has countless indigenous species. <strong>Namib
       desert</strong> is the oldest UNESCO World Heritage Site. <strong>Sossuvlei</strong> Dunes are a sight to see and
       photograph. <strong>Naukluft</strong> has a fauna that seems extraterrestrial. <strong>Swakpomund</strong> is home
-      to swathes of flamingos. There is no shortage of destinations. Where will the world take you?</div>
+      to swathes of flamingos. There is no shortage of destinations. Where will the world take you? has a fauna that seems extraterrestrial. <strong>Swakpomund</strong> is home
+      to swathes of flamingos. There is no shortage of destinations. Where will the world take you? <strong>Etosha</strong> National Park has countless indigenous species. <strong>Namib
+        desert</strong> is the oldest UNESCO World Heritage</div>
   },
   false: {
     title: "ISTIKAMETLERIMIZ",

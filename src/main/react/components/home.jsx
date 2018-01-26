@@ -5,6 +5,7 @@ import {
   stayHelper
 } from "../../resources/static/constants";
 import * as _ from "lodash";
+import Carousel from './carousel';
 
 
 export default class Home extends React.Component {
@@ -31,7 +32,6 @@ export default class Home extends React.Component {
     return <div className="background-layer" id="background-layer-mobile-change">
       <div className="landing-caption" id="mobile-caption-size-change">
         {this.props.isEnglish ? "Namibia" : "Namibya"}</div>
-      <i className="fa fa-caret-down" aria-hidden="true"/>
     </div>
   }
 
@@ -48,9 +48,11 @@ export default class Home extends React.Component {
     return <div className="destinations">
       <div className="destinations-title">
         {helper[this.props.isEnglish].title}
+        <i className="fa fa-angle-double-down"/>
       </div>
       <div className="destinations-text">
         {helper[this.props.isEnglish].text}
+
       </div>
     </div>
   }
@@ -80,7 +82,7 @@ export default class Home extends React.Component {
   getHeart() {
     return <div className="heart-container" onClick={() => this.scrollTo("destinations")}>
       <div className="heart"/>
-      <div className="heart-info">Custom Tailored Tours for Groups over 10</div>
+      <div className="heart-info">Tailored Tours for <br/> Groups over 10</div>
     </div>
   }
 
@@ -99,23 +101,36 @@ export default class Home extends React.Component {
     return <div className="group-picture"/>;
   }
 
-  getScheduleBanner() {
-    return <div className="schedule-banner">
-      <div className="schedule-title">{scheduleHelper[this.props.isEnglish][0]}</div>
-    </div>
-  }
-
   getNamibiaFlag() {
     return <div className="namibia-flag"/>;
   }
 
-  getWeek(){
-    return scheduleHelper[this.props.isEnglish].week.map(day => this.getDay(day));
+  getWeek() {
+    return <div className="carousel-container" style={{gridColumn: "1/6", gridRow: "10/12"}}>
+      <Carousel slides={scheduleHelper[this.props.isEnglish].week.map((day, index) =>
+        <div className="day-wrapper">
+          <div className="schedule-day-number">
+            <div>Day {index + 1}</div>
+          </div>
+          <div className="day-content" style={this.getDayStyle()}>{day.text}</div>
+        </div>
+      )}/>
+    </div>
   }
 
-  getDay(day){
-    return <div style={day.style}/>;
+  getDayStyle() {
+    let height = this.getCarouselHeight();
+    let width = window.innerWidth;
+    return Object.assign({}, {height, width});
   }
+
+  getCarouselHeight() {
+    return Math.ceil(window.innerHeight / 3) * 2;
+  }
+
+  // getDay(day) {
+  //   return <div>Hello {day.text}</div>;
+  // }
 
   //
   // getEmail() {
@@ -199,7 +214,7 @@ export default class Home extends React.Component {
       {this.getLandingLayer()}
 
       {/* rows 4 - 5 */}
-      {this.getVisitNamibia()}
+      {/*{this.getVisitNamibia()}*/}
       {this.getDestinations(destinationsHelper)}
 
       {/* row 6 */}
@@ -218,9 +233,9 @@ export default class Home extends React.Component {
       {this.getGroupPicture()}
 
       {/* row 12 */}
-      {this.getScheduleBanner()}
-      {this.getNamibiaFlag()}
       {this.getWeek()}
+      {/*{this.getScheduleBanner()}*/}
+      {/*{this.getNamibiaFlag()}*/}
       {/*{this.getEmail()}*/}
     </div>;
   }

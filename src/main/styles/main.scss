@@ -1,11 +1,15 @@
 @import "navbar";
 @import "home";
 @import "grid";
+@import "carousel";
 @import "tail.scss";
 @import "navbarMobile.scss";
 //@import "homeMobile.scss";
 @import "schedule";
 @import "tailMobile";
+
+//@import "~slick-carousel/slick/slick.scss";
+//@import "~slick-carousel/slick/slick-theme.scss";
 
 body, html {
   height: 100%;

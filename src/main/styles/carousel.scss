@@ -1,0 +1,77 @@
+// slides
+
+.day-wrapper {
+  display: grid !important;
+  grid-template-columns: 20% 80% !important;
+}
+
+.schedule-day-number {
+  grid-column: 1/2 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 4vh;
+  letter-spacing: 1px;
+  z-index: 5;
+  background-color: ivory;
+}
+
+.schedule-day-flower:before {
+  content: "\273F";
+  font-size: 3em;
+  opacity: 0.3;
+  color: white;
+}
+
+.day-content {
+  grid-column: 2/3 !important;
+}
+
+// buttons
+
+.slick-dots li button:before {
+  font-size: 21px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: '\25CF';
+  text-align: center;
+  opacity: .25;
+  color: #000;
+}
+
+.slick-dots {
+  bottom: 10px !important;
+}
+
+.slick-next, .slick-prev {
+  z-index: 5;
+}
+
+.slick-next:before, .slick-prev:before {
+  font-size: 20px;
+  line-height: 1;
+  opacity: .75;
+  color: black;
+}
+
+.slick-next:before {
+  content: "\279C"
+}
+
+.slick-prev {
+  left: 5px;
+  transform: rotate(180deg);
+}
+
+.slick-next {
+  right: 5px;
+}
+
+.slick-prev:before {
+  content: "\279C";
+}

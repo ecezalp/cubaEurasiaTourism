@@ -14,11 +14,12 @@
 
 .landing-image-container {
   grid-column: 1 / 6;
-  grid-row: 1 / 3;
+  grid-row: 1 / 8;
   width: 100%;
-  height: 100vh;
+  height: 166vh;
   overflow: hidden;
   margin: 0;
+  //background-color: aqua;
 }
 
 .landing-image {
@@ -26,7 +27,8 @@
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
+  background-color: red;
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url("../resources/static/images/web/giraffes.jpg");
 }
 
@@ -35,25 +37,16 @@
   width: 100%;
 }
 
-.fa-caret-down, .landing-caption {
+.landing-caption {
   width: 100%;
   height: auto;
   text-align: center;
   z-index: 5;
-  color: white;
-}
-
-.fa-caret-down {
-  font-size: 6vh;
-  padding-top: 30vh;
-  -webkit-animation: breathing 4s ease-out infinite normal;
-  animation: breathing 5s ease-out infinite normal;
-}
-
-.landing-caption {
+  color: ivory;
   font-family: 'Dancing Script', cursive;
-  font-size: 7em;
+  font-size: 10em;
   margin-top: 35vh;
+  margin-left: -35vh;
 }
 
 // safari
@@ -93,15 +86,25 @@
 // destinations
 
 .destinations {
-  background-color: paleturquoise;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   justify-content: space-evenly;
-  grid-column: 3 / 6;
-  grid-row: 4 / 6;
+  background-color: ivory;
+  -webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  grid-column: 1 / 6;
+  grid-row: 1 / 6;
+  margin-top: 75px;
   overflow: scroll;
+}
+
+.destinations-text {
+  padding-left: 70vh;
+  margin-top: 42vh;
+  line-height: 7vh !important;
+  position: absolute;
 }
 
 .destinations-title, .culture-title, .schedule-title {
@@ -112,6 +115,16 @@
   line-height: 4vh;
 }
 
+.destinations-title {
+  margin-top: 7vh;
+  margin-left: 30vw;
+  position: absolute;
+}
+
+.fa-angle-double-down {
+  padding: 0px 20px;
+}
+
 .destinations-text, .culture-text {
   max-width: 50%;
   font-family: "Montserrat", sans-serif;
@@ -120,6 +133,7 @@
   letter-spacing: 1px;
   text-align: justify;
 }
+
 
 // five grid
 
@@ -209,22 +223,14 @@
 
 // schedule
 .schedule-banner {
-  grid-column: 2 / 5;
-  grid-row: 10 / 11;
+  grid-column: 1 / 2;
+  grid-row: 10 / 12;
   display: flex;
   background-color: lightyellow;
   align-items: center;
   justify-content: center;
 }
 
-.namibia-flag {
-  grid-column: 3 / 4;
-  grid-row: 11 / 12;
-  background: url("../resources/static/images/flags/namibia-square.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
 // expert
 .expert-headshot {
@@ -345,6 +351,15 @@
 //  height: 100%;
 //  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6))
 //}
+//.namibia-flag {
+  //  grid-column: 3 / 4;
+  //  grid-row: 11 / 12;
+  //  background: url("../resources/static/images/flags/namibia-square.png");
+  //  background-position: center;
+  //  background-repeat: no-repeat;
+  //  background-size: cover;
+  //}
+
 
 // caret animation
 
