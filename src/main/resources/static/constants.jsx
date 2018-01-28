@@ -1,14 +1,19 @@
 import React from 'react';
+// 1st 5grid
 import etoshaPic from '../../resources/static/images/natureGrid/etosha.jpg'
 import sossuvleiPic from '../../resources/static/images/natureGrid/sossuvlei.jpg'
 import namibPic from '../../resources/static/images/natureGrid/namib.jpg'
 import swapkomundPic from '../../resources/static/images/natureGrid/swapkomund.jpg'
 import naukluftPic from '../../resources/static/images/natureGrid/naukluft.jpg'
+// 2 5grid
 import dolomitePic from '../../resources/static/images/stayGrid/dolomite.jpg'
 import iremPic from '../../resources/static/images/stayGrid/irem.jpg'
 import lodgeStayPic from '../../resources/static/images/stayGrid/lodge-stay.png'
 import safariJeepPic from '../../resources/static/images/stayGrid/safari-jeep.jpg'
 import swapkomundHotelPic from '../../resources/static/images/stayGrid/swapkomund-hotel.jpg'
+// week
+import joburg from '../../resources/static/images/schedule/joburg.jpg';
+import safariAnimals from '../../resources/static/images/web/safari-animals.jpg';
 
 import turkishFlag from '../../resources/static/images/flags/turkish_flag.png'
 import englishFlag from '../../resources/static/images/flags/english_flag.png'
@@ -16,21 +21,21 @@ import englishFlag from '../../resources/static/images/flags/english_flag.png'
 // Navbar
 export const menuItemsHelper = {
   true: [
-    {gridStart: 3, name: "destinations"},
+    {gridStart: 2, name: "destinations"},
     {gridStart: 6, name: "activities"},
-    {gridStart: 11, name: "schedule"}],
+    {gridStart: 9, name: "schedule"}],
   false: [
-    {gridStart: 3, name: "goreceklerimiz"},
+    {gridStart: 2, name: "goreceklerimiz"},
     {gridStart: 6, name: "aktivitelerimiz"},
-    {gridStart: 11, name: "programimiz"}],
+    {gridStart: 9, name: "programimiz"}],
 };
 
 export const aboutHelper = {
   true: [
-    {gridStart: 9, name: "about us"},
+    {gridStart: 11, name: "about us"},
     {gridStart: 12, name: "contact us"}],
   false: [
-    {gridStart: 9, name: "hakkimizda"},
+    {gridStart: 11, name: "hakkimizda"},
     {gridStart: 12, name: "iletisim"}],
 };
 
@@ -112,40 +117,83 @@ export const stayGridHelper = [
   {title: "Swapkomund Hotel", src: swapkomundHotelPic},
 ];
 
+export const scheduleHelper = [{
+  // DAY 1
+  picture: joburg,
+  figCaption: "Johannesburg",
+  entries: [{
+    icon: "fa fa-map-marker fa-2x",
+    label: {true: "Johannesburg Arrival", false: "Johannesburg'a varis"},
+    time: "10:30 AM"
+  }, {
+    icon: "fa fa-eye fa-2x",
+    label: {true: "Optional City Tour", false: "Opsiyonel Sehir Turu"},
+    time: "12:30 PM"
+  }, {
+    icon: "fa fa-plane fa-2x",
+    label: {true: "Flight to Windhoek", false: "Windhoek'e Ucus"},
+    time: "05:50 PM"
+  }, {
+    icon: "fa fa-bed fa-2x",
+    label: {true: "Hilton Windhoek Hotel", false: "Hilton Windhoek Hotel"},
+    time: "08:00 PM"
+  }]
+}, {
+  // DAY 2
+  picture: safariAnimals,
+  figCaption: "Etosha National Park",
+  entries: [{
+    icon: "fa fa-binoculars fa-2x",
+    label: {true: "Panoramic Windhoek Tour", false: "Panoramik Windhoek Turu"},
+    time: "9:30 AM"
+  }, {
+    icon: "fa fa-cutlery fa-2x",
+    label: {true: "Lunch at Turkish Embassy", false: "Buyukelcimiz ile yemek"},
+    time: "12:30 PM"
+  }, {
+    icon: "fa fa-bug fa-2x",
+    label: {true: "Etosha National Park", false: "Etosha Milli Parki"},
+    time: "03:00 PM"
+  }, {
+    icon: "fa fa-bed fa-2x",
+    label: {true: "NWR Dolomite Resort", false: "NWR Dolomite Resort"},
+    time: "08:00 PM"
+  }]
+}];
 
-export const scheduleHelper = {
-  true: {
-    title: "SCHEDULE",
-    week: [
-      {style: {gridColumn: "1/2", gridRow: "10/12", backgroundColor: "rgba(0,100,0,0.2)"}, text: "a", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "5/6", gridRow: "10/12", backgroundColor: "rgba(0,0,100,0.2)"}, text: "s", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "2/3", gridRow: "11/13", backgroundColor: "rgba(100,0,0,0.2)"}, text: "d", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "4/5", gridRow: "11/13", backgroundColor: "rgba(200,0,0,0.2)"}, text: "f", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "1/2", gridRow: "12/14", backgroundColor: "rgba(0,200,0,0.2)"}, text: "g", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "3/4", gridRow: "12/14", backgroundColor: "rgba(0,0,200,0.2)"}, text: "h", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "5/6", gridRow: "12/14", backgroundColor: "rgba(130,130,0,0.2)"}, text: "j", location: "", icons: ["", "", ""], dateAlignment: "right"},
-    ],
-   },
-  false: {
-    title: "PROGRAM",
-    week: [
-      {style: {gridColumn: "1/2", gridRow: "10/12", backgroundColor: "rgba(130,0,130,0.2)"}, text: "q", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "5/6", gridRow: "10/12", backgroundColor: "rgba(200,0,20,0.2)"}, text: "w", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "2/3", gridRow: "11/13", backgroundColor: "rgba(200,70,70,0.2)"}, text: "e", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "4/5", gridRow: "11/13", backgroundColor: "rgba(100,140,130,0.2)"}, text: "r", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "1/2", gridRow: "12/14", backgroundColor: "rgba(50,50,150,0.2)"}, text: "t", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "3/4", gridRow: "12/14", backgroundColor: "rgba(210,40,20,0.2)"}, text: "y", location: "", icons: ["", "", ""], dateAlignment: "right"},
-      {style: {gridColumn: "5/6", gridRow: "12/14", backgroundColor: "rgba(190,240,40,0.2)"}, text: "u", location: "", icons: ["", "", ""], dateAlignment: "right"},
-    ],
-  },
-};
+
+// export const scheduleHelper = {
+//   true: {
+//     title: "SCHEDULE",
+//     week: [
+//       {style: {gridColumn: "1/2", gridRow: "10/12", backgroundColor: "rgba(0,100,0,0.2)"}, text: "a", location: "", icons: ["", "", ""], dateAlignment: "right"},
+//       {style: {gridColumn: "5/6", gridRow: "10/12", backgroundColor: "rgba(0,0,100,0.2)"}, text: "s", location: "", icons: ["", "", ""], dateAlignment: "right"},
+//       {style: {gridColumn: "2/3", gridRow: "11/13", backgroundColor: "rgba(100,0,0,0.2)"}, text: "d", location: "", icons: ["", "", ""], dateAlignment: "right"},
+//       {style: {gridColumn: "4/5", gridRow: "11/13", backgroundColor: "rgba(200,0,0,0.2)"}, text: "f", location: "", icons: ["", "", ""], dateAlignment: "right"},
+//       {style: {gridColumn: "1/2", gridRow: "12/14", backgroundColor: "rgba(0,200,0,0.2)"}, text: "g", location: "", icons: ["", "", ""], dateAlignment: "right"},
+//       {style: {gridColumn: "3/4", gridRow: "12/14", backgroundColor: "rgba(0,0,200,0.2)"}, text: "h", location: "", icons: ["", "", ""], dateAlignment: "right"},
+//       {style: {gridColumn: "5/6", gridRow: "12/14", backgroundColor: "rgba(130,130,0,0.2)"}, text: "j", location: "", icons: ["", "", ""], dateAlignment: "right"},
+//     ],
+//    },
+//   false: {
+//     title: "PROGRAM",
+//     week: [
+//       {style: {gridColumn: "1/2", gridRow: "10/12", backgroundColor: "rgba(130,0,130,0.2)"}, text: "q", location: "", icons: ["", "", ""], dateAlignment: "right"},
+//       {style: {gridColumn: "5/6", gridRow: "10/12", backgroundColor: "rgba(200,0,20,0.2)"}, text: "w", location: "", icons: ["", "", ""], dateAlignment: "right"},
+//       {style: {gridColumn: "2/3", gridRow: "11/13", backgroundColor: "rgba(200,70,70,0.2)"}, text: "e", location: "", icons: ["", "", ""], dateAlignment: "right"},
+//       {style: {gridColumn: "4/5", gridRow: "11/13", backgroundColor: "rgba(100,140,130,0.2)"}, text: "r", location: "", icons: ["", "", ""], dateAlignment: "right"},
+//       {style: {gridColumn: "1/2", gridRow: "12/14", backgroundColor: "rgba(50,50,150,0.2)"}, text: "t", location: "", icons: ["", "", ""], dateAlignment: "right"},
+//       {style: {gridColumn: "3/4", gridRow: "12/14", backgroundColor: "rgba(210,40,20,0.2)"}, text: "y", location: "", icons: ["", "", ""], dateAlignment: "right"},
+//       {style: {gridColumn: "5/6", gridRow: "12/14", backgroundColor: "rgba(190,240,40,0.2)"}, text: "u", location: "", icons: ["", "", ""], dateAlignment: "right"},
+//     ],
+//   },
+// };
 
 // 1: "Safari + Cultural Interactions",
 // 2: "Photograph UNESCO World Heritage Sossusvlei dunes, observe wild life during safari in Namib Desert, stay in luxurious lodges inside the National Parks, meet the local Himba people, wonder at the depths of the Milky Way.",
 
 // 1: "Safari + Kulturel Deneyimler",
 //   2: "UNESCO Dunya Mirasi Sossusvlei kumullarinda fotograf cek, Namib colunde safariye cikip vahsi hayati gozlemle, Milli Parklarin icerisindeki luks lodge\'larda konakla, Himba kabilesi ile tanis, Samanyolu'nun derinligini duyumsa.",
-
 
 
 export const emailHelper = {
@@ -163,8 +211,10 @@ export const destinationsHelper = {
     text: <div>Namibia is magnificent. <strong>Etosha</strong> National Park has countless indigenous species. <strong>Namib
       desert</strong> is the oldest UNESCO World Heritage Site. <strong>Sossuvlei</strong> Dunes are a sight to see and
       photograph. <strong>Naukluft</strong> has a fauna that seems extraterrestrial. <strong>Swakpomund</strong> is home
-      to swathes of flamingos. There is no shortage of destinations. Where will the world take you? has a fauna that seems extraterrestrial. <strong>Swakpomund</strong> is home
-      to swathes of flamingos. There is no shortage of destinations. Where will the world take you? <strong>Etosha</strong> National Park has countless indigenous species. <strong>Namib
+      to swathes of flamingos. There is no shortage of destinations. Where will the world take you? has a fauna that
+      seems extraterrestrial. <strong>Swakpomund</strong> is home
+      to swathes of flamingos. There is no shortage of destinations. Where will the world take
+      you? <strong>Etosha</strong> National Park has countless indigenous species. <strong>Namib
         desert</strong> is the oldest UNESCO World Heritage</div>
   },
   false: {

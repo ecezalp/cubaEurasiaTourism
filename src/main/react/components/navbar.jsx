@@ -75,7 +75,6 @@ export default class NavBar extends React.Component {
   convertGridStartToPixels(gridStart) {
     let gridCellHeight = Math.ceil(window.innerHeight / 3);
     let navbarHeight = 75;
-
     return (gridCellHeight * gridStart) - navbarHeight;
   }
 

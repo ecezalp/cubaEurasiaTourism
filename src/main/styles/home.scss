@@ -151,19 +151,19 @@
   grid-row: 9 / 10;
 }
 
-.five-grid figure {
+.five-grid figure, .day-caption figure {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
 }
 
-.five-grid figure img {
+.five-grid figure img, .day-caption figure img {
   width: 100%;
   height: 100%;
 }
 
-.five-grid figcaption {
+.five-grid figcaption, .day-caption figcaption {
   color: white;
   font-family: "Montserrat";
   font-weight: bold;
@@ -235,7 +235,7 @@
 // expert
 .expert-headshot {
   grid-column: 1 / 2;
-  grid-row: 14 / 16;
+  grid-row: 12 / 14;
   background: url("../resources/static/images/web/gunnur.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -244,7 +244,7 @@
 
 .expert-info-wrapper {
   grid-column: 2 / 4;
-  grid-row: 14 / 16;
+  grid-row: 12 / 14;
   background-color: lavender;
   display: flex;
   flex-direction: column;
@@ -271,7 +271,7 @@
 
 .group-picture {
   grid-column: 4 / 6;
-  grid-row: 14 / 16;
+  grid-row: 12 / 14;
   background: url("../resources/static/images/web/capricorn.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -362,54 +362,54 @@
 
 
 // caret animation
-
-@-webkit-keyframes breathing {
-  0% {
-    -webkit-transform: scale(0.6);
-    transform: scale(0.6);
-  }
-
-  25% {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-  }
-
-  60% {
-    -webkit-transform: scale(0.6);
-    transform: scale(0.6);
-  }
-
-  100% {
-    -webkit-transform: scale(0.6);
-    transform: scale(0.6);
-  }
-}
-
-@keyframes breathing {
-  0% {
-    -webkit-transform: scale(0.6);
-    -ms-transform: scale(0.6);
-    transform: scale(0.6);
-  }
-
-  25% {
-    -webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    transform: scale(1.2);
-  }
-
-  60% {
-    -webkit-transform: scale(0.6);
-    -ms-transform: scale(0.6);
-    transform: scale(0.6);
-  }
-
-  100% {
-    -webkit-transform: scale(0.6);
-    -ms-transform: scale(0.6);
-    transform: scale(0.6);
-  }
-}
+//
+//@-webkit-keyframes breathing {
+//  0% {
+//    -webkit-transform: scale(0.6);
+//    transform: scale(0.6);
+//  }
+//
+//  25% {
+//    -webkit-transform: scale(1.2);
+//    transform: scale(1.2);
+//  }
+//
+//  60% {
+//    -webkit-transform: scale(0.6);
+//    transform: scale(0.6);
+//  }
+//
+//  100% {
+//    -webkit-transform: scale(0.6);
+//    transform: scale(0.6);
+//  }
+//}
+//
+//@keyframes breathing {
+//  0% {
+//    -webkit-transform: scale(0.6);
+//    -ms-transform: scale(0.6);
+//    transform: scale(0.6);
+//  }
+//
+//  25% {
+//    -webkit-transform: scale(1.2);
+//    -ms-transform: scale(1.2);
+//    transform: scale(1.2);
+//  }
+//
+//  60% {
+//    -webkit-transform: scale(0.6);
+//    -ms-transform: scale(0.6);
+//    transform: scale(0.6);
+//  }
+//
+//  100% {
+//    -webkit-transform: scale(0.6);
+//    -ms-transform: scale(0.6);
+//    transform: scale(0.6);
+//  }
+//}
 
 // heart
 

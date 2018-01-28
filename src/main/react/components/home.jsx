@@ -13,13 +13,7 @@ export default class Home extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.state = {
-    //   isLionSelected: true,
-    // };
-
-    // this.onCircleClick = this.onCircleClick.bind(this);
-    // this.handleEmailChange = this.handleEmailChange.bind(this);
-    // this.handleEmailSubmit = this.handleEmailSubmit.bind(this);
+    this.getDay = this.getDay.bind(this);
   }
 
   getLandingImage() {
@@ -52,7 +46,6 @@ export default class Home extends React.Component {
       </div>
       <div className="destinations-text">
         {helper[this.props.isEnglish].text}
-
       </div>
     </div>
   }
@@ -107,20 +100,42 @@ export default class Home extends React.Component {
 
   getWeek() {
     return <div className="carousel-container" style={{gridColumn: "1/6", gridRow: "10/12"}}>
-      <Carousel slides={scheduleHelper[this.props.isEnglish].week.map((day, index) =>
-        <div className="day-wrapper">
-          <div className="schedule-day-number">
-            <div>Day {index + 1}</div>
-          </div>
-          <div className="day-content" style={this.getDayStyle()}>{day.text}</div>
-        </div>
-      )}/>
+      <Carousel slides={scheduleHelper.map(this.getDay)}/>
     </div>
   }
 
-  getDayStyle() {
+  getDay(day, index) {
+    return <div className="day-wrapper" key={`day-${index}`}>
+      <div className="schedule-day-number" style={this.getDayStyle(1)}>
+        <div>Day {index + 1}</div>
+      </div>
+      {this.getDayContent(day, index)}
+      <div className="day-picture" style={this.getDayStyle(2)}>
+        <figure>
+          <img src={day.picture}/>
+          <figcaption>{day.figCaption}</figcaption>
+        </figure>
+      </div>
+    </div>
+  }
+
+  getDayContent(day, index) {
+    return <div className="day-content-wrapper" style={this.getDayStyle(2)} key={`content-${index}`}>
+      {day.entries.map((entry, index) => <div className="day-entry" key={`entry-${index}`}>
+        <i className={`day-icon ${entry.icon}`}/>
+        <div className="day-label">
+          {entry.label[this.props.isEnglish]}
+        </div>
+        <div className="day-time">
+          {entry.time}
+        </div>
+      </div>)}
+    </div>
+  }
+
+  getDayStyle(widthQuotient) {
     let height = this.getCarouselHeight();
-    let width = window.innerWidth;
+    let width = (window.innerWidth / 5) * widthQuotient;
     return Object.assign({}, {height, width});
   }
 
@@ -227,16 +242,16 @@ export default class Home extends React.Component {
       {/* row 9 */}
       {this.getGrid(stayGridHelper)}
 
-      {/* rows 10 - 11 */}
-      {this.getExpertHeadshot()}
-      {this.getExpertInfo()}
-      {this.getGroupPicture()}
-
       {/* row 12 */}
       {this.getWeek()}
       {/*{this.getScheduleBanner()}*/}
       {/*{this.getNamibiaFlag()}*/}
       {/*{this.getEmail()}*/}
+
+      {/* rows 10 - 11 */}
+      {this.getExpertHeadshot()}
+      {this.getExpertInfo()}
+      {this.getGroupPicture()}
     </div>;
   }
 }
