@@ -123,40 +123,40 @@ export const scheduleHelper = [{
   figCaption: "Johannesburg",
   entries: [{
     icon: "fa fa-map-marker fa-2x",
-    label: {true: "Johannesburg Arrival", false: "Johannesburg'a varis"},
+    label: {true: "Johannesburg", false: "Johannesburg"},
     time: "10:30 AM"
   }, {
     icon: "fa fa-eye fa-2x",
-    label: {true: "Optional City Tour", false: "Opsiyonel Sehir Turu"},
+    label: {true: "City Tour", false: "Sehir Turu"},
     time: "12:30 PM"
   }, {
     icon: "fa fa-plane fa-2x",
-    label: {true: "Flight to Windhoek", false: "Windhoek'e Ucus"},
+    label: {true: "Windhoek", false: "Windhoek"},
     time: "05:50 PM"
   }, {
     icon: "fa fa-bed fa-2x",
-    label: {true: "Hilton Windhoek Hotel", false: "Hilton Windhoek Hotel"},
+    label: {true: "Hilton Windhoek", false: "Hilton Windhoek"},
     time: "08:00 PM"
   }]
 }, {
   // DAY 2
   picture: safariAnimals,
-  figCaption: "Etosha National Park",
+  figCaption: "Etosha Park",
   entries: [{
     icon: "fa fa-binoculars fa-2x",
-    label: {true: "Panoramic Windhoek Tour", false: "Panoramik Windhoek Turu"},
+    label: {true: "Panoramic Tour", false: "Panoramik Tur"},
     time: "9:30 AM"
   }, {
     icon: "fa fa-cutlery fa-2x",
-    label: {true: "Lunch at Turkish Embassy", false: "Buyukelcimiz ile yemek"},
+    label: {true: "Turkish Embassy", false: "Buyukelcilik"},
     time: "12:30 PM"
   }, {
     icon: "fa fa-bug fa-2x",
-    label: {true: "Etosha National Park", false: "Etosha Milli Parki"},
+    label: {true: "Etosha Park", false: "Etosha Parki"},
     time: "03:00 PM"
   }, {
     icon: "fa fa-bed fa-2x",
-    label: {true: "NWR Dolomite Resort", false: "NWR Dolomite Resort"},
+    label: {true: "NWR Dolomite", false: "NWR Dolomite"},
     time: "08:00 PM"
   }]
 }];

@@ -5,7 +5,6 @@ import {
   stayHelper
 } from "../../resources/static/constants";
 import * as _ from "lodash";
-import Carousel from './carousel';
 
 
 export default class Home extends React.Component {
@@ -75,7 +74,7 @@ export default class Home extends React.Component {
   getHeart() {
     return <div className="heart-container" onClick={() => this.scrollTo("destinations")}>
       <div className="heart"/>
-      <div className="heart-info">Tailored Tours for <br/> Groups over 10</div>
+      <div className="heart-info">Special offers for <br/> Groups over 10</div>
     </div>
   }
 
@@ -98,19 +97,21 @@ export default class Home extends React.Component {
     return <div className="namibia-flag"/>;
   }
 
-  getWeek() {
-    return <div className="carousel-container" style={{gridColumn: "1/6", gridRow: "10/12"}}>
-      <Carousel slides={scheduleHelper.map(this.getDay)}/>
+  getWeek(helper) {
+    return <div className="week">
+      {helper.map((day, index) => this.getDay(day, index))}
     </div>
   }
 
   getDay(day, index) {
-    return <div className="day-wrapper" key={`day-${index}`}>
-      <div className="schedule-day-number" style={this.getDayStyle(1)}>
-        <div>Day {index + 1}</div>
+    return <div className="day-wrapper" key={`day-${index}`} id={`day-${index}`}>
+      <div className="day-index">
+        <div className="day-title">Day {index + 1}</div>
+        <div className="activity-list">
+          {this.getDayContent(day, index)}
+        </div>
       </div>
-      {this.getDayContent(day, index)}
-      <div className="day-picture" style={this.getDayStyle(2)}>
+      <div className="day-picture">
         <figure>
           <img src={day.picture}/>
           <figcaption>{day.figCaption}</figcaption>
@@ -120,7 +121,7 @@ export default class Home extends React.Component {
   }
 
   getDayContent(day, index) {
-    return <div className="day-content-wrapper" style={this.getDayStyle(2)} key={`content-${index}`}>
+    return <ul className="day-content-wrapper" key={`content-${index}`}>
       {day.entries.map((entry, index) => <div className="day-entry" key={`entry-${index}`}>
         <i className={`day-icon ${entry.icon}`}/>
         <div className="day-label">
@@ -130,18 +131,25 @@ export default class Home extends React.Component {
           {entry.time}
         </div>
       </div>)}
-    </div>
+    </ul>;
   }
 
-  getDayStyle(widthQuotient) {
-    let height = this.getCarouselHeight();
-    let width = (window.innerWidth / 5) * widthQuotient;
-    return Object.assign({}, {height, width});
-  }
+  // getDayStyle(widthQuotient) {
+  //   let height = this.getCarouselHeight();
+  //   let width = (window.innerWidth / 5) * widthQuotient;
+  //   return Object.assign({}, {height, width});
+  // }
+  //
+  // getCarouselHeight() {
+  //   return Math.ceil(window.innerHeight / 3) * 2;
+  // }
 
-  getCarouselHeight() {
-    return Math.ceil(window.innerHeight / 3) * 2;
-  }
+
+  // getWeek() {
+  //   return <div className="carousel-container" style={{gridColumn: "1/6", gridRow: "10/12"}}>
+  //     <Carousel slides={scheduleHelper.map(this.getDay)}/>
+  //   </div>
+  // }
 
   // getDay(day) {
   //   return <div>Hello {day.text}</div>;
@@ -243,7 +251,8 @@ export default class Home extends React.Component {
       {this.getGrid(stayGridHelper)}
 
       {/* row 12 */}
-      {this.getWeek()}
+      {scheduleHelper.map((day, index) => this.getDay(day, index))}
+      {/*{this.getWeek()}*/}
       {/*{this.getScheduleBanner()}*/}
       {/*{this.getNamibiaFlag()}*/}
       {/*{this.getEmail()}*/}

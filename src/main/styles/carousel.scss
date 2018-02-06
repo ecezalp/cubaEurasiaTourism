@@ -1,70 +1,29 @@
 // slides
 
-.day-wrapper {
-  display: flex !important;
-  flex-direction: row;
-  //width: 100% !important;
-}
+//.day-wrapper {
+//  display: flex !important;
+//  flex-direction: row;
+//  //width: 100% !important;
+//}
+//
+//.schedule-day-number {
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//  z-index: 5;
+//  background-color: ivory;
+//}
 
-.schedule-day-number {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 5;
-  background-color: ivory;
-}
+//.schedule-day-number div {
+//  color: black;
+//  font-family: "Dancing Script", sans-serif;
+//  font-size: 4vh;
+//  letter-spacing: 3px;
+//  line-height: 4vh;
+//}
 
-.schedule-day-number div {
-  color: black;
-  font-family: "Dancing Script", sans-serif;
-  font-size: 4vh;
-  letter-spacing: 3px;
-  line-height: 4vh;
-}
 
-.day-content-wrapper {
-  background: linear-gradient(180deg, rgba(208,240,192,0.5), rgba(243, 175, 111, 0.5)), url("../resources/static/images/backgrounds/topography.png");
-  display: grid;
-  grid-template-columns: 50% 50%;
-  align-items: center;
-  justify-items: center;
-}
 
-.day-entry {
-  text-align: center;
-  font-size: 1vw;
-}
-
-.day-entry div, i {
-  padding: 5px 0px;
-}
-
-.day-label {
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.day-picture figure {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.day-picture figure img {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.day-picture figcaption {
-  color: white;
-  font-family: "Montserrat";
-  font-weight: bold;
-  padding: 2vh;
-  position: absolute;
-  background: linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0, 0, 0, 0.8));
-  letter-spacing: 1px;
-}
 
 // buttons
 
