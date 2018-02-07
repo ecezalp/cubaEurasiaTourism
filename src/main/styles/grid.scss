@@ -1,0 +1,97 @@
+
+#day-grid-0-title {
+  grid-column: 1 / 2;
+  grid-row: 10 / 11;
+}
+
+#day-grid-0-list {
+  grid-column: 1 / 2;
+  grid-row: 11 / 12;
+}
+
+#day-grid-0-banner {
+  grid-column: 2 / 4;
+  grid-row: 10 / 12;
+  -webkit-clip-path: polygon(0 0, 0% 100%, 100% 0);
+  clip-path: polygon(0 0, 0% 100%, 100% 0);
+  padding-top: 15%;
+  padding-left: 10%;
+}
+
+#day-grid-0-picture {
+  grid-column: 2 / 6;
+  grid-row: 10 / 12;
+}
+
+#day-grid-1-title {
+  grid-column: 1 / 2;
+  grid-row: 12 / 13;
+}
+
+#day-grid-1-list {
+  grid-column: 1 / 2;
+  grid-row: 13 / 14;
+}
+
+#day-grid-1-banner {
+  grid-column: 2 / 4;
+  grid-row: 12 / 14;
+  -webkit-clip-path: polygon(0 0, 0% 100%, 100% 100%);
+  clip-path: polygon(0 0, 0% 100%, 100% 100%);
+  padding-left: 10%;
+  padding-top: 60%;
+}
+
+#day-grid-1-picture {
+  grid-column: 2 / 6;
+  grid-row: 12 / 14;
+}
+
+
+#day-grid-2-title {
+  grid-column: 1 / 2;
+  grid-row: 14 / 15;
+}
+
+#day-grid-2-list {
+  grid-column: 1 / 2;
+  grid-row: 15 / 16;
+}
+
+#day-grid-2-banner {
+  grid-column: 4 / 6;
+  grid-row: 14 / 16;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+  padding-top: 15%;
+  padding-left: 10%;
+}
+
+#day-grid-2-picture {
+  grid-column: 2 / 6;
+  grid-row: 14 / 16;
+}
+
+#day-grid-3-title {
+  grid-column: 1 / 2;
+  grid-row: 16 / 17;
+}
+
+#day-grid-3-list {
+  grid-column: 1 / 2;
+  grid-row: 17 / 18;
+}
+
+#day-grid-3-banner {
+  grid-column: 4 / 6;
+  grid-row: 16 / 18;
+  -webkit-clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  padding-left: 10%;
+  padding-top: 60%;
+}
+
+#day-grid-3-picture {
+  grid-column: 2 / 6;
+  grid-row: 16 / 18;
+}

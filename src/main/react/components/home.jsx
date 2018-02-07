@@ -97,63 +97,76 @@ export default class Home extends React.Component {
     return <div className="namibia-flag"/>;
   }
 
-  getWeek(helper) {
-    return <div className="week">
-      {helper.map((day, index) => this.getDay(day, index))}
+  getDayTitle(day, index) {
+    return <div className="day-title" id={`day-grid-${index}-title`}>Day {index + 1}</div>
+  }
+
+  getDayActivityList(day, index) {
+    let isEnglish = this.props.isEnglish;
+    return <div className="activity-list" id={`day-grid-${index}-list`}>
+       <ul className="day-content-wrapper" key={`content-${index}`}>
+         <div/>
+         {day.entries.map((entry, entryIndex) => <div className="day-entry" key={`entry-${entryIndex}`}>
+           <i className={`day-icon ${entry.icon}`}/>
+           <div className="day-label">
+             {entry.label[isEnglish]}
+             </div>
+         </div>)}
+         <div/>
+       </ul>
     </div>
   }
 
-  getDay(day, index) {
-    return <div className="day-wrapper" key={`day-${index}`} id={`day-${index}`}>
-      <div className="day-index">
-        <div className="day-title">Day {index + 1}</div>
-        <div className="activity-list">
-          {this.getDayContent(day, index)}
-        </div>
-      </div>
-      <div className="day-picture">
-        <figure>
-          <img src={day.picture}/>
-          <figcaption>{day.figCaption}</figcaption>
-        </figure>
-      </div>
+  getDayBanner(day, index) {
+    return <div className="day-banner" id={`day-grid-${index}-banner`}>{day.figCaption}</div>
+  }
+
+  getDayPicture(day, index){
+   return <div className="day-picture" id={`day-grid-${index}-picture`}>
+      <figure>
+        <img src={day.picture}/>
+      </figure>
     </div>
   }
 
-  getDayContent(day, index) {
-    return <ul className="day-content-wrapper" key={`content-${index}`}>
-      {day.entries.map((entry, index) => <div className="day-entry" key={`entry-${index}`}>
-        <i className={`day-icon ${entry.icon}`}/>
-        <div className="day-label">
-          {entry.label[this.props.isEnglish]}
-        </div>
-        <div className="day-time">
-          {entry.time}
-        </div>
-      </div>)}
-    </ul>;
+  getDay(helper, callback){
+    return helper.map((item, index) => callback(item, index));
   }
 
-  // getDayStyle(widthQuotient) {
-  //   let height = this.getCarouselHeight();
-  //   let width = (window.innerWidth / 5) * widthQuotient;
-  //   return Object.assign({}, {height, width});
-  // }
-  //
-  // getCarouselHeight() {
-  //   return Math.ceil(window.innerHeight / 3) * 2;
-  // }
+  getWeek(helper, functionArray) {
+    return functionArray.map(method => this.getDay(scheduleHelper, method));
+  }
+
+  render() {
+    return <div className="home-container">
+      {/* rows 1 - 3 */}
+      {this.getLandingImage()}
+      {this.getLandingLayer()}
+
+      {/* rows 4 - 5 */}
+      {/*{this.getVisitNamibia()}*/}
+      {this.getDestinations(destinationsHelper)}
+
+      {/* row 6 */}
+      {this.getGrid(natureGridHelper)}
+
+      {/* rows 7 - 8  */}
+      {this.getCulturalExcursions(stayHelper)}
+      {this.getHeart()}
+
+      {/* row 9 */}
+      {this.getGrid(stayGridHelper)}
+
+      {/* row 12 - 25*/}
+      {this.getWeek(scheduleHelper, [this.getDayTitle, this.getDayActivityList.bind(this), this.getDayBanner, this.getDayPicture])}
 
 
-  // getWeek() {
-  //   return <div className="carousel-container" style={{gridColumn: "1/6", gridRow: "10/12"}}>
-  //     <Carousel slides={scheduleHelper.map(this.getDay)}/>
-  //   </div>
-  // }
-
-  // getDay(day) {
-  //   return <div>Hello {day.text}</div>;
-  // }
+      {/* rows 25 - 25 */}
+      {this.getExpertHeadshot()}
+      {this.getExpertInfo()}
+      {this.getGroupPicture()}
+    </div>;
+  }
 
   //
   // getEmail() {
@@ -229,38 +242,4 @@ export default class Home extends React.Component {
   //     {this.getSafariRight()}
   //   </div>
   // }
-
-  render() {
-    return <div className="home-container">
-      {/* rows 1 - 3 */}
-      {this.getLandingImage()}
-      {this.getLandingLayer()}
-
-      {/* rows 4 - 5 */}
-      {/*{this.getVisitNamibia()}*/}
-      {this.getDestinations(destinationsHelper)}
-
-      {/* row 6 */}
-      {this.getGrid(natureGridHelper)}
-
-      {/* rows 7 - 8  */}
-      {this.getCulturalExcursions(stayHelper)}
-      {this.getHeart()}
-
-      {/* row 9 */}
-      {this.getGrid(stayGridHelper)}
-
-      {/* row 12 */}
-      {scheduleHelper.map((day, index) => this.getDay(day, index))}
-      {/*{this.getWeek()}*/}
-      {/*{this.getScheduleBanner()}*/}
-      {/*{this.getNamibiaFlag()}*/}
-      {/*{this.getEmail()}*/}
-
-      {/* rows 10 - 11 */}
-      {this.getExpertHeadshot()}
-      {this.getExpertInfo()}
-      {this.getGroupPicture()}
-    </div>;
-  }
 }

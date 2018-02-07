@@ -124,19 +124,19 @@ export const scheduleHelper = [{
   entries: [{
     icon: "fa fa-map-marker fa-2x",
     label: {true: "Johannesburg", false: "Johannesburg"},
-    time: "10:30 AM"
+    time: "10:30"
   }, {
     icon: "fa fa-eye fa-2x",
     label: {true: "City Tour", false: "Sehir Turu"},
-    time: "12:30 PM"
+    time: "12:30"
   }, {
     icon: "fa fa-plane fa-2x",
     label: {true: "Windhoek", false: "Windhoek"},
-    time: "05:50 PM"
+    time: "17:50"
   }, {
     icon: "fa fa-bed fa-2x",
     label: {true: "Hilton Windhoek", false: "Hilton Windhoek"},
-    time: "08:00 PM"
+    time: "20:00"
   }]
 }, {
   // DAY 2
@@ -145,19 +145,61 @@ export const scheduleHelper = [{
   entries: [{
     icon: "fa fa-binoculars fa-2x",
     label: {true: "Panoramic Tour", false: "Panoramik Tur"},
-    time: "9:30 AM"
+    time: "9:30"
   }, {
     icon: "fa fa-cutlery fa-2x",
     label: {true: "Turkish Embassy", false: "Buyukelcilik"},
-    time: "12:30 PM"
+    time: "12:30"
   }, {
     icon: "fa fa-bug fa-2x",
     label: {true: "Etosha Park", false: "Etosha Parki"},
-    time: "03:00 PM"
+    time: "15:00"
   }, {
     icon: "fa fa-bed fa-2x",
     label: {true: "NWR Dolomite", false: "NWR Dolomite"},
-    time: "08:00 PM"
+    time: "20:00"
+  }]
+},{
+  // DAY 3
+  picture: joburg,
+  figCaption: "Johannesburg",
+  entries: [{
+    icon: "fa fa-map-marker fa-2x",
+    label: {true: "Johannesburg", false: "Johannesburg"},
+    time: "10:30"
+  }, {
+    icon: "fa fa-eye fa-2x",
+    label: {true: "City Tour", false: "Sehir Turu"},
+    time: "12:30"
+  }, {
+    icon: "fa fa-plane fa-2x",
+    label: {true: "Windhoek", false: "Windhoek"},
+    time: "17:50"
+  }, {
+    icon: "fa fa-bed fa-2x",
+    label: {true: "Hilton Windhoek", false: "Hilton Windhoek"},
+    time: "20:00"
+  }]
+}, {
+  // DAY 4
+  picture: safariAnimals,
+  figCaption: "Etosha Park",
+  entries: [{
+    icon: "fa fa-binoculars fa-2x",
+    label: {true: "Panoramic Tour", false: "Panoramik Tur"},
+    time: "9:30"
+  }, {
+    icon: "fa fa-cutlery fa-2x",
+    label: {true: "Turkish Embassy", false: "Buyukelcilik"},
+    time: "12:30"
+  }, {
+    icon: "fa fa-bug fa-2x",
+    label: {true: "Etosha Park", false: "Etosha Parki"},
+    time: "15:00"
+  }, {
+    icon: "fa fa-bed fa-2x",
+    label: {true: "NWR Dolomite", false: "NWR Dolomite"},
+    time: "20:00"
   }]
 }];
 
